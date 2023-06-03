@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Anish Goyal">
+<meta name="dcterms.date" content="2023-01-23">
+
+<title>Chapter 1 Assignment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Chapter-1-Assignment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Chapter-1-Assignment_files/libs/quarto-html/quarto.js"></script>
+<script src="Chapter-1-Assignment_files/libs/quarto-html/popper.min.js"></script>
+<script src="Chapter-1-Assignment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Chapter-1-Assignment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Chapter-1-Assignment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Chapter-1-Assignment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Chapter-1-Assignment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Chapter-1-Assignment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Chapter-1-Assignment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Chapter 1 Assignment</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Anish Goyal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 23, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#problems" id="toc-problems">1.7 Problems</a>
+  <ul>
+  <li><a href="#problem-1.7.1" id="toc-problem-1.7.1">Problem 1.7.1:</a></li>
+  <li><a href="#problem-1.7.2" id="toc-problem-1.7.2">Problem 1.7.2:</a></li>
+  <li><a href="#problem-1.7.3" id="toc-problem-1.7.3">Problem 1.7.3:</a></li>
+  <li><a href="#problem-1.7.4" id="toc-problem-1.7.4">Problem 1.7.4:</a></li>
+  <li><a href="#problem-1.7.5" id="toc-problem-1.7.5">Problem 1.7.5:</a></li>
+  <li><a href="#problem-1.7.6" id="toc-problem-1.7.6">Problem 1.7.6</a></li>
+  <li><a href="#problem-1.7.7" id="toc-problem-1.7.7">Problem 1.7.7</a></li>
+  <li><a href="#problem-1.7.8" id="toc-problem-1.7.8">Problem 1.7.8</a></li>
+  <li><a href="#problem-1.7.9" id="toc-problem-1.7.9">Problem 1.7.9</a></li>
+  <li><a href="#problem-1.7.10" id="toc-problem-1.7.10">Problem 1.7.10</a></li>
+  <li><a href="#problem-1.7.11" id="toc-problem-1.7.11">Problem 1.7.11</a></li>
+  <li><a href="#problem-1.7.12" id="toc-problem-1.7.12">Problem 1.7.12</a></li>
+  <li><a href="#problem-1.7.13" id="toc-problem-1.7.13">Problem 1.7.13</a></li>
+  <li><a href="#problem-1.7.14" id="toc-problem-1.7.14">Problem 1.7.14</a></li>
+  </ul></li>
+  </ul>
+</nav>
+<div style="page-break-after: always;"></div>
+<section id="problems" class="level2">
+<h2 class="anchored" data-anchor-id="problems">1.7 Problems</h2>
+<section id="problem-1.7.1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.1">Problem 1.7.1:</h3>
+<p>my_filter(L, num)<br>
+<em>input:</em> list of numbers and a positive integer<br>
+<em>output:</em> list of numbers not containing a multiple of num<br>
+<em>example:</em> given list = [1, 2, 4, 5, 7] and num = 2, return [1, 5, 7]</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">def</span> my_filter(L, num): <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> L <span class="cf">if</span> x <span class="op">%</span> num <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="bu">print</span>(my_filter([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>], <span class="dv">2</span>))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1, 5, 7]</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.2">Problem 1.7.2:</h3>
+<p>my_lists(L)<br>
+<em>input:</em> list L of non-negative integers<br>
+<em>output:</em> a list of lists: for every element in <span class="math inline">\(x\)</span> in L create a list containing 1, 2,…,<span class="math inline">\(x\)</span><br>
+<em>example:</em> given [0] return [[]]</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">def</span> my_lists(L): <span class="cf">return</span> [[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, y<span class="op">+</span><span class="dv">1</span>)] <span class="cf">for</span> y <span class="kw">in</span> L]</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="bu">print</span>(my_lists([<span class="dv">0</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>[[]]</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.3">Problem 1.7.3:</h3>
+<p>my_function_composition(f, g)<br>
+<em>input:</em> two functions <span class="math inline">\(f\)</span> and <span class="math inline">\(g\)</span>, represented by dictionaries, such that <span class="math inline">\(g \circ f\)</span> exists<br>
+<em>output:</em> dictionary that represents the function <span class="math inline">\(g \circ f\)</span><br>
+<em>example:</em> given <span class="math inline">\(f\)</span> = {0:‘a’, 1:‘b’} and <span class="math inline">\(g\)</span> = {‘a’:‘apple’, ‘b’:‘banana’}, return {0:‘apple’, 1:’banana}</p>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">def</span> my_function_composition(f, g): <span class="cf">return</span> {x:g[f[x]] <span class="cf">for</span> x <span class="kw">in</span> f}</span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="bu">print</span>(my_function_composition({<span class="dv">0</span>:<span class="st">'a'</span>, <span class="dv">1</span>:<span class="st">'b'</span>}, {<span class="st">'a'</span>:<span class="st">'apple'</span>, <span class="st">'b'</span>:<span class="st">'banana'</span>}))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{0: 'apple', 1: 'banana'}</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.4">Problem 1.7.4:</h3>
+<p>mySum(L)<br>
+<em>input:</em> list of numbers<br>
+<em>output:</em> sum of numbers in the list</p>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">def</span> mySum(L): </span>
+<span id="cb7-2"><a href="#cb7-2"></a>    current <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb7-4"><a href="#cb7-4"></a>        current <span class="op">+=</span> i</span>
+<span id="cb7-5"><a href="#cb7-5"></a>    <span class="cf">return</span> current</span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="bu">print</span>(mySum([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>10</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.5">Problem 1.7.5:</h3>
+<p>myProduct(L)<br>
+<em>input:</em> list of numbers<br>
+<em>output:</em> product of numbers in the list</p>
+<div class="cell" data-execution_count="5">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">def</span> myProduct(L): </span>
+<span id="cb9-2"><a href="#cb9-2"></a>    current <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb9-3"><a href="#cb9-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb9-4"><a href="#cb9-4"></a>        current <span class="op">*=</span> i</span>
+<span id="cb9-5"><a href="#cb9-5"></a>    <span class="cf">return</span> current</span>
+<span id="cb9-6"><a href="#cb9-6"></a><span class="bu">print</span>(myProduct([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>24</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.6">Problem 1.7.6</h3>
+<p>myMin(L)<br>
+<em>input:</em> list of numbers<br>
+<em>output:</em> minimum number in list</p>
+<div class="cell" data-execution_count="6">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb11-1"><a href="#cb11-1"></a><span class="im">import</span> sys</span>
+<span id="cb11-2"><a href="#cb11-2"></a><span class="kw">def</span> myMin(L):</span>
+<span id="cb11-3"><a href="#cb11-3"></a>    current <span class="op">=</span> sys.maxsize</span>
+<span id="cb11-4"><a href="#cb11-4"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb11-5"><a href="#cb11-5"></a>        <span class="cf">if</span> i <span class="op">&lt;</span> current:</span>
+<span id="cb11-6"><a href="#cb11-6"></a>            current <span class="op">=</span> i</span>
+<span id="cb11-7"><a href="#cb11-7"></a>    <span class="cf">return</span> current</span>
+<span id="cb11-8"><a href="#cb11-8"></a><span class="bu">print</span>(myMin([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>1</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.7">Problem 1.7.7</h3>
+<p>myConcat(L)<br>
+<em>input:</em> list of strings<br>
+<em>output:</em> concatenation of all the strings in the L</p>
+<div class="cell" data-execution_count="7">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">def</span> myConcat(L): </span>
+<span id="cb13-2"><a href="#cb13-2"></a>    current <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb13-3"><a href="#cb13-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb13-4"><a href="#cb13-4"></a>        current <span class="op">+=</span> current.join(i)</span>
+<span id="cb13-5"><a href="#cb13-5"></a>    <span class="cf">return</span> current</span>
+<span id="cb13-6"><a href="#cb13-6"></a><span class="bu">print</span>(myConcat([<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>]))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>abcd</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.8">Problem 1.7.8</h3>
+<p>myUnion(L)<br>
+<em>input:</em> list of sets <em>output:</em> the union of all sets in L</p>
+<div class="cell" data-execution_count="8">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">def</span> myUnion(L): </span>
+<span id="cb15-2"><a href="#cb15-2"></a>    current <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb15-3"><a href="#cb15-3"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb15-4"><a href="#cb15-4"></a>        <span class="cf">for</span> j <span class="kw">in</span> i:</span>
+<span id="cb15-5"><a href="#cb15-5"></a>            current.add(j)</span>
+<span id="cb15-6"><a href="#cb15-6"></a>    <span class="cf">return</span> current</span>
+<span id="cb15-7"><a href="#cb15-7"></a>L <span class="op">=</span> [{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}, {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}, {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}]</span>
+<span id="cb15-8"><a href="#cb15-8"></a><span class="bu">print</span>(myUnion(L))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-stdout">
+<pre><code>{1, 2, 3, 4, 5}</code></pre>
+</div>
+</div>
+</section>
+<section id="problem-1.7.9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.9">Problem 1.7.9</h3>
+<p>Keeping in mind the comments above, what should be the value of each of the following?<br>
+1. The sum of the numbers in an empty set<br>
+2. The product of the numbers in an empty set<br>
+3. The minimum of the numbers in an empty set<br>
+4. The concatenation of an empty list of strings<br>
+5. The union of an empty list of sets<br>
+What goes wrong when we try to apply this reasoning to define the intersection of an empty list of sets?<br>
+</p>
+<p>The sum of the numbers in an empty set should be <strong>0</strong>.<br>
+The product of the numbers in an empty set should be <strong>1</strong>.<br>
+The minimum of the numbers in an empty set should be <span class="math inline">\(\infty\)</span>.<br>
+The concatenation of an empty list of strings should be <strong>an empty string</strong>.<br>
+The union of an empty list of sets should be <strong>an empty set</strong>.<br>
+The problem that occurs when we try to apply this reasoning to define the intersection of an empty list of sets is that both sets are empty, so there’s nothing to intersect.</p>
+</section>
+<section id="problem-1.7.10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.10">Problem 1.7.10</h3>
+<p>Each of the following problems asks for the sum of two complex numbers. For each, write the solution and illustrate it with a diagram like that of Figure 1.1. The arrows you draw should (roughly) correspond to the vectors being added.<br>
+a. <span class="math inline">\((3 + 1\mathbf i) + (2 + 2\mathbf i)\)</span><br>
+</p>
+<div class="cell" data-execution_count="9">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb17-1"><a href="#cb17-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb17-2"><a href="#cb17-2"></a></span>
+<span id="cb17-3"><a href="#cb17-3"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb17-4"><a href="#cb17-4"></a>z1 <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> <span class="ot">1j</span></span>
+<span id="cb17-5"><a href="#cb17-5"></a>z2 <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb17-6"><a href="#cb17-6"></a></span>
+<span id="cb17-7"><a href="#cb17-7"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb17-8"><a href="#cb17-8"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb17-9"><a href="#cb17-9"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-10"><a href="#cb17-10"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb17-11"><a href="#cb17-11"></a></span>
+<span id="cb17-12"><a href="#cb17-12"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb17-13"><a href="#cb17-13"></a>ax.legend([<span class="st">'z1 = 3+i'</span>, <span class="st">'z2 = 2+2i'</span>])</span>
+<span id="cb17-14"><a href="#cb17-14"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb17-15"><a href="#cb17-15"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb17-16"><a href="#cb17-16"></a></span>
+<span id="cb17-17"><a href="#cb17-17"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb17-18"><a href="#cb17-18"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb17-19"><a href="#cb17-19"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb17-20"><a href="#cb17-20"></a>ax.legend([<span class="st">'z1 = 3+i'</span>, <span class="st">'z2 = 2+2i'</span>,<span class="st">'(z1+z2) = 5+3i'</span>])</span>
+<span id="cb17-21"><a href="#cb17-21"></a></span>
+<span id="cb17-22"><a href="#cb17-22"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb17-23"><a href="#cb17-23"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">6</span>)</span>
+<span id="cb17-24"><a href="#cb17-24"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb17-25"><a href="#cb17-25"></a></span>
+<span id="cb17-26"><a href="#cb17-26"></a><span class="co"># Show the plot</span></span>
+<span id="cb17-27"><a href="#cb17-27"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-1-Assignment_files/figure-html/cell-10-output-1.png" width="593" height="434"></p>
+</div>
+</div>
+<ol start="2" type="a">
+<li><span class="math inline">\((-1 + 2\mathbf i) + (1 - 1\mathbf i)\)</span><br>
+</li>
+</ol>
+<div class="cell" data-execution_count="10">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb18-1"><a href="#cb18-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb18-2"><a href="#cb18-2"></a></span>
+<span id="cb18-3"><a href="#cb18-3"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb18-4"><a href="#cb18-4"></a>z1 <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb18-5"><a href="#cb18-5"></a>z2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="ot">1j</span></span>
+<span id="cb18-6"><a href="#cb18-6"></a></span>
+<span id="cb18-7"><a href="#cb18-7"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb18-8"><a href="#cb18-8"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb18-9"><a href="#cb18-9"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb18-10"><a href="#cb18-10"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb18-11"><a href="#cb18-11"></a></span>
+<span id="cb18-12"><a href="#cb18-12"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb18-13"><a href="#cb18-13"></a>ax.legend([<span class="st">'z1 = -1+2i'</span>, <span class="st">'z2 = 1-i'</span>])</span>
+<span id="cb18-14"><a href="#cb18-14"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb18-15"><a href="#cb18-15"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb18-16"><a href="#cb18-16"></a></span>
+<span id="cb18-17"><a href="#cb18-17"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb18-18"><a href="#cb18-18"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb18-19"><a href="#cb18-19"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb18-20"><a href="#cb18-20"></a>ax.legend([<span class="st">'z1 = -1+2i'</span>, <span class="st">'z2 = 1-i'</span>,<span class="st">'(z1+z2) = i'</span>])</span>
+<span id="cb18-21"><a href="#cb18-21"></a></span>
+<span id="cb18-22"><a href="#cb18-22"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb18-23"><a href="#cb18-23"></a>ax.set_xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb18-24"><a href="#cb18-24"></a>ax.set_ylim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb18-25"><a href="#cb18-25"></a></span>
+<span id="cb18-26"><a href="#cb18-26"></a><span class="co"># Show the plot</span></span>
+<span id="cb18-27"><a href="#cb18-27"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-1-Assignment_files/figure-html/cell-11-output-1.png" width="598" height="434"></p>
+</div>
+</div>
+<ol start="3" type="a">
+<li><span class="math inline">\((2 + 0\mathbf i) + (-3 + .001\mathbf i)\)</span><br>
+</li>
+</ol>
+<div class="cell" data-execution_count="11">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb19-1"><a href="#cb19-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb19-2"><a href="#cb19-2"></a></span>
+<span id="cb19-3"><a href="#cb19-3"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb19-4"><a href="#cb19-4"></a>z1 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb19-5"><a href="#cb19-5"></a>z2 <span class="op">=</span> <span class="op">-</span><span class="dv">3</span> <span class="op">+</span> <span class="ot">0.001j</span></span>
+<span id="cb19-6"><a href="#cb19-6"></a></span>
+<span id="cb19-7"><a href="#cb19-7"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb19-8"><a href="#cb19-8"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb19-9"><a href="#cb19-9"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-10"><a href="#cb19-10"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb19-11"><a href="#cb19-11"></a></span>
+<span id="cb19-12"><a href="#cb19-12"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb19-13"><a href="#cb19-13"></a>ax.legend([<span class="st">'z1 = 2'</span>, <span class="st">'z2 = -3+0.001i'</span>])</span>
+<span id="cb19-14"><a href="#cb19-14"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb19-15"><a href="#cb19-15"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb19-16"><a href="#cb19-16"></a></span>
+<span id="cb19-17"><a href="#cb19-17"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb19-18"><a href="#cb19-18"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb19-19"><a href="#cb19-19"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb19-20"><a href="#cb19-20"></a>ax.legend([<span class="st">'z1 = 2'</span>, <span class="st">'z2 = -3 + 0.001i'</span>,<span class="st">'(z1+z2) = -1+0.001i'</span>])</span>
+<span id="cb19-21"><a href="#cb19-21"></a></span>
+<span id="cb19-22"><a href="#cb19-22"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb19-23"><a href="#cb19-23"></a>ax.set_xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>)</span>
+<span id="cb19-24"><a href="#cb19-24"></a>ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.01</span>)</span>
+<span id="cb19-25"><a href="#cb19-25"></a></span>
+<span id="cb19-26"><a href="#cb19-26"></a><span class="co"># Show the plot</span></span>
+<span id="cb19-27"><a href="#cb19-27"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-1-Assignment_files/figure-html/cell-12-output-1.png" width="610" height="434"></p>
+</div>
+</div>
+<ol start="4" type="a">
+<li><span class="math inline">\(4(0 + 2\mathbf i) + (.001 + 1\mathbf i)\)</span></li>
+</ol>
+<div class="cell" data-execution_count="12">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb20-1"><a href="#cb20-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb20-2"><a href="#cb20-2"></a></span>
+<span id="cb20-3"><a href="#cb20-3"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb20-4"><a href="#cb20-4"></a>z1 <span class="op">=</span> <span class="ot">8j</span></span>
+<span id="cb20-5"><a href="#cb20-5"></a>z2 <span class="op">=</span> <span class="fl">0.001</span> <span class="op">+</span> <span class="ot">1j</span></span>
+<span id="cb20-6"><a href="#cb20-6"></a></span>
+<span id="cb20-7"><a href="#cb20-7"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb20-8"><a href="#cb20-8"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb20-9"><a href="#cb20-9"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-10"><a href="#cb20-10"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb20-11"><a href="#cb20-11"></a></span>
+<span id="cb20-12"><a href="#cb20-12"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb20-13"><a href="#cb20-13"></a>ax.legend([<span class="st">'z1 = 4(0 + 2i)'</span>, <span class="st">'z2 = 0.001+i'</span>])</span>
+<span id="cb20-14"><a href="#cb20-14"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb20-15"><a href="#cb20-15"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb20-16"><a href="#cb20-16"></a></span>
+<span id="cb20-17"><a href="#cb20-17"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb20-18"><a href="#cb20-18"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb20-19"><a href="#cb20-19"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb20-20"><a href="#cb20-20"></a>ax.legend([<span class="st">'z1 = 4(0 + 2i)'</span>, <span class="st">'z2 = 0.001+i'</span>,<span class="st">'(z1+z2) = 0.001+9i'</span>])</span>
+<span id="cb20-21"><a href="#cb20-21"></a></span>
+<span id="cb20-22"><a href="#cb20-22"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb20-23"><a href="#cb20-23"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.005</span>, <span class="fl">0.005</span>)</span>
+<span id="cb20-24"><a href="#cb20-24"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb20-25"><a href="#cb20-25"></a></span>
+<span id="cb20-26"><a href="#cb20-26"></a><span class="co"># Show the plot</span></span>
+<span id="cb20-27"><a href="#cb20-27"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-1-Assignment_files/figure-html/cell-13-output-1.png" width="585" height="434"></p>
+</div>
+</div>
+</section>
+<section id="problem-1.7.11" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.11">Problem 1.7.11</h3>
+<p>Use the First Rule of Exponentiation (Section 1.4.9) to express the product of two exponentials as a single exponential. For example, <span class="math inline">\({e^{(\pi/4)\mathbf i}}{e^{(\pi/4)\mathbf i}}=e^{(\pi/2)\mathbf i}\)</span>.<br>
+a. <span class="math inline">\(e^{1\mathbf i}e^{2\mathbf i} = e^{-2}\)</span><br>
+b. <span class="math inline">\(e^{(\pi/4)\mathbf i}e^{(2\pi/3)\mathbf i} = e^{-\cfrac{\pi^2}{6}}\)</span><br>
+c.&nbsp;<span class="math inline">\(e^{-(\pi/4)\mathbf i}e^{(2\pi/3)\mathbf i} = e^{\cfrac{\pi^2}{6}}\)</span></p>
+</section>
+<section id="problem-1.7.12" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.12">Problem 1.7.12</h3>
+<p>Write a procedure transform(a, b, L) with the following spec:<br>
+- <em>input:</em> complex numbers <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span>, and a list <span class="math inline">\(L\)</span> of complex numbers<br>
+- <em>output:</em> the list of complex numbers obtained by applying <span class="math inline">\(f(z) = \mathrm{a}z + b\)</span> to each complex number in <span class="math inline">\(L\)</span><br>
+Next, for each of the following problems, explain which value to choose for a and b in order to achieve the specified transformation. If there is no way to achieve the transformation, explain.<br>
+a. Translate <span class="math inline">\(z\)</span> one unit up and one unit to the right, then rotate ninety degrees clockwise, then scale by two.<br>
+b. Scale the real part by two and the imaginary part by three, then rotate by forty-five degrees counterclockwise, and then translate down two units and left three units.</p>
+<ol type="a">
+<li>There is no way to achieve this transformation because the scaling and rotation will occur before the translation due to order of operations.</li>
+<li>This is possible by choosing <span class="math inline">\(a = (2 + 3i)e^{(\frac{\pi}{4})i}\)</span> and <span class="math inline">\(b = -1 - 3i\)</span>, as shown below.</li>
+</ol>
+<div class="cell" data-execution_count="13">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb21-1"><a href="#cb21-1"></a><span class="im">from</span> math <span class="im">import</span> e, pi</span>
+<span id="cb21-2"><a href="#cb21-2"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb21-3"><a href="#cb21-3"></a><span class="kw">def</span> transform(a, b, L): <span class="cf">return</span> [a<span class="op">*</span>z <span class="op">+</span> b <span class="cf">for</span> z <span class="kw">in</span> L]</span>
+<span id="cb21-4"><a href="#cb21-4"></a>L<span class="op">=</span>[<span class="dv">1</span><span class="op">+</span><span class="ot">2j</span>, <span class="dv">3</span><span class="op">-</span><span class="ot">4j</span>]</span>
+<span id="cb21-5"><a href="#cb21-5"></a>transformed <span class="op">=</span> transform((<span class="dv">2</span><span class="op">+</span><span class="ot">3j</span>)<span class="op">*</span>(e<span class="op">**</span>((pi<span class="op">/</span><span class="dv">4</span>)<span class="op">*</span><span class="ot">1j</span>)), <span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="ot">3j</span>, L)</span>
+<span id="cb21-6"><a href="#cb21-6"></a><span class="kw">def</span> plot_complex_points(complex_points, xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">10</span>), ylim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">10</span>)):</span>
+<span id="cb21-7"><a href="#cb21-7"></a>    plt.scatter([p.real <span class="cf">for</span> p <span class="kw">in</span> complex_points], [p.imag <span class="cf">for</span> p <span class="kw">in</span> complex_points])</span>
+<span id="cb21-8"><a href="#cb21-8"></a>    plt.xlim(xlim)</span>
+<span id="cb21-9"><a href="#cb21-9"></a>    plt.ylim(ylim)</span>
+<span id="cb21-10"><a href="#cb21-10"></a>plot_complex_points(L, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">12</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">15</span>))</span>
+<span id="cb21-11"><a href="#cb21-11"></a>plot_complex_points(transformed, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">12</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">12</span>))</span>
+<span id="cb21-12"><a href="#cb21-12"></a>plt.legend([<span class="st">'Original List'</span>, <span class="st">'Transformed List'</span>])</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="13">
+<pre><code>&lt;matplotlib.legend.Legend at 0x22485502980&gt;</code></pre>
+</div>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-1-Assignment_files/figure-html/cell-14-output-2.png" width="569" height="416"></p>
+</div>
+</div>
+</section>
+<section id="problem-1.7.13" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.13">Problem 1.7.13</h3>
+<p>For each of the following problems, calculate the answer over <span class="math inline">\(GF(2)\)</span>.<br>
+a. <span class="math inline">\(1 + 1 + 1 + 0\)</span><br>
+b. <span class="math inline">\(1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1\)</span><br>
+c.&nbsp;<span class="math inline">\((1 + 1 + 1) \cdot (1 + 1 + 1 + 1)\)</span></p>
+<ol type="a">
+<li><span class="math inline">\(1 + 1 + 1 + 0\)</span><br>
+<span class="math inline">\(=1\)</span><br>
+</li>
+<li><span class="math inline">\(1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1\)</span> &nbsp; <span class="math inline">\(= 1 + 0 + 0 + 1\)</span><br>
+<span class="math inline">\(= 0\)</span><br>
+</li>
+<li><span class="math inline">\((1 + 1 + 1) \cdot (1 + 1 + 1 + 1)\)</span><br>
+<span class="math inline">\(= 1 \cdot 0 = 0\)</span><br>
+</li>
+</ol>
+</section>
+<section id="problem-1.7.14" class="level3">
+<h3 class="anchored" data-anchor-id="problem-1.7.14">Problem 1.7.14</h3>
+<p>Copy the example network used in Section 1.5.2. Suppose the bits that need to be transmitted in a given moment are <span class="math inline">\(b_1 = 1\)</span> and <span class="math inline">\(b_2 = 1\)</span>. Label each link of the network with the bit transmitted across it according to the network-coding scheme. Show how the customer nodes <span class="math inline">\(c\)</span> and <span class="math inline">\(d\)</span> can recover <span class="math inline">\(b_1\)</span> and <span class="math inline">\(b_2\)</span>.</p>
+<p><img src="images/image-107878324.png" class="img-fluid"></p>
+<!-- -->
+
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb23" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb23-1"><a href="#cb23-1"></a><span class="co">---</span></span>
+<span id="cb23-2"><a href="#cb23-2"></a><span class="an">title:</span><span class="co"> "Chapter 1 Assignment"</span></span>
+<span id="cb23-3"><a href="#cb23-3"></a><span class="an">author:</span><span class="co"> Anish Goyal</span></span>
+<span id="cb23-4"><a href="#cb23-4"></a><span class="an">date:</span><span class="co"> January 23, 2023</span></span>
+<span id="cb23-5"><a href="#cb23-5"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb23-6"><a href="#cb23-6"></a><span class="co">    html:</span></span>
+<span id="cb23-7"><a href="#cb23-7"></a><span class="co">        code-fold: true</span></span>
+<span id="cb23-8"><a href="#cb23-8"></a><span class="co">        code-tools: true</span></span>
+<span id="cb23-9"><a href="#cb23-9"></a><span class="co">        code-link: true</span></span>
+<span id="cb23-10"><a href="#cb23-10"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb23-11"><a href="#cb23-11"></a><span class="an">toc-location:</span><span class="co"> body</span></span>
+<span id="cb23-12"><a href="#cb23-12"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb23-13"><a href="#cb23-13"></a><span class="an">code-line-numbers:</span><span class="co"> true</span></span>
+<span id="cb23-14"><a href="#cb23-14"></a><span class="co">---</span></span>
+<span id="cb23-15"><a href="#cb23-15"></a></span>
+<span id="cb23-16"><a href="#cb23-16"></a>{{&lt; pagebreak &gt;}}</span>
+<span id="cb23-17"><a href="#cb23-17"></a></span>
+<span id="cb23-18"><a href="#cb23-18"></a><span class="fu">## 1.7 Problems</span></span>
+<span id="cb23-19"><a href="#cb23-19"></a></span>
+<span id="cb23-20"><a href="#cb23-20"></a><span class="fu">### Problem 1.7.1:</span></span>
+<span id="cb23-21"><a href="#cb23-21"></a></span>
+<span id="cb23-22"><a href="#cb23-22"></a>my_filter(L, num)\</span>
+<span id="cb23-23"><a href="#cb23-23"></a>*input:* list of numbers and a positive integer\</span>
+<span id="cb23-24"><a href="#cb23-24"></a>*output:* list of numbers not containing a multiple of num\</span>
+<span id="cb23-25"><a href="#cb23-25"></a>*example:* given list = <span class="sc">\[</span>1, 2, 4, 5, 7<span class="sc">\]</span> and num = 2, return <span class="sc">\[</span>1, 5, 7<span class="sc">\]</span></span>
+<span id="cb23-26"><a href="#cb23-26"></a></span>
+<span id="cb23-29"><a href="#cb23-29"></a><span class="in">```{python}</span></span>
+<span id="cb23-30"><a href="#cb23-30"></a><span class="kw">def</span> my_filter(L, num): <span class="cf">return</span> [x <span class="cf">for</span> x <span class="kw">in</span> L <span class="cf">if</span> x <span class="op">%</span> num <span class="op">!=</span> <span class="dv">0</span>]</span>
+<span id="cb23-31"><a href="#cb23-31"></a><span class="bu">print</span>(my_filter([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">7</span>], <span class="dv">2</span>))</span>
+<span id="cb23-32"><a href="#cb23-32"></a><span class="in">```</span></span>
+<span id="cb23-33"><a href="#cb23-33"></a></span>
+<span id="cb23-34"><a href="#cb23-34"></a><span class="fu">### Problem 1.7.2:</span></span>
+<span id="cb23-35"><a href="#cb23-35"></a></span>
+<span id="cb23-36"><a href="#cb23-36"></a>my_lists(L)\</span>
+<span id="cb23-37"><a href="#cb23-37"></a>*input:* list L of non-negative integers\</span>
+<span id="cb23-38"><a href="#cb23-38"></a>*output:* a list of lists: for every element in $x$ in L create a list containing 1, 2,...,$x$\</span>
+<span id="cb23-39"><a href="#cb23-39"></a>*example:* given <span class="sc">\[</span>0<span class="sc">\]</span> return <span class="sc">\[\[\]\]</span></span>
+<span id="cb23-40"><a href="#cb23-40"></a></span>
+<span id="cb23-43"><a href="#cb23-43"></a><span class="in">```{python}</span></span>
+<span id="cb23-44"><a href="#cb23-44"></a><span class="kw">def</span> my_lists(L): <span class="cf">return</span> [[x <span class="cf">for</span> x <span class="kw">in</span> <span class="bu">range</span>(<span class="dv">1</span>, y<span class="op">+</span><span class="dv">1</span>)] <span class="cf">for</span> y <span class="kw">in</span> L]</span>
+<span id="cb23-45"><a href="#cb23-45"></a><span class="bu">print</span>(my_lists([<span class="dv">0</span>]))</span>
+<span id="cb23-46"><a href="#cb23-46"></a><span class="in">```</span></span>
+<span id="cb23-47"><a href="#cb23-47"></a></span>
+<span id="cb23-48"><a href="#cb23-48"></a><span class="fu">### Problem 1.7.3:</span></span>
+<span id="cb23-49"><a href="#cb23-49"></a></span>
+<span id="cb23-50"><a href="#cb23-50"></a>my_function_composition(f, g)\</span>
+<span id="cb23-51"><a href="#cb23-51"></a>*input:* two functions $f$ and $g$, represented by dictionaries, such that $g \circ f$ exists\</span>
+<span id="cb23-52"><a href="#cb23-52"></a>*output:* dictionary that represents the function $g \circ f$\</span>
+<span id="cb23-53"><a href="#cb23-53"></a>*example:* given $f$ = {0:'a', 1:'b'} and $g$ = {'a':'apple', 'b':'banana'}, return {0:'apple', 1:'banana}</span>
+<span id="cb23-54"><a href="#cb23-54"></a></span>
+<span id="cb23-57"><a href="#cb23-57"></a><span class="in">```{python}</span></span>
+<span id="cb23-58"><a href="#cb23-58"></a><span class="kw">def</span> my_function_composition(f, g): <span class="cf">return</span> {x:g[f[x]] <span class="cf">for</span> x <span class="kw">in</span> f}</span>
+<span id="cb23-59"><a href="#cb23-59"></a><span class="bu">print</span>(my_function_composition({<span class="dv">0</span>:<span class="st">'a'</span>, <span class="dv">1</span>:<span class="st">'b'</span>}, {<span class="st">'a'</span>:<span class="st">'apple'</span>, <span class="st">'b'</span>:<span class="st">'banana'</span>}))</span>
+<span id="cb23-60"><a href="#cb23-60"></a><span class="in">```</span></span>
+<span id="cb23-61"><a href="#cb23-61"></a></span>
+<span id="cb23-62"><a href="#cb23-62"></a><span class="fu">### Problem 1.7.4:</span></span>
+<span id="cb23-63"><a href="#cb23-63"></a></span>
+<span id="cb23-64"><a href="#cb23-64"></a>mySum(L)\</span>
+<span id="cb23-65"><a href="#cb23-65"></a>*input:* list of numbers\</span>
+<span id="cb23-66"><a href="#cb23-66"></a>*output:* sum of numbers in the list</span>
+<span id="cb23-67"><a href="#cb23-67"></a></span>
+<span id="cb23-70"><a href="#cb23-70"></a><span class="in">```{python}</span></span>
+<span id="cb23-71"><a href="#cb23-71"></a><span class="kw">def</span> mySum(L): </span>
+<span id="cb23-72"><a href="#cb23-72"></a>    current <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb23-73"><a href="#cb23-73"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb23-74"><a href="#cb23-74"></a>        current <span class="op">+=</span> i</span>
+<span id="cb23-75"><a href="#cb23-75"></a>    <span class="cf">return</span> current</span>
+<span id="cb23-76"><a href="#cb23-76"></a><span class="bu">print</span>(mySum([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
+<span id="cb23-77"><a href="#cb23-77"></a><span class="in">```</span></span>
+<span id="cb23-78"><a href="#cb23-78"></a></span>
+<span id="cb23-79"><a href="#cb23-79"></a><span class="fu">### Problem 1.7.5:</span></span>
+<span id="cb23-80"><a href="#cb23-80"></a></span>
+<span id="cb23-81"><a href="#cb23-81"></a>myProduct(L)\</span>
+<span id="cb23-82"><a href="#cb23-82"></a>*input:* list of numbers\</span>
+<span id="cb23-83"><a href="#cb23-83"></a>*output:* product of numbers in the list</span>
+<span id="cb23-84"><a href="#cb23-84"></a></span>
+<span id="cb23-87"><a href="#cb23-87"></a><span class="in">```{python}</span></span>
+<span id="cb23-88"><a href="#cb23-88"></a><span class="kw">def</span> myProduct(L): </span>
+<span id="cb23-89"><a href="#cb23-89"></a>    current <span class="op">=</span> <span class="dv">1</span></span>
+<span id="cb23-90"><a href="#cb23-90"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb23-91"><a href="#cb23-91"></a>        current <span class="op">*=</span> i</span>
+<span id="cb23-92"><a href="#cb23-92"></a>    <span class="cf">return</span> current</span>
+<span id="cb23-93"><a href="#cb23-93"></a><span class="bu">print</span>(myProduct([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
+<span id="cb23-94"><a href="#cb23-94"></a><span class="in">```</span></span>
+<span id="cb23-95"><a href="#cb23-95"></a></span>
+<span id="cb23-96"><a href="#cb23-96"></a><span class="fu">### Problem 1.7.6</span></span>
+<span id="cb23-97"><a href="#cb23-97"></a></span>
+<span id="cb23-98"><a href="#cb23-98"></a>myMin(L)\</span>
+<span id="cb23-99"><a href="#cb23-99"></a>*input:* list of numbers\</span>
+<span id="cb23-100"><a href="#cb23-100"></a>*output:* minimum number in list</span>
+<span id="cb23-101"><a href="#cb23-101"></a></span>
+<span id="cb23-104"><a href="#cb23-104"></a><span class="in">```{python}</span></span>
+<span id="cb23-105"><a href="#cb23-105"></a><span class="im">import</span> sys</span>
+<span id="cb23-106"><a href="#cb23-106"></a><span class="kw">def</span> myMin(L):</span>
+<span id="cb23-107"><a href="#cb23-107"></a>    current <span class="op">=</span> sys.maxsize</span>
+<span id="cb23-108"><a href="#cb23-108"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb23-109"><a href="#cb23-109"></a>        <span class="cf">if</span> i <span class="op">&lt;</span> current:</span>
+<span id="cb23-110"><a href="#cb23-110"></a>            current <span class="op">=</span> i</span>
+<span id="cb23-111"><a href="#cb23-111"></a>    <span class="cf">return</span> current</span>
+<span id="cb23-112"><a href="#cb23-112"></a><span class="bu">print</span>(myMin([<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>]))</span>
+<span id="cb23-113"><a href="#cb23-113"></a><span class="in">```</span></span>
+<span id="cb23-114"><a href="#cb23-114"></a></span>
+<span id="cb23-115"><a href="#cb23-115"></a><span class="fu">### Problem 1.7.7</span></span>
+<span id="cb23-116"><a href="#cb23-116"></a></span>
+<span id="cb23-117"><a href="#cb23-117"></a>myConcat(L)\</span>
+<span id="cb23-118"><a href="#cb23-118"></a>*input:* list of strings\</span>
+<span id="cb23-119"><a href="#cb23-119"></a>*output:* concatenation of all the strings in the L</span>
+<span id="cb23-120"><a href="#cb23-120"></a></span>
+<span id="cb23-123"><a href="#cb23-123"></a><span class="in">```{python}</span></span>
+<span id="cb23-124"><a href="#cb23-124"></a><span class="kw">def</span> myConcat(L): </span>
+<span id="cb23-125"><a href="#cb23-125"></a>    current <span class="op">=</span> <span class="st">''</span></span>
+<span id="cb23-126"><a href="#cb23-126"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb23-127"><a href="#cb23-127"></a>        current <span class="op">+=</span> current.join(i)</span>
+<span id="cb23-128"><a href="#cb23-128"></a>    <span class="cf">return</span> current</span>
+<span id="cb23-129"><a href="#cb23-129"></a><span class="bu">print</span>(myConcat([<span class="st">'a'</span>, <span class="st">'b'</span>, <span class="st">'c'</span>, <span class="st">'d'</span>]))</span>
+<span id="cb23-130"><a href="#cb23-130"></a><span class="in">```</span></span>
+<span id="cb23-131"><a href="#cb23-131"></a></span>
+<span id="cb23-132"><a href="#cb23-132"></a><span class="fu">### Problem 1.7.8</span></span>
+<span id="cb23-133"><a href="#cb23-133"></a></span>
+<span id="cb23-134"><a href="#cb23-134"></a>myUnion(L)\</span>
+<span id="cb23-135"><a href="#cb23-135"></a>*input:* list of sets *output:* the union of all sets in L</span>
+<span id="cb23-136"><a href="#cb23-136"></a></span>
+<span id="cb23-139"><a href="#cb23-139"></a><span class="in">```{python}</span></span>
+<span id="cb23-140"><a href="#cb23-140"></a><span class="kw">def</span> myUnion(L): </span>
+<span id="cb23-141"><a href="#cb23-141"></a>    current <span class="op">=</span> <span class="bu">set</span>()</span>
+<span id="cb23-142"><a href="#cb23-142"></a>    <span class="cf">for</span> i <span class="kw">in</span> L:</span>
+<span id="cb23-143"><a href="#cb23-143"></a>        <span class="cf">for</span> j <span class="kw">in</span> i:</span>
+<span id="cb23-144"><a href="#cb23-144"></a>            current.add(j)</span>
+<span id="cb23-145"><a href="#cb23-145"></a>    <span class="cf">return</span> current</span>
+<span id="cb23-146"><a href="#cb23-146"></a>L <span class="op">=</span> [{<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>}, {<span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>}, {<span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>}]</span>
+<span id="cb23-147"><a href="#cb23-147"></a><span class="bu">print</span>(myUnion(L))</span>
+<span id="cb23-148"><a href="#cb23-148"></a><span class="in">```</span></span>
+<span id="cb23-149"><a href="#cb23-149"></a></span>
+<span id="cb23-150"><a href="#cb23-150"></a><span class="fu">### Problem 1.7.9</span></span>
+<span id="cb23-151"><a href="#cb23-151"></a></span>
+<span id="cb23-152"><a href="#cb23-152"></a>Keeping in mind the comments above, what should be the value of each of the following?\</span>
+<span id="cb23-153"><a href="#cb23-153"></a><span class="ss">1. </span>The sum of the numbers in an empty set\</span>
+<span id="cb23-154"><a href="#cb23-154"></a><span class="ss">2. </span>The product of the numbers in an empty set\</span>
+<span id="cb23-155"><a href="#cb23-155"></a><span class="ss">3. </span>The minimum of the numbers in an empty set\</span>
+<span id="cb23-156"><a href="#cb23-156"></a><span class="ss">4. </span>The concatenation of an empty list of strings\</span>
+<span id="cb23-157"><a href="#cb23-157"></a><span class="ss">5. </span>The union of an empty list of sets\</span>
+<span id="cb23-158"><a href="#cb23-158"></a>What goes wrong when we try to apply this reasoning to define the intersection of an empty list of sets?\</span>
+<span id="cb23-159"><a href="#cb23-159"></a></span>
+<span id="cb23-160"><a href="#cb23-160"></a>The sum of the numbers in an empty set should be **0**.\</span>
+<span id="cb23-161"><a href="#cb23-161"></a>The product of the numbers in an empty set should be **1**.\</span>
+<span id="cb23-162"><a href="#cb23-162"></a>The minimum of the numbers in an empty set should be $\infty$.\</span>
+<span id="cb23-163"><a href="#cb23-163"></a>The concatenation of an empty list of strings should be **an empty string**.\</span>
+<span id="cb23-164"><a href="#cb23-164"></a>The union of an empty list of sets should be **an empty set**.\</span>
+<span id="cb23-165"><a href="#cb23-165"></a>The problem that occurs when we try to apply this reasoning to define the intersection of an empty list of sets is that both sets are empty, so there's nothing to intersect.</span>
+<span id="cb23-166"><a href="#cb23-166"></a></span>
+<span id="cb23-167"><a href="#cb23-167"></a><span class="fu">### Problem 1.7.10</span></span>
+<span id="cb23-168"><a href="#cb23-168"></a></span>
+<span id="cb23-169"><a href="#cb23-169"></a>Each of the following problems asks for the sum of two complex numbers. For each, write the solution and illustrate it with a diagram like that of Figure 1.1. The arrows you draw should (roughly) correspond to the vectors being added.\</span>
+<span id="cb23-170"><a href="#cb23-170"></a>a. $(3 + 1\mathbf i) + (2 + 2\mathbf i)$\</span>
+<span id="cb23-171"><a href="#cb23-171"></a></span>
+<span id="cb23-174"><a href="#cb23-174"></a><span class="in">```{python}</span></span>
+<span id="cb23-175"><a href="#cb23-175"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-176"><a href="#cb23-176"></a></span>
+<span id="cb23-177"><a href="#cb23-177"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb23-178"><a href="#cb23-178"></a>z1 <span class="op">=</span> <span class="dv">3</span> <span class="op">+</span> <span class="ot">1j</span></span>
+<span id="cb23-179"><a href="#cb23-179"></a>z2 <span class="op">=</span> <span class="dv">2</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb23-180"><a href="#cb23-180"></a></span>
+<span id="cb23-181"><a href="#cb23-181"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb23-182"><a href="#cb23-182"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb23-183"><a href="#cb23-183"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-184"><a href="#cb23-184"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-185"><a href="#cb23-185"></a></span>
+<span id="cb23-186"><a href="#cb23-186"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb23-187"><a href="#cb23-187"></a>ax.legend([<span class="st">'z1 = 3+i'</span>, <span class="st">'z2 = 2+2i'</span>])</span>
+<span id="cb23-188"><a href="#cb23-188"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb23-189"><a href="#cb23-189"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb23-190"><a href="#cb23-190"></a></span>
+<span id="cb23-191"><a href="#cb23-191"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb23-192"><a href="#cb23-192"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb23-193"><a href="#cb23-193"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb23-194"><a href="#cb23-194"></a>ax.legend([<span class="st">'z1 = 3+i'</span>, <span class="st">'z2 = 2+2i'</span>,<span class="st">'(z1+z2) = 5+3i'</span>])</span>
+<span id="cb23-195"><a href="#cb23-195"></a></span>
+<span id="cb23-196"><a href="#cb23-196"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb23-197"><a href="#cb23-197"></a>ax.set_xlim(<span class="dv">0</span>, <span class="dv">6</span>)</span>
+<span id="cb23-198"><a href="#cb23-198"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">4</span>)</span>
+<span id="cb23-199"><a href="#cb23-199"></a></span>
+<span id="cb23-200"><a href="#cb23-200"></a><span class="co"># Show the plot</span></span>
+<span id="cb23-201"><a href="#cb23-201"></a>plt.show()</span>
+<span id="cb23-202"><a href="#cb23-202"></a><span class="in">```</span></span>
+<span id="cb23-203"><a href="#cb23-203"></a></span>
+<span id="cb23-204"><a href="#cb23-204"></a>b.  $(-1 + 2\mathbf i) + (1 - 1\mathbf i)$\</span>
+<span id="cb23-205"><a href="#cb23-205"></a></span>
+<span id="cb23-208"><a href="#cb23-208"></a><span class="in">```{python}</span></span>
+<span id="cb23-209"><a href="#cb23-209"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-210"><a href="#cb23-210"></a></span>
+<span id="cb23-211"><a href="#cb23-211"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb23-212"><a href="#cb23-212"></a>z1 <span class="op">=</span> <span class="op">-</span><span class="dv">1</span> <span class="op">+</span> <span class="ot">2j</span></span>
+<span id="cb23-213"><a href="#cb23-213"></a>z2 <span class="op">=</span> <span class="dv">1</span> <span class="op">-</span> <span class="ot">1j</span></span>
+<span id="cb23-214"><a href="#cb23-214"></a></span>
+<span id="cb23-215"><a href="#cb23-215"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb23-216"><a href="#cb23-216"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb23-217"><a href="#cb23-217"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-218"><a href="#cb23-218"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-219"><a href="#cb23-219"></a></span>
+<span id="cb23-220"><a href="#cb23-220"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb23-221"><a href="#cb23-221"></a>ax.legend([<span class="st">'z1 = -1+2i'</span>, <span class="st">'z2 = 1-i'</span>])</span>
+<span id="cb23-222"><a href="#cb23-222"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb23-223"><a href="#cb23-223"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb23-224"><a href="#cb23-224"></a></span>
+<span id="cb23-225"><a href="#cb23-225"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb23-226"><a href="#cb23-226"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb23-227"><a href="#cb23-227"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb23-228"><a href="#cb23-228"></a>ax.legend([<span class="st">'z1 = -1+2i'</span>, <span class="st">'z2 = 1-i'</span>,<span class="st">'(z1+z2) = i'</span>])</span>
+<span id="cb23-229"><a href="#cb23-229"></a></span>
+<span id="cb23-230"><a href="#cb23-230"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb23-231"><a href="#cb23-231"></a>ax.set_xlim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">2</span>)</span>
+<span id="cb23-232"><a href="#cb23-232"></a>ax.set_ylim(<span class="op">-</span><span class="dv">2</span>, <span class="dv">3</span>)</span>
+<span id="cb23-233"><a href="#cb23-233"></a></span>
+<span id="cb23-234"><a href="#cb23-234"></a><span class="co"># Show the plot</span></span>
+<span id="cb23-235"><a href="#cb23-235"></a>plt.show()</span>
+<span id="cb23-236"><a href="#cb23-236"></a><span class="in">```</span></span>
+<span id="cb23-237"><a href="#cb23-237"></a></span>
+<span id="cb23-238"><a href="#cb23-238"></a>c.  $(2 + 0\mathbf i) + (-3 + .001\mathbf i)$\</span>
+<span id="cb23-239"><a href="#cb23-239"></a></span>
+<span id="cb23-242"><a href="#cb23-242"></a><span class="in">```{python}</span></span>
+<span id="cb23-243"><a href="#cb23-243"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-244"><a href="#cb23-244"></a></span>
+<span id="cb23-245"><a href="#cb23-245"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb23-246"><a href="#cb23-246"></a>z1 <span class="op">=</span> <span class="dv">2</span></span>
+<span id="cb23-247"><a href="#cb23-247"></a>z2 <span class="op">=</span> <span class="op">-</span><span class="dv">3</span> <span class="op">+</span> <span class="ot">0.001j</span></span>
+<span id="cb23-248"><a href="#cb23-248"></a></span>
+<span id="cb23-249"><a href="#cb23-249"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb23-250"><a href="#cb23-250"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb23-251"><a href="#cb23-251"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-252"><a href="#cb23-252"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-253"><a href="#cb23-253"></a></span>
+<span id="cb23-254"><a href="#cb23-254"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb23-255"><a href="#cb23-255"></a>ax.legend([<span class="st">'z1 = 2'</span>, <span class="st">'z2 = -3+0.001i'</span>])</span>
+<span id="cb23-256"><a href="#cb23-256"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb23-257"><a href="#cb23-257"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb23-258"><a href="#cb23-258"></a></span>
+<span id="cb23-259"><a href="#cb23-259"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb23-260"><a href="#cb23-260"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb23-261"><a href="#cb23-261"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb23-262"><a href="#cb23-262"></a>ax.legend([<span class="st">'z1 = 2'</span>, <span class="st">'z2 = -3 + 0.001i'</span>,<span class="st">'(z1+z2) = -1+0.001i'</span>])</span>
+<span id="cb23-263"><a href="#cb23-263"></a></span>
+<span id="cb23-264"><a href="#cb23-264"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb23-265"><a href="#cb23-265"></a>ax.set_xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">3</span>)</span>
+<span id="cb23-266"><a href="#cb23-266"></a>ax.set_ylim(<span class="dv">0</span>, <span class="fl">0.01</span>)</span>
+<span id="cb23-267"><a href="#cb23-267"></a></span>
+<span id="cb23-268"><a href="#cb23-268"></a><span class="co"># Show the plot</span></span>
+<span id="cb23-269"><a href="#cb23-269"></a>plt.show()</span>
+<span id="cb23-270"><a href="#cb23-270"></a><span class="in">```</span></span>
+<span id="cb23-271"><a href="#cb23-271"></a></span>
+<span id="cb23-272"><a href="#cb23-272"></a>d.  $4(0 + 2\mathbf i) + (.001 + 1\mathbf i)$</span>
+<span id="cb23-273"><a href="#cb23-273"></a></span>
+<span id="cb23-276"><a href="#cb23-276"></a><span class="in">```{python}</span></span>
+<span id="cb23-277"><a href="#cb23-277"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-278"><a href="#cb23-278"></a></span>
+<span id="cb23-279"><a href="#cb23-279"></a><span class="co"># Create a list of the two complex numbers</span></span>
+<span id="cb23-280"><a href="#cb23-280"></a>z1 <span class="op">=</span> <span class="ot">8j</span></span>
+<span id="cb23-281"><a href="#cb23-281"></a>z2 <span class="op">=</span> <span class="fl">0.001</span> <span class="op">+</span> <span class="ot">1j</span></span>
+<span id="cb23-282"><a href="#cb23-282"></a></span>
+<span id="cb23-283"><a href="#cb23-283"></a><span class="co"># Plot the complex numbers as vectors on the complex plane</span></span>
+<span id="cb23-284"><a href="#cb23-284"></a>fig, ax <span class="op">=</span> plt.subplots()</span>
+<span id="cb23-285"><a href="#cb23-285"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z1.real], [z1.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-286"><a href="#cb23-286"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z2.real], [z2.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>)</span>
+<span id="cb23-287"><a href="#cb23-287"></a></span>
+<span id="cb23-288"><a href="#cb23-288"></a><span class="co"># Add a legend and axis labels</span></span>
+<span id="cb23-289"><a href="#cb23-289"></a>ax.legend([<span class="st">'z1 = 4(0 + 2i)'</span>, <span class="st">'z2 = 0.001+i'</span>])</span>
+<span id="cb23-290"><a href="#cb23-290"></a>ax.set_xlabel(<span class="st">'Real'</span>)</span>
+<span id="cb23-291"><a href="#cb23-291"></a>ax.set_ylabel(<span class="st">'Imaginary'</span>)</span>
+<span id="cb23-292"><a href="#cb23-292"></a></span>
+<span id="cb23-293"><a href="#cb23-293"></a><span class="co"># Add the sum of the complex numbers</span></span>
+<span id="cb23-294"><a href="#cb23-294"></a>z_sum <span class="op">=</span> z1 <span class="op">+</span> z2</span>
+<span id="cb23-295"><a href="#cb23-295"></a>ax.quiver(<span class="dv">0</span>, <span class="dv">0</span>, [z_sum.real], [z_sum.imag], angles<span class="op">=</span><span class="st">'xy'</span>, scale_units<span class="op">=</span><span class="st">'xy'</span>, scale<span class="op">=</span><span class="dv">1</span>, color<span class="op">=</span><span class="st">'r'</span>)</span>
+<span id="cb23-296"><a href="#cb23-296"></a>ax.legend([<span class="st">'z1 = 4(0 + 2i)'</span>, <span class="st">'z2 = 0.001+i'</span>,<span class="st">'(z1+z2) = 0.001+9i'</span>])</span>
+<span id="cb23-297"><a href="#cb23-297"></a></span>
+<span id="cb23-298"><a href="#cb23-298"></a><span class="co"># Set the range of the x-axis and y-axis</span></span>
+<span id="cb23-299"><a href="#cb23-299"></a>ax.set_xlim(<span class="op">-</span><span class="fl">0.005</span>, <span class="fl">0.005</span>)</span>
+<span id="cb23-300"><a href="#cb23-300"></a>ax.set_ylim(<span class="dv">0</span>, <span class="dv">10</span>)</span>
+<span id="cb23-301"><a href="#cb23-301"></a></span>
+<span id="cb23-302"><a href="#cb23-302"></a><span class="co"># Show the plot</span></span>
+<span id="cb23-303"><a href="#cb23-303"></a>plt.show()</span>
+<span id="cb23-304"><a href="#cb23-304"></a><span class="in">```</span></span>
+<span id="cb23-305"><a href="#cb23-305"></a></span>
+<span id="cb23-306"><a href="#cb23-306"></a><span class="fu">### Problem 1.7.11</span></span>
+<span id="cb23-307"><a href="#cb23-307"></a></span>
+<span id="cb23-308"><a href="#cb23-308"></a>Use the First Rule of Exponentiation (Section 1.4.9) to express the product of two exponentials as a single exponential. For example, ${e^{(\pi/4)\mathbf i}}{e^{(\pi/4)\mathbf i}}=e^{(\pi/2)\mathbf i}$.\</span>
+<span id="cb23-309"><a href="#cb23-309"></a>a. $e^{1\mathbf i}e^{2\mathbf i} = e^{-2}$\</span>
+<span id="cb23-310"><a href="#cb23-310"></a>b. $e^{(\pi/4)\mathbf i}e^{(2\pi/3)\mathbf i} = e^{-\cfrac{\pi^2}{6}}$\</span>
+<span id="cb23-311"><a href="#cb23-311"></a>c. $e^{-(\pi/4)\mathbf i}e^{(2\pi/3)\mathbf i} = e^{\cfrac{\pi^2}{6}}$</span>
+<span id="cb23-312"><a href="#cb23-312"></a></span>
+<span id="cb23-313"><a href="#cb23-313"></a><span class="fu">### Problem 1.7.12</span></span>
+<span id="cb23-314"><a href="#cb23-314"></a></span>
+<span id="cb23-315"><a href="#cb23-315"></a>Write a procedure transform(a, b, L) with the following spec:\</span>
+<span id="cb23-316"><a href="#cb23-316"></a><span class="ss">- </span>*input:* complex numbers $a$ and $b$, and a list $L$ of complex numbers\</span>
+<span id="cb23-317"><a href="#cb23-317"></a><span class="ss">- </span>*output:* the list of complex numbers obtained by applying $f(z) = \mathrm{a}z + b$ to each complex number in $L$\</span>
+<span id="cb23-318"><a href="#cb23-318"></a>Next, for each of the following problems, explain which value to choose for a and b in order to achieve the specified transformation. If there is no way to achieve the transformation, explain.\</span>
+<span id="cb23-319"><a href="#cb23-319"></a>a. Translate $z$ one unit up and one unit to the right, then rotate ninety degrees clockwise, then scale by two.\</span>
+<span id="cb23-320"><a href="#cb23-320"></a>b. Scale the real part by two and the imaginary part by three, then rotate by forty-five degrees counterclockwise, and then translate down two units and left three units.</span>
+<span id="cb23-321"><a href="#cb23-321"></a></span>
+<span id="cb23-322"><a href="#cb23-322"></a>a.  There is no way to achieve this transformation because the scaling and rotation will occur before the translation due to order of operations.</span>
+<span id="cb23-323"><a href="#cb23-323"></a>b.  This is possible by choosing $a = (2 + 3i)e^{(\frac{\pi}{4})i}$ and $b = -1 - 3i$, as shown below.</span>
+<span id="cb23-324"><a href="#cb23-324"></a></span>
+<span id="cb23-327"><a href="#cb23-327"></a><span class="in">```{python}</span></span>
+<span id="cb23-328"><a href="#cb23-328"></a><span class="im">from</span> math <span class="im">import</span> e, pi</span>
+<span id="cb23-329"><a href="#cb23-329"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb23-330"><a href="#cb23-330"></a><span class="kw">def</span> transform(a, b, L): <span class="cf">return</span> [a<span class="op">*</span>z <span class="op">+</span> b <span class="cf">for</span> z <span class="kw">in</span> L]</span>
+<span id="cb23-331"><a href="#cb23-331"></a>L<span class="op">=</span>[<span class="dv">1</span><span class="op">+</span><span class="ot">2j</span>, <span class="dv">3</span><span class="op">-</span><span class="ot">4j</span>]</span>
+<span id="cb23-332"><a href="#cb23-332"></a>transformed <span class="op">=</span> transform((<span class="dv">2</span><span class="op">+</span><span class="ot">3j</span>)<span class="op">*</span>(e<span class="op">**</span>((pi<span class="op">/</span><span class="dv">4</span>)<span class="op">*</span><span class="ot">1j</span>)), <span class="op">-</span><span class="dv">1</span><span class="op">-</span><span class="ot">3j</span>, L)</span>
+<span id="cb23-333"><a href="#cb23-333"></a><span class="kw">def</span> plot_complex_points(complex_points, xlim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">10</span>), ylim<span class="op">=</span>(<span class="dv">0</span>, <span class="dv">10</span>)):</span>
+<span id="cb23-334"><a href="#cb23-334"></a>    plt.scatter([p.real <span class="cf">for</span> p <span class="kw">in</span> complex_points], [p.imag <span class="cf">for</span> p <span class="kw">in</span> complex_points])</span>
+<span id="cb23-335"><a href="#cb23-335"></a>    plt.xlim(xlim)</span>
+<span id="cb23-336"><a href="#cb23-336"></a>    plt.ylim(ylim)</span>
+<span id="cb23-337"><a href="#cb23-337"></a>plot_complex_points(L, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">15</span>, <span class="dv">12</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">15</span>))</span>
+<span id="cb23-338"><a href="#cb23-338"></a>plot_complex_points(transformed, xlim<span class="op">=</span>(<span class="op">-</span><span class="dv">10</span>, <span class="dv">12</span>), ylim<span class="op">=</span>(<span class="op">-</span><span class="dv">5</span>, <span class="dv">12</span>))</span>
+<span id="cb23-339"><a href="#cb23-339"></a>plt.legend([<span class="st">'Original List'</span>, <span class="st">'Transformed List'</span>])</span>
+<span id="cb23-340"><a href="#cb23-340"></a><span class="in">```</span></span>
+<span id="cb23-341"><a href="#cb23-341"></a></span>
+<span id="cb23-342"><a href="#cb23-342"></a><span class="fu">### Problem 1.7.13</span></span>
+<span id="cb23-343"><a href="#cb23-343"></a></span>
+<span id="cb23-344"><a href="#cb23-344"></a>For each of the following problems, calculate the answer over $GF(2)$.\</span>
+<span id="cb23-345"><a href="#cb23-345"></a>a. $1 + 1 + 1 + 0$\</span>
+<span id="cb23-346"><a href="#cb23-346"></a>b. $1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1$\</span>
+<span id="cb23-347"><a href="#cb23-347"></a>c. $(1 + 1 + 1) \cdot (1 + 1 + 1 + 1)$</span>
+<span id="cb23-348"><a href="#cb23-348"></a></span>
+<span id="cb23-349"><a href="#cb23-349"></a>a.  $1 + 1 + 1 + 0$\</span>
+<span id="cb23-350"><a href="#cb23-350"></a>    $=1$\</span>
+<span id="cb23-351"><a href="#cb23-351"></a>b.  $1 \cdot 1 + 0 \cdot 1 + 0 \cdot 0 + 1 \cdot 1$ &nbsp; $= 1 + 0 + 0 + 1$\</span>
+<span id="cb23-352"><a href="#cb23-352"></a>    $= 0$\</span>
+<span id="cb23-353"><a href="#cb23-353"></a>c.  $(1 + 1 + 1) \cdot (1 + 1 + 1 + 1)$\</span>
+<span id="cb23-354"><a href="#cb23-354"></a>    $= 1 \cdot 0 = 0$\</span>
+<span id="cb23-355"><a href="#cb23-355"></a></span>
+<span id="cb23-356"><a href="#cb23-356"></a><span class="fu">### Problem 1.7.14</span></span>
+<span id="cb23-357"><a href="#cb23-357"></a></span>
+<span id="cb23-358"><a href="#cb23-358"></a>Copy the example network used in Section 1.5.2. Suppose the bits that need to be transmitted in a given moment are $b_1 = 1$ and $b_2 = 1$. Label each link of the network with the bit transmitted across it according to the network-coding scheme. Show how the customer nodes $c$ and $d$ can recover $b_1$ and $b_2$.</span>
+<span id="cb23-359"><a href="#cb23-359"></a></span>
+<span id="cb23-360"><a href="#cb23-360"></a><span class="al">![](images/image-107878324.png)</span></span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

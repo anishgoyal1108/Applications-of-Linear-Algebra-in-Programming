@@ -1,0 +1,464 @@
+---
+format: pdf
+pdf-engine: pdflatex
+toc: true
+toc-depth: 4
+toc-location: body
+code-line-numbers: true
+filters:
+   - include-code-files 
+include-in-header: 
+  text: |
+    \usepackage{amsmath, xparse}
+    \usepackage{fancyvrb, fvextra}
+    \usepackage{bm}
+    \usepackage{svg}
+    \usepackage{listings}
+    \usepackage{sectsty}
+    \usepackage{xifthen}
+    \subsubsectionfont{\centering}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+    \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+    \newcommand\rowop[1]{\scriptstyle\smash{\xrightarrow[\vphantom{#1}]{\mkern-4mu#1\mkern-4mu}}}
+    \DeclareDocumentCommand\converttorows%
+    {>{\SplitList{,}}m}%
+    {\ProcessList{#1}{\converttorow}}
+    \NewDocumentCommand{\converttorow}{m}
+    {\ifthenelse{\isempty{#1}}{}{\rowop{#1}}\\}
+
+    \DeclareDocumentCommand \rowops{m}
+    {\;
+    \begin{matrix}
+    \converttorows {#1}
+    \end{matrix}
+    \; }
+
+include-before-body: 
+  text: |
+    \input{./title.tex}
+    \newpage
+---
+
+{{< pagebreak >}}
+
+# Column-vector and row-vector matrix multiplication
+## Problem 4.17.11
+Compute the result of the following matrix multiplications:
+\begin{flalign*}
+&(\text{a}) 
+\begin{bmatrix}
+2 & 3 & 1 \\
+1 & 3 & 4
+\end{bmatrix}
+\begin{bmatrix}
+2 \\
+2 \\
+3
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+2 \cdot 2 + 3 \cdot 2 + 1 \cdot 3 \\
+1 \cdot 2 + 3 \cdot 2 + 4 \cdot 3
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+4+6+3 \\
+2+6+12
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+13 \\
+20
+\end{bmatrix}&\\
+&(\text{b}) 
+\begin{bmatrix}
+2 & 4 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 & 2 & 0 \\
+5 & 1 & 1 \\
+2 & 3 & 0
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+2 \cdot 1 + 4 \cdot 5 + 1 \cdot 2 & 2 \cdot 2 + 4 \cdot 1 + 1 \cdot 3 & 2 \cdot 0 + 4 \cdot 1 + 1 \cdot 0
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+2+20+2 & 4+4+3 & 0+4+0 \\
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+24 & 11 & 4
+\end{bmatrix}&\\
+&(\text{c})
+\begin{bmatrix}
+2 & 1
+\end{bmatrix}
+\begin{bmatrix}
+3 & 1 & 5 & 2 \\
+-2 & 6 & 1 & -1
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+2 \cdot 3 + 1 \cdot -2 & 2 \cdot 1 + 1 \cdot 6 & 2 \cdot 5 + 1 \cdot 1 + 2 \cdot 2 + 1 \cdot -1
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+6+(-2) & 2+6 & 10+1 & 4+(-1)
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+4 & 8 & 11 & 3
+\end{bmatrix}&\\
+\end{flalign*}
+{{< pagebreak >}}
+\begin{flalign*}
+&(\text{d})
+\begin{bmatrix}
+1 & 2 & 3 & 4 \\
+1 & 1 & 3 & 1
+\end{bmatrix}
+\begin{bmatrix}
+1 \\
+2 \\
+3 \\
+4
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+1 \cdot 1 + 2 \cdot 2 + 3 \cdot 3 + 4 \cdot 4 \\
+1 \cdot 1 + 1 \cdot 2 + 3 \cdot 3 + 1 \cdot 4
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+1 + 4 + 9 + 16 \\
+1 + 2 + 9 + 4
+\end{bmatrix}&\\
+&=\begin{bmatrix}
+30 \\
+16
+\end{bmatrix}&\\
+&(\text{e})
+\begin{bmatrix}
+4 \\
+1 \\
+-3 
+\end{bmatrix}^{\intercal}
+\begin{bmatrix}
+-1 & 1 & 1 \\
+1 & 0 & 2 \\
+0 & 1 & -1
+\end{bmatrix}&\\
+&= \begin{bmatrix}
+4 & 1 & -3
+\end{bmatrix}
+\begin{bmatrix}
+-1 & 1 & 1 \\
+1 & 0 & 2 \\
+0 & 1 & -1
+\end{bmatrix}&\\
+&= \begin{bmatrix}
+4 \cdot -1 + 1 \cdot 1 + -3 \cdot 0 & 4 \cdot 1 + 1 \cdot 0 + -3 \cdot 1 & 4 \cdot 1 + 1 \cdot 2 + -3 \cdot -1
+\end{bmatrix}&\\
+&= \begin{bmatrix}
+-4 + 1 + 0 & 4 + 0 + (-3) & 4 + 2 + 3
+\end{bmatrix} &\\
+&= \begin{bmatrix}
+-3 & 1 & 9
+\end{bmatrix}
+\end{flalign*} 
+
+{{< pagebreak >}}
+
+# Matrix Class
+## Problem 4.17.12
+You will write a module `mat` implementing a matrix classs `Mat`. The data structure used for instances of `Mat` resembles that used for isntances of `Vec`. The only difference is that the domain `D` will now store a pair (i.e., a 2-tuple) of sets instead of a single set. The keys of the dictionary `f` are pairs of elements of the Cartesian product of the two sets in `D`. The operations defined for `Mat` include entry setters and getters, an equality test, addition and subtraction and negative, multiplication by a scalar, transpose, vector-matrix, and matrix-vector multiplication, and matrix-matrix multiplication. Like `Vec`, the class `Mat` is defined to enable use of operators such as `+` and `*`. The syntax for using instances of `Mat` is as follows, where `A` and `B` are matrices, `v` is a vector, `alpha` is a scalar, `r` is a row label, and `c` is a column label:
+
+\begin{table}[hbt!]
+\centering
+\begin{tabular}{ll}
+operation                                      & syntax                               \\
+Matrix addition and subtraction                & \verb|A+B| and \verb|A-B|                      \\
+Matrix negative                                & \verb|-A|                                 \\
+Scalar-matrix multiplication                   & \verb|alpha*A|                            \\
+Matrix equality test                           & \verb|A==B|                               \\
+Matrix transpose                               & \verb|A.transpose()|                      \\
+Getting and setting a matrix entry             & \verb|A[r,c]| and \verb|A[r, c] = alpha| \\
+Matrix-vector and vector-matrix multiplication & \verb|v*A| and \verb|A*v|                        \\
+Matrix-matrix multiplication                   & \verb|A*B|                               
+\end{tabular}
+\end{table}
+
+You are required to write the procedures `equal, getitem, setitem, mat_add, mat_scalar_mul, transpose, vector_matrix_mul, matrix_vector_mal,` and `matrix_matrix_mul`. You should start by getting `equal` working since `==` is used in the doctests for other procedures. 
+
+**Note:** You are encouraged to use operator (e.g. `M[r, c]`) in your procedures. (Of course, you can't, for example, use the syntax `M[r, c]` in your `getitem` procedure.)
+
+Put the file `mat.py` in your working directory, and, for each procedure, replace the `pass` statement with a working version. Test your implementation using `doctest` as you did with `vec.py` in Problem 2.14.10. Make sure your implementation works with matrices whose row-label sets differ from their column-label sets.
+
+**Note:** Use the sparse matrix-vector multiplication algorithm described in Section 4.8 (the one based on the "ordinary" definition) for matrix-vector multiplication. Use the analogous algorithm for vector-matrix multiplication. Do not use `transpose` in your multiplication algorithms. Do not use any external proceduers or modules other than `vec`. In particular, do not use procedures from `matutil`. If you do, your `Mat` implementation is likely not to be efficient enough for use with large sparse matrices.
+
+{{< pagebreak >}}
+
+```{.python include="mat.py"}
+```
+### Testing `mat.py`
+```{python}
+import subprocess
+subprocess.run(["python", "-m", "doctest", "mat.py"], check=True)
+```
+Note that a `returncode` of 0 means that all of the testcases executed successfully.
+
+{{< pagebreak >}}
+
+# Matrix-vector and vector-matrix multiplication definitions in Python
+You will write several procedures, each implementing matrix-vector multiplication using a *specified definition* of matrix-vector multiplication or vector-matrix multiplication.
+
+\begin{itemize}
+\item These procedures can be written and run after you write \verb|getitem(M, k)| but before you make any other additions to \verb|Mat|.
+\item These procedures must \textit{not} be designed to exploit sparsity.
+\item Your code must \textit{not} use the matrix-vector and vector-matrix multiplication operations that are not part of \verb|Mat|.
+\item Your code should use procedures \verb|mat2rowdict, mat2coldict, rowdict2mat(rowdict)|, and/or \verb|coldict2mat(coldict)| from the \verb|matutil| module.
+\end{itemize}
+
+## Problem 4.17.13
+Write the procedure `lin_comb_mat_vec_mult(M, v)`, which multiplies `M` times `v` using the linear-combination definition. For this problem, the only operation on `v` you are allowed is getting the value of an entry using brackets: `v[k]`. The vector returned must be computed as a linear combination.
+
+```python
+def lin_comb_mat_vec_mult(M, v):
+    colDict = mat2coldict(M)
+    res = Vec(M.D[0],{})
+    for col in v.D:
+        res = res + v[col] * colDict[col]
+    return res
+```
+
+## Problem 4.17.14
+Write `lin_comb_vec_mat_mult(v, M)`, which multiply `v` times `M` using the linear-combination definition. For this problem, the only operation on `v` you are allowed is getting the value of an entry using brackets: `v[k]`. The vector returned must be computed as a linear combination.
+
+```python
+def lin_comb_vec_mat_mult(v, M):
+  rowDict = mat2rowdict(M)
+  res = Vec(M.D[1],{})
+  for col in v.D:
+      res = res + v[col] * rowDict[col]
+  return res
+```
+
+## Problem 4.17.15
+Write `dot_product_mat_vec_mult(M, v)`, which multiplies `M` times `v` using the dot-product definition. For this problem, the only operation on `v` you are allowed is taking the dot-product of `v` and another vector and `v`: `u*v` or `v*u`. The entries of the vector returned must be computed using dot-product.
+
+```python
+def dot_product_mat_vec_mult(M, v):
+    res = Vec(M.D[0], {})
+    rowDict = mat2rowdict(M)
+    for row in M.D[0]:
+        res[row]= rowDict[row] * v
+    return res
+```
+
+## Problem 4.17.16
+Write `dot_product_vec_mat_mult(v, M)`, which multiplies `v` times `M` using the dot-product definition. For this problem, the only operation on `v` you are allowed is taking the dot-product of `v` and another vector and `v`: `u*v` or `v*u`. The entries of the vector returned must be computed using the dot-product.
+
+```python
+def dot_product_vec_mat_mult(v, M):
+  res = Vec(M.D[1], {})
+  colDict = mat2coldict(M)
+  for col in M.D[1]:
+      res[col] = colDict[col] * v
+    return res
+```
+
+{{< pagebreak >}}
+
+# Matrix-matrix multiplication in Python
+You will write several procedures, each implementing matrix-matrix multiplication using a *specified definition* of matrix-matrix multiplication. 
+
+\begin{itemize}
+\item These procedures can be written and run only after you have written and tested the procedures in \verb|mat.py| that perform matrix-vector and vector-matrix multiplication.
+\item These procedures must \textit{not} be designed to exploit sparsity.
+\item Your code must \textit{not} use the matrix-matrix multiplication that is part of \verb|Mat|. For this reason, you can write these procedures before completing that part of \verb|Mat|.
+\item Your code should use the procedures \verb|mat2rowdict, mat2coldict, rowdict2mat(rowdict)|, and/or \verb|coldict2mat(coldict)| from the \verb|matutil| module.
+\end{itemize}
+
+## Problem 4.17.17
+Write `Mv_mat_mat_mult(A, B)` to compute the matrix-matrix product `A*B`, using the matrix-vector multiplication definition of matrix-matrix multiplication. For this procedure, the only operation you are allowed to do on `A` is matrix-vector multiplication, using the `*` operator: `A*v`. Do *not* use the named procedure `matrix_vector_mul` or any of the procedures defined in the previous problem.
+
+```{python}
+def Mv_mat_mat_mult(A, B):
+  colDict = mat2coldict(B)
+  res=dict()
+  for col in colDict.keys():
+      res[col]=A*colDict[col]
+  return coldict2mat(res)
+```
+
+## Problem 4.17.18
+Write `vM_mat_mat_mult(A, B)` to compute the matrix-matrix product `A*B`, using the vector-matrix definition. For this procedure, the only operation you are allowed to do on `B` is vector-matrix multiplication, using the `*` operator: `v*B`. Do *not* use the named procedure `vector_matrix_mul` or any of the procedures defined in the previous problem.
+
+```{python}
+def vM_mat_mat_mult(A, B):
+  rowDict=mat2rowdict(A)
+  res=dict()
+  for row in rowDict.keys():
+    res[row]=rowDict[row]*B
+  return rowdict2mat(res)
+```
+
+{{< pagebreak >}}
+
+# Dot products via matrix-matrix multiplication
+
+## Problem 4.17.19
+Let $A$ be a matrix whose column labels are countries and whose row labels are votes taken in the United Nations (UN), where $A[i, j]$ is $+1$ or -1 or 0 depending on whether country $j$ votes in favor of or against neither in vote $i$. \
+As in the politics lab, we can compare countries by comparing their voting records. Let $M = A^TA$. Then $M$'s row and column labels are countries, and $M[i, j]$ is the dot-product of country $i$'s voting record with country $j$'s voting record. \ 
+The provided file `UN_voting_data.txt` has one line per country. The line consists of the country's name, followed by $+1$'s, -1's and zeroes, separated by spaces. Read in the data and form the matrix $A$. 
+Then form the matrix $M = A^TA$. (Note: this will take quite a while---from fifteen minutes to an hour, depending on your computer.) \
+Use $M$ to answer the following questions.
+
+```{python}
+  from matutil import *
+  from vecutil import *
+
+file = open('UN_voting_data.txt', 'r')
+raw_data = file.readlines()
+for i in range(len(raw_data)):
+    line = raw_data[i].replace('\n', '')
+    raw_data[i] = line
+
+countries_2d = []
+for i in range(len(raw_data)):
+    curr = raw_data[i].split(' ')
+    country = curr[0]
+    votes = []
+    for j in range(1, len(curr)):
+        votes.append(int(curr[j]))
+    countries_2d.append([country, votes])
+
+agreement_map = {}
+for i in range(0, len(countries_2d) - 1):
+
+    country1 = countries_2d[i][0]
+    votes1 = countries_2d[i][1]
+
+    for j in range(i + 1, len(countries_2d)):
+        country2 = countries_2d[j][0]
+        votes2 = countries_2d[j][1]
+
+        dot_product = 0
+        for k in range(len(votes1)):
+            dot_product += votes1[k] * votes2[k]
+        agreement_map[tuple([country1, country2])] = dot_product
+
+agreement_map = sorted(agreement_map.items(), key=lambda x:x[1])
+```
+
+**1. Which pair of countries are most opposed? (They have the most negative dot-product.)**
+
+```{python}
+print(agreement_map[0])
+```
+
+**2. What are the ten most opposed pairs of countries?**
+
+```{python}
+for i in range(10):
+  print(agreement_map[i])
+```
+
+**3. Which pair of distinct countries are in the greatest agreement (have the most positive dot-product)?**
+
+```{python}
+print(agreement_map[-1])
+```
+
+{{< pagebreak >}}
+
+# Comprehension practice
+
+## Problem 4.17.20
+Write the one-line procedure `dictlist_helper(dlist, k)` with the following spec: \
+\begin{itemize}
+\item \textit{input:} a list \verb|dlist| of dictionaries which all have the same keys, and a key \verb|k|
+\item \textit{output:} the list whose $i^{th}$ element is the value corresponding to the key \verb|k| in the $i^{th}$ dictionary of \verb|dlist|
+\item \textit{example:} With inputs \verb|dlist=[{'a': 'apple', 'b': 'bear'}, {'a': 1, 'b': 2}]| and \verb|k='a'|, the output is \verb|['apple', 1]|
+\end{itemize}
+The procedure should use a comprehension.
+
+```{python}
+def dictlist_helper(dlist, k):
+  return [d[k] for d in dlist]
+dlist=[{'a':'apple', 'b':'bear'}, {'a':1, 'b':2}]
+print(dictlist_helper(dlist, 'a'))
+```
+
+{{< pagebreak >}}
+
+# The inverse of a $2 \times 2$ matrix
+
+## Problem 4.17.21
+**1. Use a formula given in the text to solve the linear system** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} x_1 \\ x_2 \end{bmatrix} = \begin{bmatrix} 1 \\ 0 \end{bmatrix}$.
+
+$3x_1 + 4x_2 = 1\\2x_1 + 1x_2 = 0$
+  
+$\implies$
+  
+$x_2 = -2x_1 \implies 3x_1 + 4(-2x_1) = 1 \implies x_1 = -\frac{1}{5}$, and  
+$x_2 = \frac{2}{5}$
+  
+$\begin{bmatrix}x_1\\x_2\end{bmatrix} = \begin{bmatrix}-\frac{1}{5}\\\frac{2}{5}\end{bmatrix}$
+
+**2. Use the formula to solve the linear system** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix} \begin{bmatrix} y_1 \\ y_2 \end{bmatrix} = \begin{bmatrix} 0 \\ 1 \end{bmatrix}$.
+
+$3y_1 + 4y_2 = 0\\2y_1 + 1y_2 = 1$
+
+$\implies$
+
+$y_2 = -\frac{3}{4}y_1 \implies 2y_1 - \frac{3}{4}y_1 = 1 \implies y_1 = \frac{4}{5}$, and $y_2 = -\frac{3}{5}$
+
+$\begin{bmatrix}y_1\\y_2\end{bmatrix} = \begin{bmatrix}\frac{4}{5}\\-\frac{3}{5}\end{bmatrix}$
+
+**3. Use your solutions to find a** $\bm{2 \times 2}$ **matrix** $\bm{M}$ **such that** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix}$ **times** $\bm{M}$ **is an identity matrix.**
+
+$M = \begin{bmatrix}x_1 &y_1\\x_2 &y_2\end{bmatrix} = \begin{bmatrix}-\frac{1}{5} &\frac{4}{5}\\\frac{2}{5} &-\frac{3}{5}\end{bmatrix}$
+
+**4. Calculate** $\bm{M}$ **times** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix}$ **and calculate** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix}$ **times** $\bm{M}$ **and use `Corollary 4.13.19` to decide whether** $\bm{M}$ **is the inverse of** $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix}$. **Explain your answer.**
+
+$\begin{bmatrix}-\frac{1}{5} &\frac{4}{5}\\\frac{2}{5} &-\frac{3}{5}\end{bmatrix} \begin{bmatrix}3 &4\\2 &1\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+
+$\begin{bmatrix}3 &4\\2 &1\end{bmatrix} \begin{bmatrix}-\frac{1}{5} &\frac{4}{5}\\\frac{2}{5} &-\frac{3}{5}\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+
+Since $AB$ and $BA$ are both identity matrices, $M$ is the inverse of $\begin{bmatrix} 3 & 4 \\ 2 & 1 \end{bmatrix}$ according to `Corollary 4.13.19`.
+
+{{< pagebreak >}}
+
+# Matrix inverse criterion
+
+## Problem 4.17.22
+For each of the parts below, use `Corollary 4.13.19` to demonstrate that the pairs of matrices given are or are not inverse of each other. \
+**1. matrices** $\begin{bmatrix} 5 & 1 \\ 9 & 2 \end{bmatrix}$, $\begin{bmatrix} 2 & -1 \\ -9 & 5 \end{bmatrix}$ **over** $\bm{\mathbb{R}}$
+
+$\begin{bmatrix}5 &1\\9 &2\end{bmatrix} \begin{bmatrix}2 &-1\\-9 &5\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+  
+$\begin{bmatrix}2 &-1\\-9 &5\end{bmatrix} \begin{bmatrix}5 &1\\9 &2\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+
+These matrices are inverses.
+
+**2. matrices** $\begin{bmatrix} 2 & 0 \\ 0 & 1 \end{bmatrix}$, $\begin{bmatrix} \frac{1}{2} & 0 \\ 0 & 1 \end{bmatrix}$ **over** $\bm{\mathbb{R}}$
+
+$\begin{bmatrix}2 &0\\0 &1\end{bmatrix} \begin{bmatrix}\frac{1}{2} &0\\0 &1\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+  
+$\begin{bmatrix}\frac{1}{2} &0\\0 &1\end{bmatrix} \begin{bmatrix}2 &0\\0 &1\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$  
+
+These matrices are inverses.
+
+**3. matrices** $\begin{bmatrix} 3 & 1 \\ 0 & 2 \end{bmatrix}$, $\begin{bmatrix} 1 & \frac{1}{6} \\ -2 & \frac{1}{2} \end{bmatrix}$ **over** $\bm{GF(2)}$
+
+$\begin{bmatrix}3 &1\\0 &2\end{bmatrix} \begin{bmatrix}1 &\frac{1}{6}\\-2 &\frac{1}{2}\end{bmatrix} = \begin{bmatrix}1 &1\\-4 &1\end{bmatrix}$
+  
+$\begin{bmatrix}1 &\frac{1}{6}\\-2 &\frac{1}{2}\end{bmatrix} \begin{bmatrix}3 &1\\0 &2\end{bmatrix} = \begin{bmatrix}3 &\frac{4}{3}\\-6 &-1\end{bmatrix}$
+  
+These matrices are *not* inverses.
+
+**4. matrices** $\begin{bmatrix} 1 & 0 & 1 \\ 0 & 1 & 0 \end{bmatrix}$ **over** $\bm{GF(2)}$
+
+$\begin{bmatrix}1 &0 &1\\0 &1 &0\end{bmatrix} \begin{bmatrix}0 &1\\0 &1\\1 &1\end{bmatrix} = \begin{bmatrix}1 &0\\0 &1\end{bmatrix}$
+  
+$\begin{bmatrix}0 &1\\0 &1\\1 &1\end{bmatrix} \begin{bmatrix}1 &0 &1\\0 &1 &0\end{bmatrix} = \begin{bmatrix}0 &1 &0\\0 &1 &0\\1 &1 &1\end{bmatrix}$
+
+These matrices are *not* inverses.
+
+## Problem 4.17.23
+Specify a function $f$ (by domain, co-domain, and rule) that is invertible but such that there is no matrix $A$ such that $f(\bm{x}) = A\bm{x}$.
+
+If $f(\bm{x}) = \{x_i^3, x_i \in \bm{x}\}$, then \
+$f'(\bm{x}) = g(\bm{x}) = \{x_i^\frac{1}{3}, x_i \in \bm{x}\}$, but there is no matrix $A$ where $f(\bm{x}) = A\bm{x}$.

@@ -1,0 +1,80 @@
+---
+format: pdf
+pdf-engine: pdflatex
+toc: true
+toc-depth: 4
+toc-location: body
+code-line-numbers: true 
+include-in-header: 
+  text: |
+    \usepackage{amsmath, xparse}
+    \usepackage{fancyvrb, fvextra}
+    \usepackage{bm}
+    \usepackage{svg}
+    \usepackage{listings}
+    \usepackage{sectsty}
+    \usepackage{xifthen, xparse}
+    \subsubsectionfont{\centering}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+    \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+    \newcommand\rowop[1]{\scriptstyle\smash{\xrightarrow[\vphantom{#1}]{\mkern-4mu#1\mkern-4mu}}}
+    \DeclareDocumentCommand\converttorows%
+    {>{\SplitList{,}}m}%
+    {\ProcessList{#1}{\converttorow}}
+    \NewDocumentCommand{\converttorow}{m}
+    {\ifthenelse{\isempty{#1}}{}{\rowop{#1}}\\}
+
+    \DeclareDocumentCommand \rowops{m}
+    {\;
+    \begin{matrix}
+    \converttorows {#1}
+    \end{matrix}
+    \; }
+
+include-before-body: 
+  text: |
+    \input{./title.tex}
+    \newpage
+---
+
+{{< pagebreak >}}
+
+# Sets of linear combinations and geometry
+
+![](Figure%203.1.png)
+
+## Problem 3.8.6
+**Express the line segment in Figure 3.1(a) using a set of linear combinations. Do the same for the plane containing the triangle in Figure 3.2(b).**
+
+3.1(a): $\{\alpha[1, 3], \alpha \in \mathbb{R}, 0 \le \alpha \le 1 \}$
+
+3.1(b): $\{\alpha[2, 2, 2], \alpha \in \mathbb{R}, 0 \le \alpha \le 1 \}$
+
+{{< pagebreak >}}
+
+# Vector spaces
+
+## Problem 3.8.7
+**Prove or give a counterexample: "$\bm{\{[x, y, z] \ : \ x, y, z \in \mathbb{R}, x+y+z=1\}}$ is a vector space."**
+
+This is not a vector space because it is not closed under scalar multiplication. This is because I could multiply the vector $v = [1, 0, 0]$, which is a member of the set, by 2. The resulting vector $2v = [2, 0, 0]$ is not a member of the set, and therefore it is not a vector space. 
+
+## Problem 3.8.8
+**Prove or give a counterexample: "$\bm{\{[x, y, z] \ : \ x, y, z \in \mathbb{R}, x+y+z=0\}}$ is a vector space."**
+
+This is a vector space. The vector contains $v_\varnothing \in \mathbb{R}$, and $0 + 0 + 0 = 0$. This means for any $\alpha$ that we multiply $v$ by, the vector will still be an element of the set because $\alpha(0+0+0) \stackrel{\checkmark}{=} 0$, and it is therefore closed under scalar multiplication. The set is also closed under vector addition because for any $u, v$ in the set, it will always equal 0, since $u_1+u_2+u_3+v_1+v_2+v_3 \stackrel{\checkmark}{=} 0$.
+
+## Problem 3.8.9
+**Prove or give a counterexample: "$\bm{\{[x_1, x_2, x_3, x_4, x_5] \ : \ x_1, x_2, x_3, x_4, x_5 \in \mathbb{R}, x_2 = 0 \text{ or } x_5 = 0 \}}$ is a vector space."**
+
+This is not a vector space. If we take any vectors $u$ and $v$ which are both members of the set, it is possible that $u + v \not \in \{x_2 = 0 \text{ or } x_5 = 0\}$. An example of this is $v=[3, 0, 5, 1, 8]$ and $v=[-2, 3, 4, 9, 0]$. Although both $u$ and $v$ are members of the set, $u+v$ is not a member of the set because neither the second or fifth element are zero, which means the set is not closed under vector addition.
+
+## Problem 3.8.10
+**Explain your answers.** \
+**1. Let $\bm{V}$ be the set of 5-vectors over $\bm{GF(2)}$ that have an even number of 1's. Is $\bm{V}$ a vector space?**
+
+$V$ is a vector space. $\forall v \in GF(2), 0v = v_\varnothing$, which has an even number of 1's, and $1v = v$, which also has an even number of 1's per the problem; therefore, it is closed under scalar multiplication. $v$ is also closed under vector addition because two vectors $u$ and $v$ in the set will always have the same number of 1's modulo 2.
+
+**2. Let $\bm{V}$ be the set of 5-vectors over $\bm{GF(2)}$ that have an odd number of 1's. Is $\bm{V}$ a vector space?**
+
+Any set over $GF(2)$ with an odd number of 1's is NOT closed under scalar multiplication and thus cannot be a vector space. This is because $\forall v \in GF(2), 0v = [0, 0, 0, 0, 0]$, which has an even number of 1's (no 1's at all).

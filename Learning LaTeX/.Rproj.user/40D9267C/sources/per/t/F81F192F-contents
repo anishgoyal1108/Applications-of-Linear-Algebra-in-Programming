@@ -1,0 +1,278 @@
+---
+title: "Learning LaTeX"
+author: Anish Goyal
+date: January 18, 2023
+subtitle: "A document containing a collection of mathematical expressions in LaTeX and a 'funny' meme about LaTeX for the Applications of Linear Algebra class at GSMST."
+format:
+    html:
+            theme: vapor
+            title-block-banner: true
+code-overflow: wrap
+execute:
+    echo: true
+    error: true
+    include: true
+toc-location: body
+toc: true
+---
+
+## Mathematical expressions
+
+### Expression 1
+
+![](images/image-1069874928.png)
+```
+$$
+\begin{cases}
+w + x +y +z=6 \\
+w \hspace{90px} +y+z =4 \\
+w \hspace{90px}+y \hspace{90px} =2 \\
+\end{cases}
+$$
+```   
+$$
+\Huge
+\begin{cases}
+w + x +y +z=6 \\
+w \hspace{90px} +y+z =4 \\
+w \hspace{90px}+y \hspace{90px} =2 \\
+\end{cases}
+$$
+
+### Expression 2
+
+![](images/image-1212342519.png)
+
+```
+$$
+k\neq-1, 1 \\ {\frac{1}{k+1}},{\frac{1}{k+1}}
+$$
+```
+$$\Huge \begin{eqnarray}k\neq-1, 1 \\ {\frac{1}{k+1}},{\frac{1}{k+1}}
+\end{eqnarray}$$
+
+### Expression 3
+
+![](images/image-1884990960.png)
+```
+$$
+\operatorname{tr}A:=\sum_{j=1}^{n}a_{jj}
+$$ 
+```
+$$ 
+\Huge
+\operatorname{tr}A:=\sum_{j=1}^{n}a_{jj}
+$$
+
+### Expression 4
+
+![](images/image-1983034508.png)
+```
+$$
+A(\theta)={\left[
+\begin{matrix}
+\cos{\theta} & -\sin{\theta} \\
+\sin{\theta} & \cos{\theta}
+\end{matrix}\right]}
+$$
+```
+$$ \Huge
+A(\theta)={\left[
+\begin{matrix}
+\cos{\theta} & -\sin{\theta} \\
+\sin{\theta} & \cos{\theta}
+\end{matrix}\right]}
+$$
+
+### Expression 5
+
+![](images/image-1969377765.png)
+```
+$$
+A = \left [ \begin{matrix} 
+0 & a & a^2 & a^3 & a^4 \\
+0 & 0 & a & a^2 & a^3 \\
+0 & 0 & 0 & a & a^2 \\
+0 & 0 & 0 & 0 & a \\
+0 & 0 & 0 & 0 & 0 
+\end{matrix} \right ]
+$$
+```
+$$ \Huge
+A = \left [ \begin{matrix} 
+0 & a & a^2 & a^3 & a^4 \\
+0 & 0 & a & a^2 & a^3 \\
+0 & 0 & 0 & a & a^2 \\
+0 & 0 & 0 & 0 & a \\
+0 & 0 & 0 & 0 & 0 
+\end{matrix} \right ]
+$$
+
+### Expression 6
+
+![](images/image-1950951149.png)
+```
+$$
+\textbf{3.1.6. Proposition.} \ Let \  n \in \mathbb{N} \ and \ \textbf{M}_{n \times n} \ be \ the  \ collection \ of \ all \ n \times n \ matrices. \ There \ is \ exactly \ one \ function \\
+\mathrm{det}: \textbf{M}_{n \times n} \rightarrow \mathbb{R}\colon A\mapsto\operatorname{det}A
+$$
+```
+$$\begin{eqnarray}
+\textbf{3.1.6. Proposition.} \ Let \  n \in \mathbb{N} \ and \ \textbf{M}_{n \times n} \ be \ the  \ collection \ of \ all \ n \times n \ matrices. \ There \ is \ exactly \ one \ function \\
+\mathrm{det}: \textbf{M}_{n \times n} \rightarrow \mathbb{R}\colon A\mapsto\operatorname{det}A
+\end{eqnarray}$$
+
+### Expression 7
+
+![](images/image-2143312636.png)
+```
+$$
+\textbf{3.1.12. Proposition.} \ If \  A \in \mathbb{N} \ and \ 1 \le j \le n, \ then \\
+\mathrm{det}\ A: \sum_{k=1}^{n}a_{jk}C_{jk}
+$$
+```
+$$\Large \begin{eqnarray}
+\textbf{3.1.12. Proposition.} \ If \  A \in \mathbb{N} \ and \ 1 \le j \le n, \ then \\
+\mathrm{det}\ A: \sum_{k=1}^{n}a_{jk}C_{jk}
+\end{eqnarray}$$
+
+### Expression 8
+
+![](images/image-1940893679.png)
+```
+$$
+\vert a d+b e+c f\vert\leq{\sqrt{a^{2}+b^{2}+c^{2}}}{\sqrt{d^{2}+e^{2}+f^{2}}}
+$$
+```
+$$ \huge
+\vert a d+b e+c f\vert\leq{\sqrt{a^{2}+b^{2}+c^{2}}}{\sqrt{d^{2}+e^{2}+f^{2}}}
+$$
+
+### Expression 9
+
+![](images/image-331355199.png)
+```
+$$
+\text{Let $V$ be the set of real numbers $x$ such that $x >= 0$. Define an operation of "addition" by} \\
+x \boxplus y = xy+1 \\
+\text{for all $x, y \in V$. Define an operation of "scalar multiplication" by} \\
+a \boxdot x = a^2x \\
+\text{for all $a \in R$ and $x \in V$.}
+$$
+```
+$$\begin{eqnarray}
+\text{Let $V$ be the set of real numbers $x$ such that $x >= 0$. Define an operation of "addition" by} \\
+x \boxplus y = xy+1 \\
+\text{for all $x, y \in V$. Define an operation of "scalar multiplication" by} \\
+a \boxdot x = a^2x \\
+\text{for all $a \in R$ and $x \in V$.}
+\end{eqnarray}$$
+
+### Expression 10
+
+![](images/image-1239672658.png)
+```
+$$
+\left [ \begin{matrix} 
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : & 1 & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 1 & 0 & 0 \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : & 0 & 0 & 1 & 0 \\
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 0 & 0 & 1 \\
+\end{matrix} \right ] \xrightarrow{X_1}
+\left [ \begin{matrix} 
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : &  &  &  &  \\
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : &  &  &  &  \\
+\end{matrix} \right ] 
+$$
+```
+$$ \Large 
+\left [ \begin{matrix} 
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : & 1 & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 1 & 0 & 0 \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : & 0 & 0 & 1 & 0 \\
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 0 & 0 & 1 \\
+\end{matrix} \right ] \xrightarrow{X_1}
+\left [ \begin{matrix} 
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : &  &  &  &  \\
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : &  &  &  &  \\
+\end{matrix} \right ] 
+$$
+
+### Expression 11
+
+![](images/image-966103750.png)
+```
+$$
+a_{jk} = \begin{cases}
+0, & \text{for $\vert j-k \vert 1$} \\ 
+1, &\text{for $\vert j-k \vert = 1$} \\
+2\cos x, &\text{for $j=k$} \\
+\end{cases} 
+$$
+```
+$$ \Huge
+a_{jk} = \begin{cases}
+0, & \text{for $\vert j-k \vert 1$} \\ 
+1, &\text{for $\vert j-k \vert = 1$} \\
+2\cos x, &\text{for $j=k$} \\
+\end{cases} 
+$$
+
+### Expression 12
+
+![](images/image-698644403.png)
+```
+$$
+\textbf{4.1.3. Definition.} \text{  Let $\textbf{x}$ and $\textbf{y}$ be nonzero vectors in $\mathbb{R}^n$. Then $\measuredangle{(\textbf{x}, \textbf{y})}$, the ANGLE between $\textbf{x}$ and $\textbf{y}$, is defined by} \\
+\measuredangle{(\textbf{x}, \textbf{y})} = \arccos \frac{\langle \textbf{x}, \textbf{y}\rangle}{\Vert\textbf{x} \Vert \Vert\textbf{y} \Vert}
+$$
+```
+$$\begin{eqnarray}
+\textbf{4.1.3. Definition.} \text{  Let $\textbf{x}$ and $\textbf{y}$ be nonzero vectors in $\mathbb{R}^n$. Then $\measuredangle{(\textbf{x}, \textbf{y})}$, the ANGLE between $\textbf{x}$ and $\textbf{y}$, is defined by} \\
+\measuredangle{(\textbf{x}, \textbf{y})} = \arccos \frac{\langle \textbf{x}, \textbf{y}\rangle}{\Vert\textbf{x} \Vert \Vert\textbf{y} \Vert}
+\end{eqnarray}$$
+
+### Expression 13
+
+![](images/image-1340050623.png)
+```
+$$
+M\cap N \\
+M\cup N 
+$$
+```
+$$ \huge \begin{eqnarray} 
+M\cap N \\
+M\cup N 
+\end{eqnarray} $$
+
+### Expression 14
+
+![](images/image-341248740.png)
+```
+$$
+\int_{0}^{1}t g(t)\,d t=0 \hspace{50pt} \text{and} \hspace{50pt} \int_{0}^{1}t^{4}g(t)\,d t=0
+$$
+```
+$$ \huge \begin{eqnarray}
+\int_{0}^{1}t g(t)\,d t=0 \hspace{50pt} \text{and} \hspace{50pt} \int_{0}^{1}t^{4}g(t)\,d t=0
+\end{eqnarray}$$
+
+### Expression 15
+
+![](images/image-1876561767.png)
+```
+$$
+\mathbf{y}=\left(-{\frac{1}{2}},{\frac{\sqrt{3}}{2}}\right)
+$$
+```
+$$ \huge
+\mathbf{y}=\left(-{\frac{1}{2}},{\frac{\sqrt{3}}{2}}\right)
+$$
+
+## A LaTeX Meme
+![](images/image-220842989.png)

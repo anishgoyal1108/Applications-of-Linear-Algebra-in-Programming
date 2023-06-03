@@ -1,0 +1,339 @@
+---
+format: pdf
+pdf-engine: pdflatex
+toc: true
+toc-depth: 4
+toc-location: body
+code-line-numbers: true
+include-in-header: 
+  text: |
+    \UseRawInputEncoding
+    \usepackage{amsmath, xparse}
+    \usepackage{fancyvrb, fvextra}
+    \usepackage{bm}
+    \usepackage{svg}
+    \usepackage{listings}
+    \usepackage{sectsty}
+    \usepackage{xifthen}
+    \usepackage{xstring}
+    \let\oldtexttt\texttt
+    \renewcommand{\texttt}[1]{\oldtexttt{\StrSubstitute[0]{#1}{,}{,\allowbreak}}}
+    \subsubsectionfont{\centering}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+    \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+    \newcommand\rowop[1]{\scriptstyle\smash{\xrightarrow[\vphantom{#1}]{\mkern-4mu#1\mkern-4mu}}}
+    \DeclareDocumentCommand\converttorows%
+    {>{\SplitList{,}}m}%
+    {\ProcessList{#1}{\converttorow}}
+    \NewDocumentCommand{\converttorow}{m}
+    {\ifthenelse{\isempty{#1}}{}{\rowop{#1}}\\}
+
+    \DeclareDocumentCommand \rowops{m}
+    {\;
+    \begin{matrix}
+    \converttorows {#1}
+    \end{matrix}
+    \; }
+
+include-before-body: 
+  text: |
+    \input{./title.tex}
+    \newpage
+---
+
+{{< pagebreak >}}
+
+# 4.14.3 Hamming's code
+Hamming discovered a code in which a four-bit message is represented by a seven-bit *code-word*. The generator matrix is 
+
+\begin{align*}
+G = \begin{bmatrix} 1 & 0 & 1 & 1 \\ 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{bmatrix}
+\end{align*}
+
+A four-bit message is represented by a 4-vector $\bm{p}$ over $GF(2)$. The encoding of $\bm{p}$ is the 7-vector resulting from the matrix vector-product $G * \bm{p}$.
+
+Let $f_G$ be the encoding function, the function defined by $f_{G}(\bm{x}) = G * \bm{p}$. The image of $f_G$, the set of all codewords, is the row space of $G$.
+
+## Task 4.14.1 
+Create an instance of `Mat` representing the generator matrix $G$. You can use the procedure `listlist2mat` in the `matutil` module. Since we are working over $GF(2)$, you should use the value `one` from the `GF2` module to represent 1.
+
+```{python}
+# Import all necessary libraries
+from mat import Mat
+from matutil import listlist2mat
+from GF2 import one
+
+G = listlist2mat([
+  [one, 0, one, one],
+  [one, one, 0, one],
+  [0, 0, 0, one],
+  [one, one, one, 0],
+  [0, 0, one, 0],
+  [0, one, 0, 0],
+  [one, 0, 0, 0]
+])
+```
+
+## Task 4.14.2
+What is the encoding of the message [1, 0, 0, 1]?
+
+```{python}
+from vec import Vec
+from vecutil import list2vec
+
+p=list2vec([one, 0, 0, one])
+encoded = G * p
+print(encoded)
+```
+
+{{< pagebreak >}}
+
+# 4.14.4 Decoding
+Note that four of the rows of $G$ are the standard basis vectors $e_1, e_2, e_3, e_4$ of $GF(2)^4$. What does that imply about the relation between words and codewords? Can you easily decode the codeword [0, 1, 1, 1, 1, 0, 0] without using a computer?
+
+The codeword vector will always match the $i^{th}$ positions of the word vector corresponding to the standard basis vectors of the generator matrix. This means that the codeword [0, 1, 1, 1, 1, 0, 0] would correspond to the word [0, 0, 1, 1] since rows 7, 6, 5, and 3 are the standard basis vectors of $G$.
+
+## Task 4.14.3
+Think about the manual decoding process you just did. Construct a $4 \times 7$ matrix $R$ such that, for any codeword $\bm{c}$, the matrix-vector product $R*\bm{c}$ equals the 4-vector whose encoding is $\bm{c}$. What should the matrix-matrix product $RG$ be? Compute the matrix and check it against your prediction.
+
+\begin{align*}
+R = \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 & 1\\ 0 & 0 & 0 & 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 \end{bmatrix}
+\end{align*}
+
+Performing the operation $RG$ gives us the identity matrix:
+
+```{python}
+R = listlist2mat([
+[0, 0, 0, 0, 0, 0, one],
+[0, 0, 0, 0, 0, one, 0],
+[0, 0, 0, 0, one, 0, 0],
+[0, 0, one, 0, 0, 0, 0]
+])
+
+print(R*G)
+```
+
+{{< pagebreak >}}
+
+## 4.14.5 Eror syndrome
+Suppose Alice sends the codeword $\bm{c}$ across the noisy channel. Let $\bm{\tilde{c}}$ be the vector received by Bob. To reflect the fact that $\bm{\tilde{c}}$ might differ from $\bm{c}$, we write
+
+\begin{align*}
+\bm{\tilde{c} = c + e}
+\end{align*}
+
+where $\bm{e}$ is the error vector, the vector with ones in the corrupted positions.
+
+If Bob can figure out the error vector $\bm{e}$, he can recover the codeword $\bm{c}$ and therefore the original message. To figure out the error vector $\bm{e}$, Bob uses the check matrix, which for the Hamming code is 
+
+\begin{align*}
+H = \begin{bmatrix} 0 & 0 & 0 & 1 & 1 & 1 & 1\\ 0 & 1 & 1 & 0 & 0 & 1 & 1\\ 1 & 0 & 1 & 0 & 1 & 0 & 1 \end{bmatrix}
+\end{align*}
+
+As a first step towards figuring out the error vector, Bob computes the *error syndrome*, the vector $H * \bm{\tilde{c}}$, which equals $H * \bm{e}$.
+
+Examine the matrix $H$ carefully. What is special about the order of its columns?
+
+Define the function $f_H$ by $f_H(\bm{y}) = H * \bm{y}$. The image under $f_H$ of any codeword is the zero vector. Now consider the function $f_H \circ f_G$ that is the composition of $f_H$ with $f_G$. For any vector $\bm{p}, f_G(\bm{p})$ is a codeword $\bm{c}$, and for any codeword $\bm{c}, f_H(\bm{c}) = \bm{0}$. This implies that, for any vector $\bm{p}, (f_H \circ f_G)(\bm{p}) = \bm{0}$.
+
+The matrix $HG$ corresponds to the function $f_H \circ f_G$. Based on this fact, predict the entries of the matrix $HG$.
+
+I believe the matrix $HG$ will look like $\begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}$ because $f_H$ of any codeword is the zero vector for any entry $\bm{p}$.
+
+## Task 4.14.4 
+Create an instance of `Mat` representing the check matrix $H$. Calculate the matrix-matrix product $HG$. Is the result consistent with your prediction?
+
+```{python}
+H = listlist2mat([
+  [0, 0, 0, one, one, one, one],
+  [0, one, one, 0, 0, one, one],
+  [one, 0, one, 0, one, 0, one]
+])
+print(H * G)
+```
+
+Just as expected, $HG$ is equal to the $4 \times 4$ zero matrix.
+
+{{< pagebreak >}}
+
+# 4.14.6 Finding the error
+Bob assumes that at most one bit of the codeword is corrupted, so at most one bit of $\bm{e}$ is nonzero, say the bit in position $i \in \{1, 2, \dots, 7\}$. In this case, what is the value of $H * \bm{e}$?
+
+$H * \bm{e}$ should be the value of the $i^{th}$ column of $H$.
+
+## Task 4.14.5
+Write a procedure `find_error` that takes an error syndrome and returns the corresponding error vector $\bm{e}$.
+
+```{python}
+def find_error(error_syndrome):
+  i = sum([2**(2-x) for x in error_syndrome.f.keys() if error_syndrome.f[x]==one])
+  if i==0:
+    return Vec({0, 1, 2, 3, 4, 5, 6}, {})
+  else:
+    return Vec({0, 1, 2, 3, 4, 5, 6}, {i-1:one})
+```
+
+## Task 4.14.6
+Imagine that you are Bob, and you have received the *non-codeword* $\bm{\tilde{c}} = [1, 0, 1, 1, 0, 1, 1]$. Your goal is to derive the original 4-bit message that Alice intended to send. To do this, use `find_eror` to figure out the corresponding vector $\bm{e}$, and then add $\bm{e}$ to $\bm{\tilde{c}}$ to obtain the correct codeword. Finally, use the matrix $R$ from `Task 4.14.3` to derive the original 4-vector.
+
+```{python}
+non_c = Vec({0, 1, 2, 3, 4, 5, 6}, {0: one, 1:0, 2:one, 3:one, 4:0, 5:one, 6:one})
+error = find_error(H*non_c)
+c = non_c+error
+original = R*c
+print(original)
+```
+
+## Task 4.14.7
+Write a one-line procedure `find_error_matrix` with the following spec: 
+\begin{itemize}
+\item \textit{input:} a matrix `S` whose columns are error syndromes
+\item \textit{output:} a matrix whose $c^{th}$ column is the error corresponding to the $c^{th}$ column of `S`.
+\end{itemize}
+This procedure consists of a comprehension that uses the procedure `find_error` together with some procedures from the `matutil` module.
+
+Test your procedure on a matrix whose columns are [1, 1, 1] and [0, 0, 1].
+
+```{python}
+from matutil import coldict2mat, mat2coldict
+
+def find_error_matrix(S):
+  return coldict2mat({key: find_error(mat2coldict(S)[key]) for key in mat2coldict(S).keys()})
+
+S = listlist2mat([[one, 0],[one, 0],[one, one]])
+print(find_error_matrix(S))
+```
+
+{{< pagebreak >}}
+
+# 4.14.7 Putting it all together
+We will now encode an entire string and will try to protect it against errors. We first have to learn a little about representing a text as a matrix of bits. Characters are represented using a variable-length encoding scheme called *UTF-8*. Each character is represented by some number of bytes. You can find the value of a character c using `ord(c)`. What are the numeric values of the characters 'a', 'A', and space?
+
+```{python}
+print(ord('a'), ord('A'), ord(' '))
+```
+
+You can obtain the character from a numerical value using `chr(i)`. To see the string of characters numbered 0 through 255, you can use the following:
+
+```{python}
+s = ''.join([chr(i) for i in range(0, 256) if chr(i).isprintable()]) # Some characters are excluded due to the fact that they are not UTF-8 encodable.
+print(s)
+```
+
+We have provided a module `bitutil` that defines some procedures for converting between lists of $GF(2)$ values, matrices over $GF(2)$, and strings. Two such procedures are `str2bits(str)` and `bits2str(L)`:
+
+The procedure `str2bits(str)` has the following spec:
+\begin{itemize}
+\item \textit{input:} a string
+\item \textit{output:} a list of $GF(2)$ values (0 and one) representing the string
+\end{itemize}
+
+The procedure `bits2str(L)` is the inverse procedure:
+\begin{itemize}
+\item \textit{input:} a list of $GF(2)$ values
+\item \textit{output:} the corresponding string
+\end{itemize}
+
+## Task 4.14.8 
+Try out `str2bits(str)` on the string `s` defined above, and verify that `bits2str(L)` gets you back the original string.
+
+```{python}
+from bitutil import *
+print(str2bits(s))
+print(bits2str(str2bits(s)))
+print(bits2str(str2bits(s)) == s)
+```
+
+The Hamming code operates on four bits at a time. A four-bit sequence is called a *nibble* (sometimes *nybble*). To encode a list of bits (such as that produced by `str2bits`), we break the list into nibbles and encode each nibble separately.
+
+To transform each nibble, we interpret the nibble as a 4-vector and we multiply it by the generating matrix $G$. One strategy is to convert the list of bits into a list of 4-vectors, and then use, say, a comprehension to multiply each vector in that list by $G$. In keeping with our current interest in matrices, we will instead convert the list of bits into a matrix $B$ each column of which is a 4-vector representing a nibble. Thus a sequence of $4n$ bits is represented by a $4 \times n$ matrix $P$. The module `bitutil` defines a procedure `bits2mat(bits)` that transforms a list of bits into a matrix, and a procedure `mat2bits(A)` that transforms a matrix $A$ back into a list of bits.
+
+## Task 4.14.9
+Try converting a string to a list of bits to a matrix $P$ and back to a string, and verify that you get the string you started with.
+
+```{python}
+s = "Hello world!"
+print(s == bits2str(mat2bits(bits2mat(str2bits(s)))))
+```
+
+## Task 4.14.10
+Putting these procedures together, compute the matrix $P$ which represents the string "I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it."
+
+```{python}
+s = "I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it."
+P = bits2mat(str2bits(s))
+print(P) 
+```
+
+Imagine that you are transmitting the above message over a noisy communication channel. This channel transmits bits, but occasionally sends the wrong bit, so one becomes 0 and vice versa. 
+
+The module `bitutil` provides a procedure `noise(A, s)` that, given a matrix $A$ and a probability parameter $s$, returns a matrix with the same row- and column-labels as $A$ but with entries chosen from $GF(2)$ according to the probability distribution `{one:s, 0:1-s}`. For example, each entry of `noise(A, 0.02)` will be `one` with probability 0.02 and zero with probability 0.98.
+
+## Task 4.14.11
+To simulate the effects of the noisy channel when transmitting your matrix $P$, use `noise(P, 0.02)` to create a random matrix $E$. The matrix $E+P$ will introduce some errors. To see the effect of the noise, convert the perturbed matrix back to text.
+
+```{python}
+E = noise(P, 0.02)
+errorP = P + E
+print(bits2str(mat2bits(errorP)))
+```
+
+Looks pretty bad, huh? Let's try to use the Hamming code to fix that. Recall that to encode a word represented by the row vector $\bm{p}$, we compute $G*\bm{p}$.
+
+## Task 4.14.12
+Encode the words represented by the columns of the matrix $P$, obtaining a matrix $C$. You should not use any loops or comprehensions to compute $C$ from $P$. How many bits represented the text before the encoding? How many after?
+
+```{python}
+C = G * P
+unencoded_size = len(mat2bits(P))
+print(unencoded_size)
+```
+
+```{python}
+encoded_size = len(mat2bits(C))
+print(encoded_size)
+```
+
+## Task 4.14.13
+Imagine that you send the encoded data over the noisy channel. Use `noise` to construct a noise matrix of the appropriate dimensions with error probability 0.02, and add it to $C$ to obtain a perturbed matrix $CTILDE$. Without correcting the errors, decode $CTILDE$ and convert it to text to see how garbled the information is.
+
+```{python}
+CTILDE = noise(C, 0.02) + C
+print(bits2str(mat2bits(R*CTILDE)))
+```
+
+## Task 4.14.14
+In this task, you are to write a one-line procedure `correct(A)` with the following spec:
+\begin{itemize}
+\item \textit{input:} a matrix $A$ each column of which differs from a codeword in at most one bit
+\item \textit{output:} a matrix whose columns are the corresponding valid codewords.
+\end{itemize}
+The procedure should contain no loops or comprehensions. Just use matrix-matrix multiplications and matrix-matrix additions together with a procedure you have written in this lab.
+
+```{python}
+def correct(A):
+  return A+find_error_matrix(H*A)
+```
+
+## Task 4.14.15
+Apply your procedure `correct(A)` to `CTILDE` to get a matrix of codewords. Decode this matrix of codewords using the matrix *R* from `Task 4.14.3`, obtaining a matrix whose columns are 4-vectors. Then derive the string corresponding to these 4-vectors.
+
+Did the Hamming code succeed in fixing all of the corrupted characters? If not, can you explain why?
+
+```{python}
+print(bits2str(mat2bits(R * correct(CTILDE))))
+```
+
+The Hamming code did not succeed in fixing *all* of the characters. This is because the `correct(A)` procedure assumed at most one bit error for each nibble in $\bm{\tilde{c}}$. If there was more than a single bit error for a particular nibble, the error syndrome would map to the incorrect index.
+
+## Task 4.14.16
+Repeat this process with different error probabilities to see how well the Hamming code does under different circumstances.
+
+```{python}
+for error in range(0, 21, 1):
+  noiseMat = noise(C, error*0.01)
+  print("Probability of error: " + str(error) + "%")
+  print("Decoded string without any corrections: " + bits2str(mat2bits(R * (C + noiseMat))))
+  print("Decoded string with attempted corrections: " + bits2str(mat2bits(R * correct(C + noiseMat))))
+  print("--------------------\n")
+```

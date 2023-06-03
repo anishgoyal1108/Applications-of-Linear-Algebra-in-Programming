@@ -1,0 +1,182 @@
+---
+format: pdf
+pdf-engine: pdflatex
+toc: true
+toc-depth: 4
+toc-location: body
+code-line-numbers: true 
+include-in-header: 
+  text: |
+    \usepackage{amsmath, xparse}
+    \usepackage{fancyvrb, fvextra}
+    \usepackage{bm}
+    \usepackage{svg}
+    \usepackage{listings}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+    \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+
+include-before-body: 
+  text: |
+    \input{./title.tex}
+    \newpage2
+---
+
+{{< pagebreak >}}
+
+# 3.8 Problems
+
+## Problem 3.8.1
+1. Write and test a procedure `vec_select` using a comprehension for the following computational problem:
+    * *input:* a list `veclist` of vectors over the same domain, and an element $k$ of the domain
+    * *output:* the sublist of `veclist` consisting of the vectors `v` in `veclist` where `v[k]` is zero
+2. Write and test a procedure `vec_sum` using the built-in procedure `sum(.)` for the following:
+    * *input:* a list `veclist` of vectors, and a set `D` that is the common domain of these vectors
+    * *output:* the vector sum of the vectors in `veclist`
+
+    Your procedure must work even if `veclist` has length 0.\
+    *Hint:* Recall from the Python lab that `sum(.)` optionally takes a second argument, which is the element to start the sum with. This can be a vector. \
+    *Disclaimer*: The `Vec` class is defined in such a way that, for a vector `v`, the expression `0 + v` evaluates to `v`. This was done precisely so that `sum([v1,v2,... vk])` will correctly evaluate to the sum of the vectors when the number of vectors is nonzero. However, this won't work when the number of vectors is zero.
+
+3. Put your procedures together to obtain a procedure `vec_select_sum` for the following:
+    * *input*: a set `D`, a list `veclist` of vectors within domain `D`, and an element `k` of the domain
+    * *output*: the sum of all vectors `v` in `veclist` where `v[k]` is zero
+
+{{< pagebreak >}}
+
+```{python}
+from vec import Vec
+from vecutil import list2vec
+
+def vec_select(veclist, k):
+    return [v for v in veclist if v[k] == 0]
+
+veclist = [list2vec(range(15)), list2vec([1, 2, 3]), list2vec([0, 0, 1])]
+print(vec_select(veclist, 0))
+print(vec_select(veclist, 1))
+print(vec_select(veclist, 2))
+```
+
+```{python}
+def vec_sum(veclist, D):
+    return sum([Vec(D, v.f) for v in veclist], Vec(D, {}))
+
+print(vec_sum([], {'a', 'b', 'c'}))
+print(vec_sum([list2vec([1, 2, 3]), list2vec([4, 5, 6]), list2vec([7, 8, 9])], {'x', 'y', 'z'}))
+```
+
+```{python}
+def vec_select_sum(D, veclist, k):
+    return vec_sum(vec_select (veclist, k), D)
+
+print(vec_select_sum(veclist[0].D, veclist, 0))
+```
+
+{{< pagebreak >}}
+
+## Problem 3.8.2
+Write and test a procedure `scale_vecs(vecdict)` for the following:
+
+* *input*: a dictionary vector mapping positive numbers to vectors (instances of `Vec`)
+* *output*: a list of vectors, one for each item in `vecdict`. If `vecdict` contains a key *k* mapping to vector $\bm{v}$, the output should contain the vector $(1/k)\bm{v}$
+
+```{python}
+def scale_vecs(vecdict):
+    return [(1/k)*v for k, v in vecdict.items()]
+
+v1 = Vec({'x', 'y', 'z'}, {'x': 1, 'y': 2, 'z': 3})
+v2 = Vec({'x', 'y', 'z'}, {'x': 4, 'y': 5, 'z': 6})
+v3 = Vec({'x', 'y', 'z'}, {'x': 7, 'y': 8, 'z': 9})
+
+vecdict = {2: v1, 3: v2, 4: v3}
+
+print([v for v in scale_vecs(vecdict)]) 
+```
+
+{{< pagebreak >}}
+
+## Problem 3.8.3
+Write a procedure `GF2_span` with the following specs:
+
+* *input*: a set *D* of labels and a list *L* of vectors over *GF(2)* with label-set *D*
+* *output*: the list of all linear combinations of the vectors in *L*
+
+(Hint: use a loop (or recursion) and a comprehension. Be sure to test your procedure on examples where *L* is an empty list.)
+
+```{python}
+from itertools import product
+
+def GF2_span(D, L):
+    if not L:
+        return [Vec(D, {})]
+    result = []
+    for coeffs in product([0,1], repeat=len(L)):
+        combination = Vec(D, {})
+        for i, v in enumerate(L):
+            combination += coeffs[i]*v
+        result.append(combination)
+    return result
+
+D = {'a', 'b', 'c'}
+L = [Vec(D, {'a': 1, 'c': 1}), Vec(D, {'b': 1})]
+print(GF2_span(D, L))
+
+L = []
+print(GF2_span(D, L))
+```
+
+{{< pagebreak >}}
+
+## Problem 3.8.4
+Let *a, b* be real numbers. Consider the equation $z = ax + by$. Prove that there are two 3-vectors $\bm{v_1}, \bm{v_2}$ such that the set of points $[x, y, z]$ satisfying the equation is exactly the set of linear combinations of $\bm{v_1}$ and $\bm{v_2}$. (Hint: Specify the vectors using formulas involving $a, b$.)
+
+To find the two 3-vectors $\mathbf{v_1}$ and $\mathbf{v_2}$ that satisfy the equation $z = ax + by$, we can start by considering the cases where $a$ and $b$ are not both zero.
+
+Case 1: $a \neq 0, b \neq 0$
+
+In this case, we can choose $\mathbf{v_1} = \begin{bmatrix} 1 \ 0 \ a \end{bmatrix}$ and $\mathbf{v_2} = \begin{bmatrix} 0 \ 1 \ b \end{bmatrix}$. Then, any point $\begin{bmatrix} x \ y \ z \end{bmatrix}$ that satisfies the equation $z = ax + by$ can be written as a linear combination of $\mathbf{v_1}$ and $\mathbf{v_2}$:
+
+$\begin{bmatrix} x \ y \ z \end{bmatrix} = x\begin{bmatrix} 1 \ 0 \ a \end{bmatrix} + y\begin{bmatrix} 0 \ 1 \ b \end{bmatrix} = \begin{bmatrix} x \ 0 \ ax \end{bmatrix} + \begin{bmatrix} 0 \ y \ by \end{bmatrix} = \begin{bmatrix} x \ y \ ax + by \end{bmatrix} = x\mathbf{v_1} + y\mathbf{v_2}$
+
+Conversely, any linear combination of $\mathbf{v_1}$ and $\mathbf{v_2}$ can be written in the form $x\begin{bmatrix} 1 \ 0 \ a \end{bmatrix} + y\begin{bmatrix} 0 \ 1 \ b \end{bmatrix}$, which satisfies the equation $z = ax + by$.
+
+Case 2: $a = 0, b \neq 0$
+
+In this case, we can choose $\mathbf{v_1} = \begin{bmatrix} 0 \ 1 \ b \end{bmatrix}$ and $\mathbf{v_2} = \begin{bmatrix} 1 \ 0 \ 0 \end{bmatrix}$. Then, any point $\begin{bmatrix} x \ y \ z \end{bmatrix}$ that satisfies the equation $z = ax + by$ can be written as a linear combination of $\mathbf{v_1}$ and $\mathbf{v_2}$:
+
+$\begin{bmatrix} x \ y \ z \end{bmatrix} = x\begin{bmatrix} 0 \ 1 \ b \end{bmatrix} + z\begin{bmatrix} 1 \ 0 \ 0 \end{bmatrix} = \begin{bmatrix} 0 \ x \ bx \end{bmatrix} + \begin{bmatrix} z \ 0 \ 0 \end{bmatrix} = \begin{bmatrix} z \ x \ bx \end{bmatrix} = z\mathbf{v_1} + x\mathbf{v_2}$
+
+Conversely, any linear combination of $\mathbf{v_1}$ and $\mathbf{v_2}$ can be written in the form $x\begin{bmatrix} 1 \ 0 \ 0 \end{bmatrix} + z\begin{bmatrix} 0 \ 1 \ b \end{bmatrix} = \begin{bmatrix} x \ y \ bx \end{bmatrix}$, which satisfies the equation $z = ax + by$.
+
+Case 3: $a \neq 0, b = 0$
+
+This case is similar to Case 2, but with $\mathbf{v_1} = \begin{bmatrix} 1 \ 0 \ a \end{bmatrix}$ and $\mathbf{v_2} = \begin{bmatrix} 0 \ 1 \ 0 \end{bmatrix}$:
+
+$\begin{bmatrix} x \ y \ z \end{bmatrix} = x\begin{bmatrix} 1 \ 0 \ a \end{bmatrix} + z\begin{bmatrix} 0 \ 1 \ 0 \end{bmatrix} = \begin{bmatrix} x \ 0 \ ax \end{bmatrix} + \begin{bmatrix} 0 \ y \ 0 \end{bmatrix} = \begin{bmatrix} x \ y \ ax \end{bmatrix} = x\mathbf{v_1} + y\mathbf{v_2}$
+
+Again, any linear combination of $\mathbf{v_1}$ and $\mathbf{v_2}$ can be written in the form $x\begin{bmatrix} 1 \ 0 \ a \end{bmatrix} + y\begin{bmatrix} 0 \ 1 \ 0 \end{bmatrix} = \begin{bmatrix} x \ y \ ax \end{bmatrix}$, which satisfies the equation $z = ax + by$.
+
+Therefore, in all three cases, we have found two 3-vectors $\mathbf{v_1}$ and $\mathbf{v_2}$ such that the set of points satisfying the equation $z = ax + by$ is exactly the set of linear combinations of $\mathbf{v_1}$ and $\mathbf{v_2}$.
+
+{{< pagebreak >}}
+
+## Problem 3.8.5
+Let *a, b, c* be real numbers. Consider the equation $z = ax + by + c$. Prove that there are three 3-vectors $\bm{v_0}, \bm{v_1}, \bm{v_2}$ such that the set of points $[x, y, z]$ satisfying the equation is exactly
+\begin{equation*}
+\{\bm{v_0}+\alpha_1 \bm{v_1} + \alpha_2 \bm{v_2} \ : \ \alpha_1 \in \mathbb{R}, \alpha_2 \in \mathbb{R} \}
+\end{equation*}
+(Hint: Specify the vectors using formulas involving $a, b, c$.)
+
+Let \(v_0 = \begin{bmatrix}0\ 0\ c\end{bmatrix}, v_1 = \begin{bmatrix}1\ 0\ a\end{bmatrix}, v_2 = \begin{bmatrix}0\ 1\ b\end{bmatrix}\).
+Now, let \([x,y,z]\) be a point that satisfies the equation
+\(z = ax + by + c\). Then, we can write \([x,y,z]\) as: \\
+\begin{align*}
+  [x,y,z] &= \begin{bmatrix}x\ y\ ax+by+c\end{bmatrix} \\
+  &= \begin{bmatrix}0\ 0\ c\end{bmatrix} + x\begin{bmatrix}1\ 0\ a\end{bmatrix} + y\begin{bmatrix}0\ 1\ b\end{bmatrix} \\
+  &= v_0 + x v_1 + y v_2. \\
+\end{align*}
+Conversely, suppose $[x,y,z]$ is a point of the form $v_0 + x v_1 + y v_2$ for some $x,y \in \mathbb{R}$. Then, we have: \\
+\begin{align*}
+  [x,y,z] &= \begin{bmatrix}0\ 0\ c\end{bmatrix} + x\begin{bmatrix}1\ 0\ a\end{bmatrix} + y\begin{bmatrix}0\ 1\ b\end{bmatrix} \\
+  &= \begin{bmatrix}x\ y\ ax+by+c\end{bmatrix}.
+\end{align*}
+Therefore, $z = ax + by + c$, and we see that every point of the form $v_0 + x v_1 + y v_2$ satisfies the equation.

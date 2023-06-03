@@ -1,0 +1,22 @@
+\contentsline {section}{\nonumberline 4.14.3 Hamming's code}{3}{section*.3}%
+\contentsline {subsection}{\nonumberline Task 4.14.1}{3}{subsection*.5}%
+\contentsline {subsection}{\nonumberline Task 4.14.2}{4}{subsection*.7}%
+\contentsline {section}{\nonumberline 4.14.4 Decoding}{5}{section*.9}%
+\contentsline {subsection}{\nonumberline Task 4.14.3}{5}{subsection*.11}%
+\contentsline {subsection}{\nonumberline 4.14.5 Eror syndrome}{6}{subsection*.13}%
+\contentsline {subsection}{\nonumberline Task 4.14.4}{6}{subsection*.15}%
+\contentsline {section}{\nonumberline 4.14.6 Finding the error}{8}{section*.17}%
+\contentsline {subsection}{\nonumberline Task 4.14.5}{8}{subsection*.19}%
+\contentsline {subsection}{\nonumberline Task 4.14.6}{8}{subsection*.21}%
+\contentsline {subsection}{\nonumberline Task 4.14.7}{9}{subsection*.23}%
+\contentsline {section}{\nonumberline 4.14.7 Putting it all together}{10}{section*.25}%
+\contentsline {subsection}{\nonumberline Task 4.14.8}{11}{subsection*.27}%
+\contentsline {subsection}{\nonumberline Task 4.14.9}{13}{subsection*.29}%
+\contentsline {subsection}{\nonumberline Task 4.14.10}{13}{subsection*.31}%
+\contentsline {subsection}{\nonumberline Task 4.14.11}{15}{subsection*.33}%
+\contentsline {subsection}{\nonumberline Task 4.14.12}{16}{subsection*.35}%
+\contentsline {subsection}{\nonumberline Task 4.14.13}{16}{subsection*.37}%
+\contentsline {subsection}{\nonumberline Task 4.14.14}{16}{subsection*.39}%
+\contentsline {subsection}{\nonumberline Task 4.14.15}{17}{subsection*.41}%
+\contentsline {subsection}{\nonumberline Task 4.14.16}{17}{subsection*.43}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,0 +1,270 @@
+---
+title: "Learning LaTeX"
+author: Anish Goyal
+date: January 18, 2023
+subtitle: "A document containing a collection of mathematical expressions in LaTeX and a 'funny' meme about LaTeX for the Applications of Linear Algebra class at GSMST."
+format:
+    pdf:
+        pdf-engine: latexmk
+        latex-auto-install: true
+code-overflow: wrap
+toc: true
+toc-depth: 3
+include-in-header: 
+  text: |
+    \usepackage{amsmath, xparse}
+    \usepackage{fancyvrb, fvextra}
+    \usepackage{bm}
+    \usepackage{svg}
+    \usepackage{listings}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}  
+    \lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+header-includes: 
+- \usepackage{amsthm}
+- \newtheorem{proposition}{Proposition}
+---
+
+\newpage
+
+## Mathematical expressions
+
+### Expression 1
+
+![](images/image-1069874928.png)
+
+    \begin{cases}
+    w + x +y +z=6 \\
+    w \hspace{90px} +y+z =4 \\
+    w \hspace{90px}+y \hspace{90px} =2 \\
+    \end{cases}
+
+```{=latex}
+\Huge
+\begin{cases}
+w + x +y +z=6 \\
+w \hspace{70px} +y+z =4 \\
+w \hspace{70px}+y \hspace{70px} =2 \\
+\end{cases}
+```
+### Expression 2
+
+![](images/image-1212342519.png)
+
+    k\neq-1, 1 \\ {\frac{1}{k+1}},{\frac{1}{k+1}}
+
+```{=latex}
+{k\neq-1, 1 \\ {\frac{1}{k+1}},{\frac{1}{k+1}}}
+```
+### Expression 3
+
+![](images/image-1884990960.png)
+
+    \operatorname{tr}A:=\sum_{j=1}^{n}a_{jj}
+
+```{=latex}
+\Huge
+\operatorname{tr}A:=\sum_{j=1}^{n}a_{jj}
+```
+### Expression 4
+
+![](images/image-1983034508.png)
+
+    A(\theta)={\left[
+    \begin{matrix}
+    \cos{\theta} & -\sin{\theta} \\
+    \sin{\theta} & \cos{\theta}
+    \end{matrix}\right]}
+
+```{=latex}
+\Huge
+A(\theta)={\left[
+\begin{matrix}
+\cos{\theta} & -\sin{\theta} \\
+\sin{\theta} & \cos{\theta}
+\end{matrix}\right]}
+```
+### Expression 5
+
+![](images/image-1969377765.png)
+
+    A = \left [ \begin{matrix} 
+    0 & a & a^2 & a^3 & a^4 \\
+    0 & 0 & a & a^2 & a^3 \\
+    0 & 0 & 0 & a & a^2 \\
+    0 & 0 & 0 & 0 & a \\
+    0 & 0 & 0 & 0 & 0 
+    \end{matrix} \right ]
+
+```{=latex}
+\Huge
+A = \left [ \begin{matrix} 
+0 & a & a^2 & a^3 & a^4 \\
+0 & 0 & a & a^2 & a^3 \\
+0 & 0 & 0 & a & a^2 \\
+0 & 0 & 0 & 0 & a \\
+0 & 0 & 0 & 0 & 0 
+\end{matrix} \right ]
+```
+### Expression 6
+
+![](images/image-1950951149.png)
+
+    \mathbf{3.1.6. Proposition.} \ Let \  n \in \mathbb{N} \ and \ \mathbf{M}_{n \times n} \ be \ the  \ collection \ of \ all \ n \times n \ matrices. \ There \ is \ exactly \ one \\ function \\
+    \mathrm{det}: \mathbf{M}_{n \times n} \rightarrow \mathbb{R}\colon A\mapsto\operatorname{det}A
+
+```{=latex}
+\begin{proposition}
+Let $n$ in \mathbb{N} and \mathbf{M}_{n \times n} be the collection of all $n \times n$ matrices. There is exactly one function 
+\begin{equation}
+\det : \mathbf{M}_{n \times n} \rightarrow \mathbb{R}\colon A\mapsto \det A
+
+\end{proposition}
+```
+### Expression 7
+
+![](images/image-2143312636.png)
+
+    \begin{proposition}
+    If $A \in \mathbb{N}$ and $1 \le j \le n$, then 
+    \begin{equation}
+    \det A: \sum_{k=1}^{n}a_{jk}C_{jk}
+    \end{equation}
+    \end{proposition}
+
+```{=latex}
+\begin{proposition}
+If $A \in \mathbb{M}_{n \cross n} $ and $1 \le j \le n$, then 
+\begin{equation}
+\det A: \sum_{k=1}^{n}a_{jk}C_{jk}
+\end{equation}
+\end{proposition}
+```
+### Expression 8
+
+![](images/image-1940893679.png)
+
+    \vert a d+b e+c f\vert\leq{\sqrt{a^{2}+b^{2}+c^{2}}}{\sqrt{d^{2}+e^{2}+f^{2}}}
+
+```{=latex}
+\huge
+\vert a d+b e+c f\vert\leq{\sqrt{a^{2}+b^{2}+c^{2}}}{\sqrt{d^{2}+e^{2}+f^{2}}}.
+```
+### Expression 9
+
+![](images/image-331355199.png)
+
+    \text{Let $V$ be the set of real numbers $x$ such that $x >= 0$. Define an operation of "addition" by} \\
+    x \boxplus y = xy+1 \\
+    \text{for all $x, y \in V$. Define an operation of "scalar multiplication" by} \\
+    a \boxdot x = a^2x \\
+    \text{for all $a \in R$ and $x \in V$.}
+
+```{=latex}
+\begin{eqnarray}
+\text{Let $V$ be the set of real numbers $x$ such that $x >= 0$. Define an operation of "addition" by} \\
+x \boxplus y = xy+1 \\
+\text{for all $x, y \in V$. Define an operation of "scalar multiplication" by} \\
+a \boxdot x = a^2x \\
+\text{for all $a \in R$ and $x \in V$.}
+\end{eqnarray}
+```
+### Expression 10
+
+![](images/image-1239672658.png)
+
+    \left [ \begin{matrix} 
+    0 & -\frac{1}{2} & 0 & \frac{1}{2} & : & 1 & 0 & 0 & 0 \\
+    0 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 1 & 0 & 0 \\
+    \frac{1}{2} & 0 & -\frac{1}{2} & 0 & : & 0 & 0 & 1 & 0 \\
+    1 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 0 & 0 & 1 \\
+    \end{matrix} \right ] \xrightarrow{X_1}
+    \left [ \begin{matrix} 
+    1 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+    0 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  &  \\
+    \frac{1}{2} & 0 & -\frac{1}{2} & 0 & : &  &  &  &  \\
+    0 & -\frac{1}{2} & 0 & \frac{1}{2} & : &  &  &  &  \\
+    \end{matrix} \right ] 
+
+```{=latex}
+\Large 
+\left [ \begin{matrix} 
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : & 1 & 0 & 0 & 0 \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 1 & 0 & 0 \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : & 0 & 0 & 1 & 0 \\
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : & 0 & 0 & 0 & 1 \\
+\end{matrix} \right ] \xrightarrow{X_1}
+\left [ \begin{matrix} 
+1 & 0 & \frac{1}{2} & \frac{1}{2} & : &  &  &  & & & & & \\
+0 & 0 & \frac{1}{2} & \frac{1}{2} & : \\
+\frac{1}{2} & 0 & -\frac{1}{2} & 0 & : \\
+0 & -\frac{1}{2} & 0 & \frac{1}{2} & : \\
+\end{matrix} \right ] 
+```
+### Expression 11
+
+![](images/image-966103750.png)
+
+    a_{jk} = \begin{cases}
+    0, & \text{for $\vert j-k \vert 1$} \\ 
+    1, &\text{for $\vert j-k \vert = 1$} \\
+    2\cos x, &\text{for $j=k$} \\
+    \end{cases} 
+
+```{=latex}
+\Huge
+a_{jk} = \begin{cases}
+0, & \text{for $\vert j-k \vert 1$} \\ 
+1, &\text{for $\vert j-k \vert = 1$} \\
+2\cos x, &\text{for $j=k$} \\
+\end{cases} 
+```
+### Expression 12
+
+![](images/image-698644403.png)
+
+    \mathbf{4.1.3. Definition.} \text{  Let $\mathbf{x}$ and $\mathbf{y}$ be nonzero vectors in $\mathbb{R}^n$. Then $\measuredangle{(\mathbf{x}, \mathbf{y})}$, the ANGLE between $\mathbf{x}$ and $\mathbf{y}$, is defined by} \\
+    \measuredangle{(\mathbf{x}, \mathbf{y})} = \arccos \frac{\langle \mathbf{x}, \mathbf{y}\rangle}{\Vert\mathbf{x} \Vert \Vert\mathbf{y} \Vert}
+
+```{=latex}
+\begin{eqnarray}
+\mathbf{4.1.3. Definition.} \text{  Let $\mathbf{x}$ and $\mathbf{y}$ be nonzero vectors in $\mathbb{R}^n$. Then $\measuredangle{(\mathbf{x}, \mathbf{y})}$, the ANGLE between $\mathbf{x}$ and $\mathbf{y}$, is defined by} \\
+\measuredangle{(\mathbf{x}, \mathbf{y})} = \arccos \frac{\langle \mathbf{x}, \mathbf{y}\rangle}{\Vert\mathbf{x} \Vert \Vert\mathbf{y} \Vert}
+\end{eqnarray}
+```
+### Expression 13
+
+![](images/image-1340050623.png)
+
+    M\cap N \\
+    M\cup N 
+
+```{=latex}
+\huge \begin{eqnarray} 
+M\cap N \\
+M\cup N 
+\end{eqnarray}
+```
+### Expression 14
+
+![](images/image-341248740.png)
+
+    \int_{0}^{1}t g(t)\,d t=0 \hspace{50pt} \text{and} \hspace{50pt} \int_{0}^{1}t^{4}g(t)\,d t=0
+
+```{=latex}
+\huge \begin{eqnarray}
+\int_{0}^{1}t g(t)\,d t=0 \hspace{50pt} \text{and} \hspace{50pt} \int_{0}^{1}t^{4}g(t)\,d t=0
+\end{eqnarray}
+```
+### Expression 15
+
+![](images/image-1876561767.png)
+
+    \mathbf{y}=\left(-{\frac{1}{2}},{\frac{\sqrt{3}}{2}}\right)
+
+```{=latex}
+\huge
+\mathbf{y}=\left(-{\frac{1}{2}},{\frac{\sqrt{3}}{2}}\right)
+```
+## A LaTeX Meme
+
+![](images/image-220842989.png)

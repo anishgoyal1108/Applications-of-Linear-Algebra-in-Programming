@@ -1,0 +1,668 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{amsmath, xparse}
+\usepackage{fancyvrb, fvextra}
+\usepackage{bm}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage{sectsty}
+\usepackage{xifthen, xparse}
+\subsubsectionfont{\centering}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+\newcommand\rowop[1]{\scriptstyle\smash{\xrightarrow[\vphantom{#1}]{\mkern-4mu#1\mkern-4mu}}}
+\DeclareDocumentCommand\converttorows%
+{>{\SplitList{,}}m}%
+{\ProcessList{#1}{\converttorow}}
+\NewDocumentCommand{\converttorow}{m}
+{\ifthenelse{\isempty{#1}}{}{\rowop{#1}}\\}
+
+\DeclareDocumentCommand \rowops{m}
+{\;
+\begin{matrix}
+\converttorows {#1}
+\end{matrix}
+\; }
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\input{./title.tex}
+\newpage
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[sharp corners, borderline west={3pt}{0pt}{shadecolor}, boxrule=0pt, interior hidden, enhanced, breakable, frame hidden]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\newpage{}
+
+\hypertarget{find-the-inverse-of-each-matrix.-you-must-use-each-method-from-class-augmentedcofactoring-and-linear-row-reduction-with-identity-matrix}{%
+\subsection{1. Find the inverse of each matrix. You must use each method
+from class (Augmented/Cofactoring and linear row reduction with identity
+matrix):}\label{find-the-inverse-of-each-matrix.-you-must-use-each-method-from-class-augmentedcofactoring-and-linear-row-reduction-with-identity-matrix}}
+
+\hypertarget{gauss-jordan-elimination-method}{%
+\subsubsection{Gauss-Jordan Elimination
+Method}\label{gauss-jordan-elimination-method}}
+
+\begin{align*}
+A = \begin{bmatrix}
+-2 & -6 & 1 \\
+-3 & -2 & -5 \\
+-5 & -4 & -1
+\end{bmatrix}
+\end{align*}
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+\begin{align*}
+[A \ \ I] = \left[\begin{array}{ccc|ccc}
+-2 & -6 & 1 & 1 & 0 & 0 \\
+-3 & -2 & -5 & 0 & 1 & 0 \\
+-5 & -4 & -1 & 0 & 0 & 1
+\end{array}\right]
+\rowops{-\frac{1}{2}R_1,,}
+\left[\begin{array}{ccc|ccc}
+1 & 3 & -\frac{1}{2} & -\frac{1}{2} & 0 & 0 \\
+-3 & -2 & -5 & 0 & 1 & 0 \\
+-5 & -4 & -1 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{,3R_1+2R_2,5R_1+R_3}
+\left[\begin{array}{ccc|ccc}
+1 & 3 & -\frac{1}{2} & -\frac{1}{2} & 0 & 0 \\
+0 & 7 & -\frac{13}{2} & -\frac{3}{2} & 1 & 0 \\
+0 & 11 & -\frac{7}{2} & -\frac{5}{2} & 0 & 1
+\end{array}\right] \rowops{,\frac{1}{7}R_2,} \left[\begin{array}{ccc|ccc}
+  1 & 3 & -\frac{1}{2} & -\frac{1}{2} & 0 & 0 \\
+  0 & 1 & -\frac{13}{14} & -\frac{3}{14} & \frac{1}{7} & 0 \\
+  0 & 11 & -\frac{7}{2} & -\frac{5}{2} & 0 & 1
+\end{array}\right] &\\
+\rowops{R_1-3R_2,,} \left[\begin{array}{ccc|ccc}
+  1 & 0 & \frac{16}{7} & \frac{1}{7} & -\frac{3}{7} & 0 \\
+  0 & 1 & -\frac{13}{14} & -\frac{3}{14} & \frac{1}{7} & 0 \\
+  0 & 11 & -\frac{7}{2} & -\frac{5}{2} & 0 & 1
+\end{array}\right] \rowops{,,R_3-11R_2} \left[\begin{array}{ccc|ccc}
+  1 & 0 & \frac{16}{7} & \frac{1}{7} & -\frac{3}{7} & 0 \\
+  0 & 1 & -\frac{13}{14} & -\frac{3}{14} & \frac{1}{7} & 0 \\
+  0 & 0 & \frac{47}{7} & -\frac{1}{7} & -\frac{11}{7} & 1
+\end{array}\right] &\\
+\rowops{,,\frac{4}{47}R_3} \left[\begin{array}{ccc|ccc}
+  1 & 0 & \frac{16}{7} & \frac{1}{7} & -\frac{3}{7} & 0 \\
+  0 & 1 & -\frac{13}{14} & -\frac{3}{14} & \frac{1}{7} & 0 \\
+  0 & 0 & 1 & -\frac{1}{47} & -\frac{11}{47} & \frac{7}{47}
+\end{array}\right]
+\rowops{R_1 - \frac{16}{7}R_3,,} \left[\begin{array}{ccc|ccc}
+    1 & 0 & 0 & \frac{9}{47} & \frac{5}{47} & -\frac{16}{47} \\
+    0 & 1 & -\frac{13}{14} & -\frac{3}{14} & \frac{1}{7} & 0 \\
+    0 & 0 & 1 & -\frac{1}{47} & -\frac{11}{47} & \frac{7}{47}
+\end{array}\right] &\\
+\rowops{,\frac{13}{14}R_1+R_2,}
+\left[\begin{array}{ccc|ccc}
+    1 & 0 & 0 & \frac{9}{47} & \frac{5}{47} & -\frac{16}{47} \\
+    0 & 1 & 0 & -\frac{11}{47} & -\frac{7}{94} & \frac{13}{94} \\
+    0 & 0 & 1 & -\frac{1}{47} & -\frac{11}{47} & \frac{7}{47}
+\end{array}\right] &\\
+A^{-1} = \begin{bmatrix}
+\frac{9}{47} & \frac{5}{47} & -\frac{16}{47} \\
+-\frac{11}{47} & -\frac{7}{94} & \frac{13}{94} \\
+-\frac{1}{47} & -\frac{11}{47} & \frac{7}{47}
+\end{bmatrix} &\\
+\end{align*}
+
+\newpage{}
+
+\hypertarget{adjoint-method}{%
+\subsubsection{Adjoint Method}\label{adjoint-method}}
+
+\begin{gather*}
+B = \begin{bmatrix}
+3 & 4 & 5 \\
+-2 & 3 & 3 \\
+-1 & 2 & -5
+\end{bmatrix} \\
+\end{gather*}
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+\begin{align*}
+\det B &= \begin{vmatrix}
+3 & 4 & 5 \\
+-2 & 3 & 3 \\
+-1 & 2 & -5
+\end{vmatrix} \\
+&=3\begin{vmatrix}
+3 & 3 \\
+2 & -5
+\end{vmatrix} + 4\begin{vmatrix}
+2 & 3 \\
+1 & -5
+\end{vmatrix} + 5\begin{vmatrix}
+-2 & 3 \\
+-1 & 2
+\end{vmatrix} \\
+&= 3([3 \cdot -5] - [3 \cdot 2]) + 4([2 \cdot -5] - [3 \cdot 1]) + 5([-2 \cdot 2] - [3 \cdot -1]) \\
+&= 3(-15 - 6) + 4(-10 - 3) + 5(-4 + 3) \\
+&= 3(-21) + 4(-13) + 5(-1) \\
+&= -63 - 52 - 5 \\
+&= -120
+\end{align*}
+
+\begin{align*}
+\mathrm{cof}(B_{11}) &= \begin{vmatrix}
+3 & 3 \\
+2 & -5
+\end{vmatrix} &= -21 \qquad
+\mathrm{cof}(B_{12}) &= -\begin{vmatrix}
+-2 & 3 \\
+-1 & -5
+\end{vmatrix} &= -13 \qquad
+\mathrm{cof}(B_{13}) &= \begin{vmatrix}
+-2 & 3 \\
+-1 & 2
+\end{vmatrix} &= -1 \\
+\mathrm{cof}(B_{21}) &= -\begin{vmatrix}
+4 & 5 \\
+2 & -5
+\end{vmatrix} &= 30 \qquad
+\mathrm{cof}(B_{22}) &= \begin{vmatrix}
+3 & 5 \\
+-1 & -5
+\end{vmatrix} &= -10 \qquad
+\mathrm{cof}(B_{23}) &= -\begin{vmatrix}
+3 & 4 \\
+-1 & 2
+\end{vmatrix} &= -10 \\
+\mathrm{cof}(B_{31}) &= \begin{vmatrix}
+4 & 5 \\
+3 & 3
+\end{vmatrix} &= -3 \qquad
+\mathrm{cof}(B_{32}) &= -\begin{vmatrix}
+3 & 5 \\
+-2 & 3
+\end{vmatrix} &= -19 \qquad
+\mathrm{cof}(B_{33}) &= \begin{vmatrix}
+3 & 4 \\
+-2 & 3 
+\end{vmatrix} &= 17
+\end{align*}
+
+\begin{align*}
+[\mathrm{cof}(B_{ij})] = \begin{bmatrix}
+-21 & -13 & -1 \\
+30 & -10 & -10 \\
+-3 & -19 & 17
+\end{bmatrix} \\
+\mathrm{Adj} \ B = [\mathrm{cof}(B_{ij})]^\intercal = \begin{bmatrix}
+-21 & 30 & -3 \\
+-13 & -10 & -19 \\
+-1 & -10 & 17
+\end{bmatrix} \\
+\end{align*}
+
+\newpage{}
+
+\begin{align*}
+B^{-1} &= \frac{\mathrm{Adj } \ B}{\det B} \\
+&= \left(-\frac{1}{120}\right)\begin{bmatrix}
+-21 & 30 & -3 \\
+-13 & -10 & -19 \\
+-1 & -10 & 17
+\end{bmatrix} \\  
+&= \begin{bmatrix}
+-21 \cdot \left(-\frac{1}{120}\right) & 30 \cdot \left(-\frac{1}{120}\right) & -3 \cdot \left(-\frac{1}{120}\right) \\
+-13 \cdot \left(-\frac{1}{120}\right) & -10 \cdot \left(-\frac{1}{120}\right) & -19 \cdot \left(-\frac{1}{120}\right) \\
+-1 \cdot \left(-\frac{1}{120}\right) & -10 \cdot \left(-\frac{1}{120}\right) & 17 \cdot \left(-\frac{1}{120}\right)
+\end{bmatrix} \\
+&= \begin{bmatrix}
+\frac{-21}{-120} & \frac{30}{-120} & \frac{-3}{-120} \\
+\frac{-13}{-120} & \frac{-10}{-120} & \frac{-19}{-120} \\
+\frac{-1}{-120} & \frac{-10}{-120} & \frac{17}{-120}
+\end{bmatrix} \\
+&= \begin{bmatrix}
+\frac{7}{40} & -\frac{1}{4} & \frac{1}{40} \\
+\frac{13}{120} & \frac{1}{12} & \frac{19}{120} \\
+\frac{1}{120} & \frac{1}{12} & -\frac{17}{120}
+\end{bmatrix}
+\end{align*}
+
+\newpage{}
+
+\hypertarget{for-which-three-numbers-c-is-this-matrix-not-invertible-and-why-not}{%
+\subsection{\texorpdfstring{2. For which three numbers \(c\) is this
+matrix not invertible, and why
+not?}{2. For which three numbers c is this matrix not invertible, and why not?}}\label{for-which-three-numbers-c-is-this-matrix-not-invertible-and-why-not}}
+
+\[
+A = \begin{bmatrix}
+2 & c & c \\
+c & c & c \\
+8 & 7 & c
+\end{bmatrix}
+\]
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+The three numbers of \(c\) for which \(A\) is not invertible are
+\textbf{0, 7, and 2}, as those values of \(c\) would make \(A\) linearly
+dependent.
+
+If \(c\) was 0, then \(A\) would be linearly dependent because it
+contained a column/row of zeros.
+
+If \(c\) was 7, then \(A\) would be linearly dependent because it would
+contain a column of 7s.
+
+If \(c\) was 2, then \(A\) would be linearly dependent because it would
+contain a row of 2s.
+
+\newpage{}
+
+\hypertarget{prove-that-a-is-invertible-if-a-ne-0-and-a-ne-b-find-the-pivots-or-a-1}{%
+\subsection{\texorpdfstring{3. Prove that \(A\) is invertible if
+\(a \ne 0\) and \(a \ne b\) (find the pivots or
+\(A^{-1}\)):}{3. Prove that A is invertible if a \textbackslash ne 0 and a \textbackslash ne b (find the pivots or A\^{}\{-1\}):}}\label{prove-that-a-is-invertible-if-a-ne-0-and-a-ne-b-find-the-pivots-or-a-1}}
+
+\[
+A = \begin{bmatrix}
+a & b & b \\
+a & a & b \\
+a & a & a
+\end{bmatrix} \text{.}
+\]
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+Let's perform a row reduction of the given matrix \(A\):
+
+\begin{gather*}
+\left(\begin{matrix}
+a & b & b \\
+a & a & b \\
+a & a & a
+\end{matrix}\right) \sim \left(\begin{matrix}
+a & b & b \\
+0 & a-b & 0 \\
+0 & a-b & a-b
+\end{matrix}\right) \sim \left(\begin{matrix}
+a & b & b \\
+0 & a-b & 0 \\
+0 & 0 & a-b
+\end{matrix}\right)
+\end{gather*}
+
+Therefore, \(A\) is invertible since \(a \ne 0\) and
+\(a \ne b \therefore a-b \ne 0\), which means all the pivots are
+non-zero in fully reduced row-echelon form.
+
+\newpage{}
+
+\hypertarget{this-matrix-has-a-remarkable-inverse.-find-a-1-by-elimination-on-a-i.-extend-to-a-5-by-5-alternating-matrix-and-guess-its-inverse-then-multiply-to-confirm.}{%
+\subsection{\texorpdfstring{4. This matrix has a remarkable inverse.
+Find \(A^{-1}\) by elimination on \([A \ \ I]\). Extend to a 5 by 5
+``alternating matrix'' and guess its inverse; then multiply to
+confirm.}{4. This matrix has a remarkable inverse. Find A\^{}\{-1\} by elimination on {[}A \textbackslash{} \textbackslash{} I{]}. Extend to a 5 by 5 ``alternating matrix'' and guess its inverse; then multiply to confirm.}}\label{this-matrix-has-a-remarkable-inverse.-find-a-1-by-elimination-on-a-i.-extend-to-a-5-by-5-alternating-matrix-and-guess-its-inverse-then-multiply-to-confirm.}}
+
+\[
+\mathrm{Invert} \  A = \begin{bmatrix}
+1 & -1 & 1 & -1 \\
+0 & 1 & -1 & 1 \\
+0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 1
+\end{bmatrix} \ \text{and solve }Ax = (1, 1, 1, 1).
+\]
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+\begin{align*}
+[A \ \ I] = \left[\begin{array}{cccc|cccc}
+1 & -1 & 1 & -1 & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] \rowops{R_2+R1,,,} \left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & -1 & 1 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{,R_3+R_2,,} \left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & -1 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] \rowops{,,R_4+R_3,} \left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+A^{-1} = \begin{bmatrix}
+1 & 1 & 0 & 0 \\
+0 & 1 & 1 & 0 \\
+0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 1
+\end{bmatrix} &\\
+\end{align*}
+
+Now, let's extend \(A\) to be a 5x5 alternating matrix, which we'll
+denote as \(B\):
+
+\[
+B = \begin{bmatrix}
+1 & -1 & 1 & -1 & 1 \\
+0 & 1 & -1 & 1 & -1 \\
+0 & 0 & 1 & -1 & 1 \\
+0 & 0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+If we wanted to calculate \(B^{-1}\), we would have to reduce it just
+like we did to \(A\) above\ldots{} but the pattern here is pretty
+obvious, since \(A^{-1}\) follows a ``snake'' pattern downward:
+
+\[
+B^{-1} \text{ (predicted) } = \begin{bmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+\newpage{}
+
+Let's actually calculate it:
+
+\begin{align*}
+[B \ \ I] = \left[\begin{array}{ccccc|ccccc}
+1 & -1 & 1 & -1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+0 & 1 & -1 & 1 & -1 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & -1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{array}\right] \rowops{R_2+R1,,,,} \left[\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & -1 & 1 & -1 & 0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & -1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{,R3+R2,,,} \left[\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & -1 & 1 & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{array}\right] \rowops{,,R_4+R_3,,} \left[\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & -1 & 0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{,,,R_5+R4,} \left[\begin{array}{ccccc|ccccc}
+1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 0 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+B^{-1} = \begin{bmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 
+\end{bmatrix} &\\
+\end{align*}
+
+Now, let's confirm \(B^{-1} \cdot B\) yields the identity matrix:
+
+\[
+B^{-1} \cdot B = \begin{bmatrix}
+1 & -1 & 1 & -1 & 1 \\
+0 & 1 & -1 & 1 & -1 \\
+0 & 0 & 1 & -1 & 1 \\
+0 & 0 & 0 & 1 & -1 \\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix} \begin{bmatrix}
+1 & 1 & 0 & 0 & 0 \\
+0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 1 & 1 & 0 \\
+0 & 0 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 
+\end{bmatrix} = \begin{bmatrix}
+C_{11} & C_{12} & \cdots & C_{15}\\
+C_{21} & C_{22} & \cdots & C_{25}\\ 
+\vdots & \vdots & \ddots & \vdots\\ 
+C_{51} & C_{52} & \cdots & C_{55} 
+\end{bmatrix}
+\] \[
+C_{ij}= B_{i1} (B^{-1})_{1j} + B_{i2} (B^{-1})_{2j} +\cdots+ B_{in} + (B^{-1})_{nj} = \sum_{k=1}^n B_{ik}(B^{-1})_{kj}
+\] \[
+\stackrel{\checkmark}{=} \begin{bmatrix}
+1 & 0 & 0 & 0 & 0 \\
+0 & 1 & 0 & 0 & 0 \\
+0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 0 & 1
+\end{bmatrix}
+\]
+
+\newpage{}
+
+\hypertarget{a-is-a-4x4-matrix-with-1s-on-the-diagonal-and--a--b--c-on-the-diagonal-above.-find-the-inverse-of-this-bidiagonal-matrix.}{%
+\subsection{\texorpdfstring{5. \(A\) is a 4x4 matrix with 1's on the
+diagonal and \(-a, -b, -c\) on the diagonal above. Find the inverse of
+this bidiagonal
+matrix.}{5. A is a 4x4 matrix with 1's on the diagonal and -a, -b, -c on the diagonal above. Find the inverse of this bidiagonal matrix.}}\label{a-is-a-4x4-matrix-with-1s-on-the-diagonal-and--a--b--c-on-the-diagonal-above.-find-the-inverse-of-this-bidiagonal-matrix.}}
+
+\centering \textcolor[RGB]{0,0,0}{\rule{\linewidth}{0.6pt}}
+
+\begin{align*}
+[A \ \ I] = \left[\begin{array}{cccc|cccc}
+1 & -a & 0 & 0 & 1 & 0 & 0 & 0 \\
+0 & 1 & -b & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right]
+\rowops{aR_2+R_1,,,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & -ab & 0 & 1 & a & 0 & 0 \\
+0 & 1 & -b & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{abR_3+R_1,,,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & -abc & 1 & a & ab & 0 \\
+0 & 1 & -b & 0 & 0 & 1 & 0 & 0 \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right]
+\rowops{,bR_3+R_2,,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & -abc & 1 & a & ab & 0 \\
+0 & 1 & 0 & -bc & 0 & 1 & b & 0 \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{abcR_4+R_1,,,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & a & ab & abc \\
+0 & 1 & 0 & -bc & 0 & 1 & b & 0 \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right]
+\rowops{,bcR_4+R_2,,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & a & ab & abc \\
+0 & 1 & 0 & 0 & 0 & 1 & b & bc \\
+0 & 0 & 1 & -c & 0 & 0 & 1 & 0 \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+\rowops{,,cR_4+R_3,}
+\left[\begin{array}{cccc|cccc}
+1 & 0 & 0 & 0 & 1 & a & ab & abc \\
+0 & 1 & 0 & 0 & 0 & 1 & b & bc \\
+0 & 0 & 1 & 0 & 0 & 0 & 1 & c \\
+0 & 0 & 0 & 1 & 0 & 0 & 0 & 1
+\end{array}\right] &\\
+A^{-1} = \begin{bmatrix}
+1 & a & ab & abc \\
+0 & 1 & b & bc \\
+0 & 0 & 1 & c \\
+0 & 0 & 0 & 1
+\end{bmatrix} &\\
+\end{align*}
+
+
+
+\end{document}

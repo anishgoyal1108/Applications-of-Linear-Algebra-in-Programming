@@ -1,0 +1,980 @@
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+\PassOptionsToPackage{dvipsnames,svgnames,x11names}{xcolor}
+%
+\documentclass[
+  letterpaper,
+  DIV=11,
+  numbers=noendperiod]{scrartcl}
+
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+% Make \paragraph and \subparagraph free-standing
+\ifx\paragraph\undefined\else
+  \let\oldparagraph\paragraph
+  \renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+  \let\oldsubparagraph\subparagraph
+  \renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{241,243,245}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.40,0.45,0.13}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\BuiltInTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\ExtensionTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.28,0.35,0.67}{#1}}
+\newcommand{\ImportTok}[1]{\textcolor[rgb]{0.00,0.46,0.62}{#1}}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\NormalTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.68,0.00,0.00}{#1}}
+\newcommand{\RegionMarkerTok}[1]{\textcolor[rgb]{0.00,0.23,0.31}{#1}}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.07,0.07,0.07}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.13,0.47,0.30}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.37,0.37,0.37}{\textit{#1}}}
+
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}\usepackage{longtable,booktabs,array}
+\usepackage{calc} % for calculating minipage widths
+% Correct order of tables after \paragraph or \subparagraph
+\usepackage{etoolbox}
+\makeatletter
+\patchcmd\longtable{\par}{\if@noskipsec\mbox{}\fi\par}{}{}
+\makeatother
+% Allow footnotes in longtable head/foot
+\IfFileExists{footnotehyper.sty}{\usepackage{footnotehyper}}{\usepackage{footnote}}
+\makesavenoteenv{longtable}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\UseRawInputEncoding
+\usepackage{amsmath, xparse}
+\usepackage{fancyvrb, fvextra}
+\usepackage{bm}
+\usepackage{svg}
+\usepackage{listings}
+\usepackage{sectsty}
+
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+\lstset{basicstyle=\ttfamily\footnotesize,breaklines=true}
+\KOMAoption{captions}{tableheading}
+\makeatletter
+\makeatother
+\makeatletter
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\AtBeginDocument{%
+\ifdefined\contentsname
+  \renewcommand*\contentsname{Table of contents}
+\else
+  \newcommand\contentsname{Table of contents}
+\fi
+\ifdefined\listfigurename
+  \renewcommand*\listfigurename{List of Figures}
+\else
+  \newcommand\listfigurename{List of Figures}
+\fi
+\ifdefined\listtablename
+  \renewcommand*\listtablename{List of Tables}
+\else
+  \newcommand\listtablename{List of Tables}
+\fi
+\ifdefined\figurename
+  \renewcommand*\figurename{Figure}
+\else
+  \newcommand\figurename{Figure}
+\fi
+\ifdefined\tablename
+  \renewcommand*\tablename{Table}
+\else
+  \newcommand\tablename{Table}
+\fi
+}
+\@ifpackageloaded{float}{}{\usepackage{float}}
+\floatstyle{ruled}
+\@ifundefined{c@chapter}{\newfloat{codelisting}{h}{lop}}{\newfloat{codelisting}{h}{lop}[chapter]}
+\floatname{codelisting}{Listing}
+\newcommand*\listoflistings{\listof{codelisting}{List of Listings}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{caption}{}{\usepackage{caption}}
+\@ifpackageloaded{subcaption}{}{\usepackage{subcaption}}
+\makeatother
+\makeatletter
+\@ifpackageloaded{tcolorbox}{}{\usepackage[many]{tcolorbox}}
+\makeatother
+\makeatletter
+\@ifundefined{shadecolor}{\definecolor{shadecolor}{rgb}{.97, .97, .97}}
+\makeatother
+\makeatletter
+\makeatother
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  colorlinks=true,
+  linkcolor={blue},
+  filecolor={Maroon},
+  citecolor={Blue},
+  urlcolor={Blue},
+  pdfcreator={LaTeX via pandoc}}
+
+\author{}
+\date{}
+
+\begin{document}
+\input{./title.tex}
+\newpage
+
+\ifdefined\Shaded\renewenvironment{Shaded}{\begin{tcolorbox}[borderline west={3pt}{0pt}{shadecolor}, sharp corners, interior hidden, enhanced, frame hidden, breakable, boxrule=0pt]}{\end{tcolorbox}}\fi
+
+\renewcommand*\contentsname{Table of contents}
+{
+\hypersetup{linkcolor=}
+\setcounter{tocdepth}{4}
+\tableofcontents
+}
+\newpage{}
+
+\hypertarget{hammings-code}{%
+\section{4.14.3 Hamming's code}\label{hammings-code}}
+
+Hamming discovered a code in which a four-bit message is represented by
+a seven-bit \emph{code-word}. The generator matrix is
+
+\begin{align*}
+G = \begin{bmatrix} 1 & 0 & 1 & 1 \\ 1 & 1 & 0 & 1 \\ 0 & 0 & 0 & 1 \\ 1 & 1 & 1 & 0 \\ 0 & 0 & 1 & 0 \\ 0 & 1 & 0 & 0 \\ 1 & 0 & 0 & 0 \end{bmatrix}
+\end{align*}
+
+A four-bit message is represented by a 4-vector \(\bm{p}\) over
+\(GF(2)\). The encoding of \(\bm{p}\) is the 7-vector resulting from the
+matrix vector-product \(G * \bm{p}\).
+
+Let \(f_G\) be the encoding function, the function defined by
+\(f_{G}(\bm{x}) = G * \bm{p}\). The image of \(f_G\), the set of all
+codewords, is the row space of \(G\).
+
+\hypertarget{task-4.14.1}{%
+\subsection{Task 4.14.1}\label{task-4.14.1}}
+
+Create an instance of \texttt{Mat} representing the generator matrix
+\(G\). You can use the procedure \texttt{listlist2mat} in the
+\texttt{matutil} module. Since we are working over \(GF(2)\), you should
+use the value \texttt{one} from the \texttt{GF2} module to represent 1.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\CommentTok{\# Import all necessary libraries}
+\ImportTok{from}\NormalTok{ mat }\ImportTok{import}\NormalTok{ Mat}
+\ImportTok{from}\NormalTok{ matutil }\ImportTok{import}\NormalTok{ listlist2mat}
+\ImportTok{from}\NormalTok{ GF2 }\ImportTok{import}\NormalTok{ one}
+
+\NormalTok{G }\OperatorTok{=}\NormalTok{ listlist2mat([}
+\NormalTok{  [one, }\DecValTok{0}\NormalTok{, one, one],}
+\NormalTok{  [one, one, }\DecValTok{0}\NormalTok{, one],}
+\NormalTok{  [}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one],}
+\NormalTok{  [one, one, one, }\DecValTok{0}\NormalTok{],}
+\NormalTok{  [}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{],}
+\NormalTok{  [}\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{],}
+\NormalTok{  [one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{]}
+\NormalTok{])}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{task-4.14.2}{%
+\subsection{Task 4.14.2}\label{task-4.14.2}}
+
+What is the encoding of the message {[}1, 0, 0, 1{]}?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\ImportTok{from}\NormalTok{ vec }\ImportTok{import}\NormalTok{ Vec}
+\ImportTok{from}\NormalTok{ vecutil }\ImportTok{import}\NormalTok{ list2vec}
+
+\NormalTok{p}\OperatorTok{=}\NormalTok{list2vec([one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one])}
+\NormalTok{encoded }\OperatorTok{=}\NormalTok{ G }\OperatorTok{*}\NormalTok{ p}
+\BuiltInTok{print}\NormalTok{(encoded)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+ 0 1   2   3 4 5   6
+--------------------
+ 0 0 one one 0 0 one
+\end{lstlisting}
+
+\newpage{}
+
+\hypertarget{decoding}{%
+\section{4.14.4 Decoding}\label{decoding}}
+
+Note that four of the rows of \(G\) are the standard basis vectors
+\(e_1, e_2, e_3, e_4\) of \(GF(2)^4\). What does that imply about the
+relation between words and codewords? Can you easily decode the codeword
+{[}0, 1, 1, 1, 1, 0, 0{]} without using a computer?
+
+The codeword vector will always match the \(i^{th}\) positions of the
+word vector corresponding to the standard basis vectors of the generator
+matrix. This means that the codeword {[}0, 1, 1, 1, 1, 0, 0{]} would
+correspond to the word {[}0, 0, 1, 1{]} since rows 7, 6, 5, and 3 are
+the standard basis vectors of \(G\).
+
+\hypertarget{task-4.14.3}{%
+\subsection{Task 4.14.3}\label{task-4.14.3}}
+
+Think about the manual decoding process you just did. Construct a
+\(4 \times 7\) matrix \(R\) such that, for any codeword \(\bm{c}\), the
+matrix-vector product \(R*\bm{c}\) equals the 4-vector whose encoding is
+\(\bm{c}\). What should the matrix-matrix product \(RG\) be? Compute the
+matrix and check it against your prediction.
+
+\begin{align*}
+R = \begin{bmatrix} 0 & 0 & 0 & 0 & 0 & 0 & 1\\ 0 & 0 & 0 & 0 & 0 & 1 & 0\\ 0 & 0 & 0 & 0 & 1 & 0 & 0\\ 0 & 0 & 1 & 0 & 0 & 0 & 0 \end{bmatrix}
+\end{align*}
+
+Performing the operation \(RG\) gives us the identity matrix:
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{R }\OperatorTok{=}\NormalTok{ listlist2mat([}
+\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one],}
+\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{],}
+\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{],}
+\NormalTok{[}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{]}
+\NormalTok{])}
+
+\BuiltInTok{print}\NormalTok{(R}\OperatorTok{*}\NormalTok{G)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+         0   1   2   3
+     -----------------
+ 0  |  one   0   0   0
+ 1  |    0 one   0   0
+ 2  |    0   0 one   0
+ 3  |    0   0   0 one
+\end{lstlisting}
+
+\newpage{}
+
+\hypertarget{eror-syndrome}{%
+\subsection{4.14.5 Eror syndrome}\label{eror-syndrome}}
+
+Suppose Alice sends the codeword \(\bm{c}\) across the noisy channel.
+Let \(\bm{\tilde{c}}\) be the vector received by Bob. To reflect the
+fact that \(\bm{\tilde{c}}\) might differ from \(\bm{c}\), we write
+
+\begin{align*}
+\bm{\tilde{c} = c + e}
+\end{align*}
+
+where \(\bm{e}\) is the error vector, the vector with ones in the
+corrupted positions.
+
+If Bob can figure out the error vector \(\bm{e}\), he can recover the
+codeword \(\bm{c}\) and therefore the original message. To figure out
+the error vector \(\bm{e}\), Bob uses the check matrix, which for the
+Hamming code is
+
+\begin{align*}
+H = \begin{bmatrix} 0 & 0 & 0 & 1 & 1 & 1 & 1\\ 0 & 1 & 1 & 0 & 0 & 1 & 1\\ 1 & 0 & 1 & 0 & 1 & 0 & 1 \end{bmatrix}
+\end{align*}
+
+As a first step towards figuring out the error vector, Bob computes the
+\emph{error syndrome}, the vector \(H * \bm{\tilde{c}}\), which equals
+\(H * \bm{e}\).
+
+Examine the matrix \(H\) carefully. What is special about the order of
+its columns?
+
+Define the function \(f_H\) by \(f_H(\bm{y}) = H * \bm{y}\). The image
+under \(f_H\) of any codeword is the zero vector. Now consider the
+function \(f_H \circ f_G\) that is the composition of \(f_H\) with
+\(f_G\). For any vector \(\bm{p}, f_G(\bm{p})\) is a codeword
+\(\bm{c}\), and for any codeword \(\bm{c}, f_H(\bm{c}) = \bm{0}\). This
+implies that, for any vector
+\(\bm{p}, (f_H \circ f_G)(\bm{p}) = \bm{0}\).
+
+The matrix \(HG\) corresponds to the function \(f_H \circ f_G\). Based
+on this fact, predict the entries of the matrix \(HG\).
+
+I believe the matrix \(HG\) will look like
+\(\begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 \end{bmatrix}\)
+because \(f_H\) of any codeword is the zero vector for any entry
+\(\bm{p}\).
+
+\hypertarget{task-4.14.4}{%
+\subsection{Task 4.14.4}\label{task-4.14.4}}
+
+Create an instance of \texttt{Mat} representing the check matrix \(H\).
+Calculate the matrix-matrix product \(HG\). Is the result consistent
+with your prediction?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{H }\OperatorTok{=}\NormalTok{ listlist2mat([}
+\NormalTok{  [}\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, one, one, one],}
+\NormalTok{  [}\DecValTok{0}\NormalTok{, one, one, }\DecValTok{0}\NormalTok{, }\DecValTok{0}\NormalTok{, one, one],}
+\NormalTok{  [one, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{, one, }\DecValTok{0}\NormalTok{, one]}
+\NormalTok{])}
+\BuiltInTok{print}\NormalTok{(H }\OperatorTok{*}\NormalTok{ G)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+       0 1 2 3
+     ---------
+ 0  |  0 0 0 0
+ 1  |  0 0 0 0
+ 2  |  0 0 0 0
+\end{lstlisting}
+
+Just as expected, \(HG\) is equal to the \(4 \times 4\) zero matrix.
+
+\newpage{}
+
+\hypertarget{finding-the-error}{%
+\section{4.14.6 Finding the error}\label{finding-the-error}}
+
+Bob assumes that at most one bit of the codeword is corrupted, so at
+most one bit of \(\bm{e}\) is nonzero, say the bit in position
+\(i \in \{1, 2, \dots, 7\}\). In this case, what is the value of
+\(H * \bm{e}\)?
+
+\(H * \bm{e}\) should be the value of the \(i^{th}\) column of \(H\).
+
+\hypertarget{task-4.14.5}{%
+\subsection{Task 4.14.5}\label{task-4.14.5}}
+
+Write a procedure \texttt{find\_error} that takes an error syndrome and
+returns the corresponding error vector \(\bm{e}\).
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\KeywordTok{def}\NormalTok{ find\_error(error\_syndrome):}
+\NormalTok{  i }\OperatorTok{=} \BuiltInTok{sum}\NormalTok{([}\DecValTok{2}\OperatorTok{**}\NormalTok{(}\DecValTok{2}\OperatorTok{{-}}\NormalTok{x) }\ControlFlowTok{for}\NormalTok{ x }\KeywordTok{in}\NormalTok{ error\_syndrome.f.keys() }\ControlFlowTok{if}\NormalTok{ error\_syndrome.f[x]}\OperatorTok{==}\NormalTok{one])}
+  \ControlFlowTok{if}\NormalTok{ i}\OperatorTok{==}\DecValTok{0}\NormalTok{:}
+    \ControlFlowTok{return}\NormalTok{ Vec(\{}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{\}, \{\})}
+  \ControlFlowTok{else}\NormalTok{:}
+    \ControlFlowTok{return}\NormalTok{ Vec(\{}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{\}, \{i}\OperatorTok{{-}}\DecValTok{1}\NormalTok{:one\})}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{task-4.14.6}{%
+\subsection{Task 4.14.6}\label{task-4.14.6}}
+
+Imagine that you are Bob, and you have received the \emph{non-codeword}
+\(\bm{\tilde{c}} = [1, 0, 1, 1, 0, 1, 1]\). Your goal is to derive the
+original 4-bit message that Alice intended to send. To do this, use
+\texttt{find\_eror} to figure out the corresponding vector \(\bm{e}\),
+and then add \(\bm{e}\) to \(\bm{\tilde{c}}\) to obtain the correct
+codeword. Finally, use the matrix \(R\) from \texttt{Task\ 4.14.3} to
+derive the original 4-vector.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{non\_c }\OperatorTok{=}\NormalTok{ Vec(\{}\DecValTok{0}\NormalTok{, }\DecValTok{1}\NormalTok{, }\DecValTok{2}\NormalTok{, }\DecValTok{3}\NormalTok{, }\DecValTok{4}\NormalTok{, }\DecValTok{5}\NormalTok{, }\DecValTok{6}\NormalTok{\}, \{}\DecValTok{0}\NormalTok{: one, }\DecValTok{1}\NormalTok{:}\DecValTok{0}\NormalTok{, }\DecValTok{2}\NormalTok{:one, }\DecValTok{3}\NormalTok{:one, }\DecValTok{4}\NormalTok{:}\DecValTok{0}\NormalTok{, }\DecValTok{5}\NormalTok{:one, }\DecValTok{6}\NormalTok{:one\})}
+\NormalTok{error }\OperatorTok{=}\NormalTok{ find\_error(H}\OperatorTok{*}\NormalTok{non\_c)}
+\NormalTok{c }\OperatorTok{=}\NormalTok{ non\_c}\OperatorTok{+}\NormalTok{error}
+\NormalTok{original }\OperatorTok{=}\NormalTok{ R}\OperatorTok{*}\NormalTok{c}
+\BuiltInTok{print}\NormalTok{(original)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+ 0   1 2   3
+------------
+ 0 one 0 one
+\end{lstlisting}
+
+\hypertarget{task-4.14.7}{%
+\subsection{Task 4.14.7}\label{task-4.14.7}}
+
+Write a one-line procedure \texttt{find\_error\_matrix} with the
+following spec:
+
+\begin{itemize}
+\item \textit{input:} a matrix `S` whose columns are error syndromes
+\item \textit{output:} a matrix whose $c^{th}$ column is the error corresponding to the $c^{th}$ column of `S`.
+\end{itemize}
+
+This procedure consists of a comprehension that uses the procedure
+\texttt{find\_error} together with some procedures from the
+\texttt{matutil} module.
+
+Test your procedure on a matrix whose columns are {[}1, 1, 1{]} and
+{[}0, 0, 1{]}.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\ImportTok{from}\NormalTok{ matutil }\ImportTok{import}\NormalTok{ coldict2mat, mat2coldict}
+
+\KeywordTok{def}\NormalTok{ find\_error\_matrix(S):}
+  \ControlFlowTok{return}\NormalTok{ coldict2mat(\{key: find\_error(mat2coldict(S)[key]) }\ControlFlowTok{for}\NormalTok{ key }\KeywordTok{in}\NormalTok{ mat2coldict(S).keys()\})}
+
+\NormalTok{S }\OperatorTok{=}\NormalTok{ listlist2mat([[one, }\DecValTok{0}\NormalTok{],[one, }\DecValTok{0}\NormalTok{],[one, one]])}
+\BuiltInTok{print}\NormalTok{(find\_error\_matrix(S))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+         0   1
+     ---------
+ 0  |    0 one
+ 1  |    0   0
+ 2  |    0   0
+ 3  |    0   0
+ 4  |    0   0
+ 5  |    0   0
+ 6  |  one   0
+\end{lstlisting}
+
+\newpage{}
+
+\hypertarget{putting-it-all-together}{%
+\section{4.14.7 Putting it all together}\label{putting-it-all-together}}
+
+We will now encode an entire string and will try to protect it against
+errors. We first have to learn a little about representing a text as a
+matrix of bits. Characters are represented using a variable-length
+encoding scheme called \emph{UTF-8}. Each character is represented by
+some number of bytes. You can find the value of a character c using
+\texttt{ord(c)}. What are the numeric values of the characters `a', `A',
+and space?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\BuiltInTok{print}\NormalTok{(}\BuiltInTok{ord}\NormalTok{(}\StringTok{\textquotesingle{}a\textquotesingle{}}\NormalTok{), }\BuiltInTok{ord}\NormalTok{(}\StringTok{\textquotesingle{}A\textquotesingle{}}\NormalTok{), }\BuiltInTok{ord}\NormalTok{(}\StringTok{\textquotesingle{} \textquotesingle{}}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+97 65 32
+\end{lstlisting}
+
+You can obtain the character from a numerical value using
+\texttt{chr(i)}. To see the string of characters numbered 0 through 255,
+you can use the following:
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{s }\OperatorTok{=} \StringTok{\textquotesingle{}\textquotesingle{}}\NormalTok{.join([}\BuiltInTok{chr}\NormalTok{(i) }\ControlFlowTok{for}\NormalTok{ i }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{256}\NormalTok{) }\ControlFlowTok{if} \BuiltInTok{chr}\NormalTok{(i).isprintable()]) }\CommentTok{\# Some characters are excluded due to the fact that they are not UTF{-}8 encodable.}
+\BuiltInTok{print}\NormalTok{(s)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ
+\end{lstlisting}
+
+We have provided a module \texttt{bitutil} that defines some procedures
+for converting between lists of \(GF(2)\) values, matrices over
+\(GF(2)\), and strings. Two such procedures are \texttt{str2bits(str)}
+and \texttt{bits2str(L)}:
+
+The procedure \texttt{str2bits(str)} has the following spec:
+
+\begin{itemize}
+\item \textit{input:} a string
+\item \textit{output:} a list of $GF(2)$ values (0 and one) representing the string
+\end{itemize}
+
+The procedure \texttt{bits2str(L)} is the inverse procedure:
+
+\begin{itemize}
+\item \textit{input:} a list of $GF(2)$ values
+\item \textit{output:} the corresponding string
+\end{itemize}
+
+\hypertarget{task-4.14.8}{%
+\subsection{Task 4.14.8}\label{task-4.14.8}}
+
+Try out \texttt{str2bits(str)} on the string \texttt{s} defined above,
+and verify that \texttt{bits2str(L)} gets you back the original string.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\ImportTok{from}\NormalTok{ bitutil }\ImportTok{import} \OperatorTok{*}
+\BuiltInTok{print}\NormalTok{(str2bits(s))}
+\BuiltInTok{print}\NormalTok{(bits2str(str2bits(s)))}
+\BuiltInTok{print}\NormalTok{(bits2str(str2bits(s)) }\OperatorTok{==}\NormalTok{ s)}
+\end{Highlighting}
+\end{Shaded}
+
+\texttt{[0, 0, 0, 0, 0, one, 0, 0, one, 0, 0, 0, 0, one, 0, 0, 0, one, 0, 0, 0, one, 0, 0, one, one, 0, 0, 0, one, 0, 0, 0, 0, one, 0, 0, one, 0, 0, one, 0, one, 0, 0, one, 0, 0, 0, one, one, 0, 0, one, 0, 0, one, one, one, 0, 0, one, 0, 0, 0, 0, 0, one, 0, one, 0, 0, one, 0, 0, one, 0, one, 0, 0, 0, one, 0, one, 0, one, 0, 0, one, one, 0, one, 0, one, 0, 0, 0, 0, one, one, 0, one, 0, 0, one, 0, one, one, 0, one, 0, 0, 0, one, one, one, 0, one, 0, 0, one, one, one, one, 0, one, 0, 0, 0, 0, 0, 0, one, one, 0, 0, one, 0, 0, 0, one, one, 0, 0, 0, one, 0, 0, one, one, 0, 0, one, one, 0, 0, one, one, 0, 0, 0, 0, one, 0, one, one, 0, 0, one, 0, one, 0, one, one, 0, 0, 0, one, one, 0, one, one, 0, 0, one, one, one, 0, one, one, 0, 0, 0, 0, 0, one, one, one, 0, 0, one, 0, 0, one, one, one, 0, 0, 0, one, 0, one, one, one, 0, 0, one, one, 0, one, one, one, 0, 0, 0, 0, one, one, one, one, 0, 0, one, 0, one, one, one, one, 0, 0, 0, one, one, one, one, one, 0, 0, one, one, one, one, one, one, 0, 0, 0, 0, 0, 0, 0, 0, one, 0, one, 0, 0, 0, 0, 0, one, 0, 0, one, 0, 0, 0, 0, one, 0, one, one, 0, 0, 0, 0, one, 0, 0, 0, one, 0, 0, 0, one, 0, one, 0, one, 0, 0, 0, one, 0, 0, one, one, 0, 0, 0, one, 0, one, one, one, 0, 0, 0, one, 0, 0, 0, 0, one, 0, 0, one, 0, one, 0, 0, one, 0, 0, one, 0, 0, one, 0, one, 0, 0, one, 0, one, one, 0, one, 0, 0, one, 0, 0, 0, one, one, 0, 0, one, 0, one, 0, one, one, 0, 0, one, 0, 0, one, one, one, 0, 0, one, 0, one, one, one, one, 0, 0, one, 0, 0, 0, 0, 0, one, 0, one, 0, one, 0, 0, 0, one, 0, one, 0, 0, one, 0, 0, one, 0, one, 0, one, one, 0, 0, one, 0, one, 0, 0, 0, one, 0, one, 0, one, 0, one, 0, one, 0, one, 0, one, 0, 0, one, one, 0, one, 0, one, 0, one, one, one, 0, one, 0, one, 0, 0, 0, 0, one, one, 0, one, 0, one, 0, 0, one, one, 0, one, 0, 0, one, 0, one, one, 0, one, 0, one, one, 0, one, one, 0, one, 0, 0, 0, one, one, one, 0, one, 0, one, 0, one, one, one, 0, one, 0, 0, one, one, one, one, 0, one, 0, one, one, one, one, one, 0, one, 0, 0, 0, 0, 0, 0, one, one, 0, one, 0, 0, 0, 0, one, one, 0, 0, one, 0, 0, 0, one, one, 0, one, one, 0, 0, 0, one, one, 0, 0, 0, one, 0, 0, one, one, 0, one, 0, one, 0, 0, one, one, 0, 0, one, one, 0, 0, one, one, 0, one, one, one, 0, 0, one, one, 0, 0, 0, 0, one, 0, one, one, 0, one, 0, 0, one, 0, one, one, 0, 0, one, 0, one, 0, one, one, 0, one, one, 0, one, 0, one, one, 0, 0, 0, one, one, 0, one, one, 0, one, 0, one, one, 0, one, one, 0, 0, one, one, one, 0, one, one, 0, one, one, one, one, 0, one, one, 0, 0, 0, 0, 0, one, one, one, 0, one, 0, 0, 0, one, one, one, 0, 0, one, 0, 0, one, one, one, 0, one, one, 0, 0, one, one, one, 0, 0, 0, one, 0, one, one, one, 0, one, 0, one, 0, one, one, one, 0, 0, one, one, 0, one, one, one, 0, one, one, one, 0, one, one, one, 0, 0, 0, 0, one, one, one, one, 0, one, 0, 0, one, one, one, one, 0, 0, one, 0, one, one, one, one, 0, one, one, 0, one, one, one, one, 0, 0, 0, one, one, one, one, one, 0, one, 0, one, one, one, one, one, 0, 0, one, one, one, one, one, one, 0, one, 0, 0, 0, 0, one, 0, one, 0, one, 0, 0, 0, one, 0, one, one, one, 0, 0, 0, one, 0, one, 0, 0, one, 0, 0, one, 0, one, one, 0, one, 0, 0, one, 0, one, 0, one, one, 0, 0, one, 0, one, one, one, one, 0, 0, one, 0, one, 0, 0, 0, one, 0, one, 0, one, one, 0, 0, one, 0, one, 0, one, 0, one, 0, one, 0, one, 0, one, one, one, 0, one, 0, one, 0, one, 0, 0, one, one, 0, one, 0, one, 0, one, one, one, 0, one, 0, one, one, one, one, one, 0, one, 0, one, 0, 0, 0, 0, one, one, 0, one, one, 0, 0, 0, one, one, 0, one, 0, one, 0, 0, one, one, 0, one, one, one, 0, 0, one, one, 0, one, 0, 0, one, 0, one, one, 0, one, one, 0, one, 0, one, one, 0, one, 0, one, one, 0, one, one, 0, one, one, one, one, 0, one, one, 0, one, 0, 0, 0, one, one, one, 0, one, one, 0, 0, one, one, one, 0, one, 0, one, 0, one, one, one, 0, one, one, one, 0, one, one, one, 0, one, 0, 0, one, one, one, one, 0, one, one, 0, one, one, one, one, 0, one, 0, one, one, one, one, one, 0, one, one, one, one, one, one, one, 0, one, 0, 0, 0, 0, 0, 0, one, one, one, 0, 0, 0, 0, 0, one, one, 0, one, 0, 0, 0, 0, one, one, one, one, 0, 0, 0, 0, one, one, 0, 0, one, 0, 0, 0, one, one, one, 0, one, 0, 0, 0, one, one, 0, one, one, 0, 0, 0, one, one, one, one, one, 0, 0, 0, one, one, 0, 0, 0, one, 0, 0, one, one, one, 0, 0, one, 0, 0, one, one, 0, one, 0, one, 0, 0, one, one, one, one, 0, one, 0, 0, one, one, 0, 0, one, one, 0, 0, one, one, one, 0, one, one, 0, 0, one, one, 0, one, one, one, 0, 0, one, one, one, one, one, one, 0, 0, one, one, 0, 0, 0, 0, one, 0, one, one, one, 0, 0, 0, one, 0, one, one, 0, one, 0, 0, one, 0, one, one, one, one, 0, 0, one, 0, one, one, 0, 0, one, 0, one, 0, one, one, one, 0, one, 0, one, 0, one, one, 0, one, one, 0, one, 0, one, one, one, one, one, 0, one, 0, one, one, 0, 0, 0, one, one, 0, one, one, one, 0, 0, one, one, 0, one, one, 0, one, 0, one, one, 0, one, one, one, one, 0, one, one, 0, one, one, 0, 0, one, one, one, 0, one, one, one, 0, one, one, one, 0, one, one, 0, one, one, one, one, 0, one, one, one, one, one, one, one, 0, one, one, 0, 0, 0, 0, 0, one, one, one, one, 0, 0, 0, 0, one, one, one, 0, one, 0, 0, 0, one, one, one, one, one, 0, 0, 0, one, one, one, 0, 0, one, 0, 0, one, one, one, one, 0, one, 0, 0, one, one, one, 0, one, one, 0, 0, one, one, one, one, one, one, 0, 0, one, one, one, 0, 0, 0, one, 0, one, one, one, one, 0, 0, one, 0, one, one, one, 0, one, 0, one, 0, one, one, one, one, one, 0, one, 0, one, one, one, 0, 0, one, one, 0, one, one, one, one, 0, one, one, 0, one, one, one, 0, one, one, one, 0, one, one, one, one, one, one, one, 0, one, one, one, 0, 0, 0, 0, one, one, one, one, one, 0, 0, 0, one, one, one, one, 0, one, 0, 0, one, one, one, one, one, one, 0, 0, one, one, one, one, 0, 0, one, 0, one, one, one, one, one, 0, one, 0, one, one, one, one, 0, one, one, 0, one, one, one, one, one, one, one, 0, one, one, one, one, 0, 0, 0, one, one, one, one, one, one, 0, 0, one, one, one, one, one, 0, one, 0, one, one, one, one, one, one, one, 0, one, one, one, one, one, 0, 0, one, one, one, one, one, one, one, 0, one, one, one, one, one, one, 0, one, one, one, one, one, one, one, one, one, one, one, one, one, one, one]}
+\begin{lstlisting}
+ !"#$%&'()*+,-./0123456789:;<=>?@ABCDEFGHIJKLMNOPQRSTUVWXYZ[\]^_`abcdefghijklmnopqrstuvwxyz{|}~¡¢£¤¥¦§¨©ª«¬®¯°±²³´µ¶·¸¹º»¼½¾¿ÀÁÂÃÄÅÆÇÈÉÊËÌÍÎÏÐÑÒÓÔÕÖ×ØÙÚÛÜÝÞßàáâãäåæçèéêëìíîïðñòóôõö÷øùúûüýþÿ
+True
+\end{lstlisting}
+
+The Hamming code operates on four bits at a time. A four-bit sequence is
+called a \emph{nibble} (sometimes \emph{nybble}). To encode a list of
+bits (such as that produced by \texttt{str2bits}), we break the list
+into nibbles and encode each nibble separately.
+
+To transform each nibble, we interpret the nibble as a 4-vector and we
+multiply it by the generating matrix \(G\). One strategy is to convert
+the list of bits into a list of 4-vectors, and then use, say, a
+comprehension to multiply each vector in that list by \(G\). In keeping
+with our current interest in matrices, we will instead convert the list
+of bits into a matrix \(B\) each column of which is a 4-vector
+representing a nibble. Thus a sequence of \(4n\) bits is represented by
+a \(4 \times n\) matrix \(P\). The module \texttt{bitutil} defines a
+procedure \texttt{bits2mat(bits)} that transforms a list of bits into a
+matrix, and a procedure \texttt{mat2bits(A)} that transforms a matrix
+\(A\) back into a list of bits.
+
+\hypertarget{task-4.14.9}{%
+\subsection{Task 4.14.9}\label{task-4.14.9}}
+
+Try converting a string to a list of bits to a matrix \(P\) and back to
+a string, and verify that you get the string you started with.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{s }\OperatorTok{=} \StringTok{"Hello world!"}
+\BuiltInTok{print}\NormalTok{(s }\OperatorTok{==}\NormalTok{ bits2str(mat2bits(bits2mat(str2bits(s)))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+True
+\end{lstlisting}
+
+\hypertarget{task-4.14.10}{%
+\subsection{Task 4.14.10}\label{task-4.14.10}}
+
+Putting these procedures together, compute the matrix \(P\) which
+represents the string ``I'm trying to free your mind, Neo. But I can
+only show you the door. You're the one that has to walk through it.''
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{s }\OperatorTok{=} \StringTok{"I\textquotesingle{}m trying to free your mind, Neo. But I can only show you the door. You\textquotesingle{}re the one that has to walk through it."}
+\NormalTok{P }\OperatorTok{=}\NormalTok{ bits2mat(str2bits(s))}
+\BuiltInTok{print}\NormalTok{(P) }
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+
+         0   1  10 100 101 102 103 104 105 106 107 108 109  11 110 111 112 113 114 115 116 117 118 119  12 120 121 122 123 124 125 126 127 128 129  13 130 131 132 133 134 135 136 137 138 139  14 140 141 142 143 144 145 146 147 148 149  15 150 151 152 153 154 155 156 157 158 159  16 160 161 162 163 164 165 166 167 168 169  17 170 171 172 173 174 175 176 177 178 179  18 180 181 182 183 184 185 186 187 188 189  19 190 191 192 193 194 195 196 197 198 199   2 20 200 201 202 203 204 205 206 207 208 209  21 210 211 212 213 214 215 216 217 218 219  22 220 221 222 223  23  24  25 26  27  28  29   3  30  31  32  33  34  35 36  37  38  39   4  40  41  42  43  44  45 46  47  48  49   5  50  51  52  53  54  55  56  57 58  59 6  60  61  62  63  64  65  66  67 68  69   7  70  71  72  73  74  75 76  77  78  79   8 80  81  82  83  84  85  86  87 88  89   9  90  91  92  93  94  95  96  97 98  99
+     ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+ 0  |  one   0   0 one one   0   0 one   0 one one   0   0 one one one one   0 one one   0   0   0 one one   0   0 one   0   0   0   0   0 one   0 one one   0   0 one   0   0   0   0 one one one one   0 one one one   0   0 one one   0   0   0   0   0 one   0   0 one   0   0   0   0 one   0   0   0 one   0   0   0   0 one   0   0   0 one   0   0 one   0   0   0   0 one one   0 one one   0   0   0 one one   0   0   0   0 one one one   0   0   0 one   0 one  0   0   0   0 one   0   0   0 one one   0   0 one one one   0   0   0   0   0 one   0   0   0 one   0   0 one one   0  0   0   0   0   0   0 one one   0 one   0  0   0 one one one one   0 one one   0 one  0   0 one   0   0 one   0   0   0   0   0   0   0  0   0 0   0   0 one   0 one   0   0   0  0   0   0   0   0 one one   0 one  0   0 one   0   0  0   0 one   0 one   0   0   0  0   0 one one   0   0   0   0   0 one one  0   0
+ 1  |    0   0 one one one   0 one one one one one   0 one one   0 one one one   0 one   0 one   0 one   0   0 one   0 one   0 one   0 one one one one one one one one one one   0 one   0   0   0 one one   0 one one one one one   0 one one   0 one   0 one   0 one   0 one   0 one one one one one one   0 one   0 one   0 one one   0 one   0 one   0 one   0 one   0 one one   0 one one one   0 one   0 one one one one   0 one one one   0 one   0 one one one one  0   0 one   0 one   0 one one one one one one   0 one one one   0 one   0 one   0 one   0   0 one one one one one one  0 one one one one one one   0 one   0 one  0 one   0 one   0 one one   0 one one one  0 one   0 one one   0 one one one   0 one   0 one  0 one 0 one   0   0 one one one one one  0 one one one   0   0 one   0 one  0 one   0   0   0  0 one one one   0 one one one  0 one one one one one one   0 one   0 one  0 one
+ 2  |    0 one   0   0 one   0 one one one one one   0   0 one   0 one one one one one   0   0 one one   0   0 one one one   0   0 one one one one one one one   0 one one   0   0   0   0 one   0 one one one one one   0   0 one one one one   0   0 one one   0 one one one   0   0 one one one one one one one   0   0 one one one   0 one   0 one one one   0   0   0 one one   0 one   0 one   0   0 one one one one one   0   0 one one   0 one one one   0 one one  0   0   0 one one   0 one   0 one one one   0 one one one one   0 one   0   0   0 one one one one one   0 one one one  0   0 one one   0   0 one one one one one  0   0   0 one one one one one one   0 one  0   0 one one one   0 one one one one one one   0  0   0 0 one one one one one one one   0  0   0   0   0 one one one one one  0   0   0 one one  0   0   0 one   0 one one one  0   0 one one one one one one one   0 one  0   0
+ 3  |  one   0   0   0   0 one   0 one   0   0   0   0   0   0 one   0 one   0   0   0   0   0   0   0 one one   0   0   0   0   0   0   0 one   0   0 one   0   0   0 one   0   0   0 one   0 one one   0   0   0   0   0   0   0   0   0   0   0   0   0   0 one   0   0   0   0   0 one one   0 one   0   0   0   0   0   0   0   0 one   0   0   0   0   0   0   0 one   0   0   0   0   0   0   0   0   0   0 one   0   0   0   0   0   0   0   0 one   0 one   0   0  0   0   0   0   0 one   0   0   0 one   0   0   0   0   0   0 one   0   0   0 one   0   0   0   0 one   0   0 one   0  0   0   0   0   0   0   0   0   0   0   0  0   0 one   0 one one   0   0   0   0   0  0   0 one   0   0 one   0 one   0   0   0 one   0  0   0 0 one   0   0   0 one   0 one   0  0   0   0   0   0   0   0   0   0  0   0 one   0   0  0   0   0   0   0   0 one   0  0   0   0 one   0 one   0 one   0 one   0  0   0
+\end{lstlisting}
+
+\begin{lstlisting}
+\end{lstlisting}
+
+Imagine that you are transmitting the above message over a noisy
+communication channel. This channel transmits bits, but occasionally
+sends the wrong bit, so one becomes 0 and vice versa.
+
+The module \texttt{bitutil} provides a procedure \texttt{noise(A,\ s)}
+that, given a matrix \(A\) and a probability parameter \(s\), returns a
+matrix with the same row- and column-labels as \(A\) but with entries
+chosen from \(GF(2)\) according to the probability distribution
+\texttt{\{one:s,\ 0:1-s\}}. For example, each entry of
+\texttt{noise(A,\ 0.02)} will be \texttt{one} with probability 0.02 and
+zero with probability 0.98.
+
+\hypertarget{task-4.14.11}{%
+\subsection{Task 4.14.11}\label{task-4.14.11}}
+
+To simulate the effects of the noisy channel when transmitting your
+matrix \(P\), use \texttt{noise(P,\ 0.02)} to create a random matrix
+\(E\). The matrix \(E+P\) will introduce some errors. To see the effect
+of the noise, convert the perturbed matrix back to text.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{E }\OperatorTok{=}\NormalTok{ noise(P, }\FloatTok{0.02}\NormalTok{)}
+\NormalTok{errorP }\OperatorTok{=}\NormalTok{ P }\OperatorTok{+}\NormalTok{ E}
+\BuiltInTok{print}\NormalTok{(bits2str(mat2bits(errorP)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+I'm$pv}ing to free y/ur0mind, Nto.`But K can onhY sh-w xou thå door. You'pM$the one ôhat hás to walo thrOugh0yt.
+\end{lstlisting}
+
+\begin{lstlisting}
+\end{lstlisting}
+
+Looks pretty bad, huh? Let's try to use the Hamming code to fix that.
+Recall that to encode a word represented by the row vector \(\bm{p}\),
+we compute \(G*\bm{p}\).
+
+\hypertarget{task-4.14.12}{%
+\subsection{Task 4.14.12}\label{task-4.14.12}}
+
+Encode the words represented by the columns of the matrix \(P\),
+obtaining a matrix \(C\). You should not use any loops or comprehensions
+to compute \(C\) from \(P\). How many bits represented the text before
+the encoding? How many after?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{C }\OperatorTok{=}\NormalTok{ G }\OperatorTok{*}\NormalTok{ P}
+\NormalTok{unencoded\_size }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(mat2bits(P))}
+\BuiltInTok{print}\NormalTok{(unencoded\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+896
+\end{lstlisting}
+
+\begin{lstlisting}
+\end{lstlisting}
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{encoded\_size }\OperatorTok{=} \BuiltInTok{len}\NormalTok{(mat2bits(C))}
+\BuiltInTok{print}\NormalTok{(encoded\_size)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+1568
+\end{lstlisting}
+
+\hypertarget{task-4.14.13}{%
+\subsection{Task 4.14.13}\label{task-4.14.13}}
+
+Imagine that you send the encoded data over the noisy channel. Use
+\texttt{noise} to construct a noise matrix of the appropriate dimensions
+with error probability 0.02, and add it to \(C\) to obtain a perturbed
+matrix \(CTILDE\). Without correcting the errors, decode \(CTILDE\) and
+convert it to text to see how garbled the information is.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\NormalTok{CTILDE }\OperatorTok{=}\NormalTok{ noise(C, }\FloatTok{0.02}\NormalTok{) }\OperatorTok{+}\NormalTok{ C}
+\BuiltInTok{print}\NormalTok{(bits2str(mat2bits(R}\OperatorTok{*}\NormalTok{CTILDE)))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+I'm`tryinf to fr%e your minl, Neo® But Iãaî only shgw iou the donr. You're the one that Has to walk through it*
+\end{lstlisting}
+
+\hypertarget{task-4.14.14}{%
+\subsection{Task 4.14.14}\label{task-4.14.14}}
+
+In this task, you are to write a one-line procedure \texttt{correct(A)}
+with the following spec:
+
+\begin{itemize}
+\item \textit{input:} a matrix $A$ each column of which differs from a codeword in at most one bit
+\item \textit{output:} a matrix whose columns are the corresponding valid codewords.
+\end{itemize}
+
+The procedure should contain no loops or comprehensions. Just use
+matrix-matrix multiplications and matrix-matrix additions together with
+a procedure you have written in this lab.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\KeywordTok{def}\NormalTok{ correct(A):}
+  \ControlFlowTok{return}\NormalTok{ A}\OperatorTok{+}\NormalTok{find\_error\_matrix(H}\OperatorTok{*}\NormalTok{A)}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{task-4.14.15}{%
+\subsection{Task 4.14.15}\label{task-4.14.15}}
+
+Apply your procedure \texttt{correct(A)} to \texttt{CTILDE} to get a
+matrix of codewords. Decode this matrix of codewords using the matrix
+\emph{R} from \texttt{Task\ 4.14.3}, obtaining a matrix whose columns
+are 4-vectors. Then derive the string corresponding to these 4-vectors.
+
+Did the Hamming code succeed in fixing all of the corrupted characters?
+If not, can you explain why?
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\BuiltInTok{print}\NormalTok{(bits2str(mat2bits(R }\OperatorTok{*}\NormalTok{ correct(CTILDE))))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+I'm`trying to fr5e your mind, Neo. But I can only shgw you the door. You're the one that has to walk through it.
+\end{lstlisting}
+
+The Hamming code did not succeed in fixing \emph{all} of the characters.
+This is because the \texttt{correct(A)} procedure assumed at most one
+bit error for each nibble in \(\bm{\tilde{c}}\). If there was more than
+a single bit error for a particular nibble, the error syndrome would map
+to the incorrect index.
+
+\hypertarget{task-4.14.16}{%
+\subsection{Task 4.14.16}\label{task-4.14.16}}
+
+Repeat this process with different error probabilities to see how well
+the Hamming code does under different circumstances.
+
+\begin{Shaded}
+\begin{Highlighting}[numbers=left,,]
+\ControlFlowTok{for}\NormalTok{ error }\KeywordTok{in} \BuiltInTok{range}\NormalTok{(}\DecValTok{0}\NormalTok{, }\DecValTok{21}\NormalTok{, }\DecValTok{1}\NormalTok{):}
+\NormalTok{  noiseMat }\OperatorTok{=}\NormalTok{ noise(C, error}\OperatorTok{*}\FloatTok{0.01}\NormalTok{)}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"Probability of error: "} \OperatorTok{+} \BuiltInTok{str}\NormalTok{(error) }\OperatorTok{+} \StringTok{"\%"}\NormalTok{)}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"Decoded string without any corrections: "} \OperatorTok{+}\NormalTok{ bits2str(mat2bits(R }\OperatorTok{*}\NormalTok{ (C }\OperatorTok{+}\NormalTok{ noiseMat))))}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"Decoded string with attempted corrections: "} \OperatorTok{+}\NormalTok{ bits2str(mat2bits(R }\OperatorTok{*}\NormalTok{ correct(C }\OperatorTok{+}\NormalTok{ noiseMat))))}
+  \BuiltInTok{print}\NormalTok{(}\StringTok{"{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}\CharTok{\textbackslash{}n}\StringTok{"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{lstlisting}
+Probability of error: 0%
+Decoded string without any corrections: I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it.
+--------------------
+
+Probability of error: 1%
+Decoded string without any corrections: I'm trying to free your mind, Neo. ButI cqn only show you the door, YoU're the one that has to wa,k througj it.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm trying to free your mind, Neo. But I can only show you the door. You're the one that has to walk through it.
+--------------------
+
+Probability of error: 2%
+Decoded string without any corrections: I#m tzyhng to$æree you2 m+nd, Neo.(But i cao!Onlh wnow you the!dooz. You§re the onu that has to wamk through iU.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm trying to free your mind, Neo. But I can only sfow you the door. You're the one that has to walk through it.
+--------------------
+
+Probability of error: 3%
+Decoded string without any corrections: I'm tryhNg to free yntr miîd, Neo. Âut M$Can only sxW$yow the door. You'rç!the one$uhat hap to valk through yt
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm tryiNg to free your mind, Neo. But I can only show you the door. You're the one that hap to walk through it.
+--------------------
+
+Probability of error: 4%
+Decoded string without any corrections: I'm trymng DO freey/ur mind, Neo. RuV Iban mnmy!slow you txa`tor.You'rg the onE that hás To walc ôhrougH ét>
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm 4rying Do free your mind, Neo. But I can only show you the door. You're the one that has To walk through it.
+--------------------
+
+Probability of error: 5%
+Decoded string without any corrections: I'}"trymng to free {ur íind, %o.Bu|$I"san only s)gw }ou$4He äoor.0[ot&Re)the g~ethat has tm walk thr*ugi it&
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm trying to free your miîd, Neo. Bu| I"can only show you 4he door. You're)the one that has to walk thr:ugh it.
+--------------------
+
+Probability of error: 6%
+Decoded string without any corrections: Ie$lriiçg tof2eg"ùo5r0mind<0NEo.`Bu4I(can ov|y"sèG7xou the dmnr. You'R the`ïne that ha{(tm ual tjrough m$.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: Ie`tryigg toÀf"ee ùour mind, Neo. Bu< I can on<y sÈow you thg dmor. You'r the`one that has to wal through l.
+--------------------
+
+Probability of error: 7%
+Decoded string without any corrections: M&m$trxifg$tm fRee hotr`m)^d<N`on Bu4 I sqn oney show"you t( $xînr.(Yku/re the1ooa u(aT has Po alm t  souwh it.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I$m%trying to free your`mi^d| N`on But I can oney show yo} th`%joor, You're vhe1one that haq po waLl trouUh it.
+--------------------
+
+Probability of error: 8%
+Decoded string without any corrections: I'm"Trymn&"tofree y}wRhOijf,"Nen.2CuT$Y cyn Zol9shou y1!4ze$doírn!YoU%2g0thepknebt`Ad&iás to"7x¬i Phrnugi0i4n
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'-#Trying to free your Nind, Neo. But I cñn Xnl) show yo5 the$door. You're thePone that.hás to 7hi through it.
+--------------------
+
+Probability of error: 9%
+Decoded string without any corrections: H#M vryÉmç`þï¨nreaykur -ind,0\åo. hud M Aan0mnl9 s`gw$yow 6`edor.`Yot're(thE îe ôhit ,a{(4o w¡lê"tLrg}gÈht.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm tryÉmg zo freayour mind, Nåo. Iu$ I can°only show$you 4he eoor. You're the îe ôhat mas $o wlë througÂit.
+--------------------
+
+Probability of error: 10%
+Decoded string without any corrections: K'm vrzing¢Tofrd  yurmiîd, Fe, B}U I0cef oolyÑhí? yoUxhadonòn&_ou'rew`u0nb÷pHet his(uïwc~; tlroqg( iv.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm trzing"tobre` your mind, Geo. B}T I cag only Ãho yoUzhedoor.&Wou're$whUpo`õ that has tï wal; throug8 it.
+--------------------
+
+Probability of error: 11%
+Decoded string without any corrections: h/m nrymnGàün$^pmw qourMind, NdBÕt(H"bEf`wn.]óXkwy?u p(e`dgor*!Yo5'pä$txi%onev-atzeC un0Ua`k 0lz/t7h"su.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: i'm zrùmnÇÀto$Vree youvmind,$Neo.°Bt I"jQnponlY sowy?u the`door.#You're$thi%onet=at°haÃ tl Wabk tlzou7h ÷q.
+--------------------
+
+Probability of error: 12%
+Decoded string without any corrections: I¦o tx9inäáz föuá {+4r$eiv$,Geo
+ cut i¡bqn"g.lqàsho#yïõehgà$o?j.Yïw&($ 4hå"on% 4hatHas0uo w@ík thvoueh Iu'
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'm t|yin`Ézÿ fr5e ykur ei6d, Geo*But i jan"onlyðshow#you¤E(gÀdg?r.PYown)e 4h¥#one 4hat has to wdlK through Iw'
+--------------------
+
+Probability of error: 13%
+Decoded string without any corrections: I#d6r)ngtk fseEqn÷s }on@l Êug®4But i(Bin"o.lù,rxÿ!9lubôhm ¥kcr.O÷'r`tö`a$o;%àt`Ut¨`às ôO r@mip*rmåg( y4®
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I'd°'rwingtk fqeE youw mgndl Keo. But I can"onhy.shÿw )lubtHm oar. ]ou%r`pt`e$o;eÀthQt hds tW paiitjrmåGh ùt.
+--------------------
+
+Probability of error: 14%
+Decoded string without any corrections: I M`Tra@ng¡ôM"nzee!yo}r min@*Neo~(Ut0I#af n6dy sh¯÷$áOu vüe"Dogz>`Qoõ'åxo¡Mrg 4x!t0jk} to¥qlo!t`zOUn¬yå 
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I ]ptrqAng to"oree your min`"N%o~(Up0I kan o¶ly shw$©ouvüe Togr~ Qou'e xk Ï`e thatho} to%alk ThroEo®i¤ 
+--------------------
+
+Probability of error: 15%
+Decoded string without any corrections: é&er]Iïg$^O!vR5u!1na²2héf@$*nek/"5tÀI ãqjhîì|yqx}g+x_5(pÌ( lGor   iu'pm"vde onmyõ(@t¢ø û üoi~hhk õ`pOôfh(cq.
+Decoded string with attempted corrections: Lm.$ryYng%^`dÒ55 )luhÉfP,.~eo+ ¢%tÀI cñkpnlly sø?u+y_u t( moor.°    éu're"wfe$onm{äAt¢ø!{ ìoé>lhk qhq_ägh)gq.
+--------------------
+
+Probability of error: 16%
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string without any corrections: Q+M"às19~ç!t.(fvee0y'ur iigaì@'o. JÔt`"caN(o*lS!âj¿u0uoñ¤wndfoMz&ow§Pm)T å îJD`xit yikpowálK pH[oefhqð.
+Decoded string with attempted corrections: I)m äwy9~g tl(free 9our migaÌPF¥o.(Jt J can o.lw æhÿw toÕ%wLd foOr.&\ïu'ql)t1e êjetxit øaspoÀwalK though9t.
+--------------------
+
+Probability of error: 17%
+Decoded string without any corrections: gi!urié"d"TÝ f2gk0uëõ»mãbl'uí*(bítdX can`/~,yóàm`+n}ål <kÏò& Y{u/2uAFLu&nu!e8dØ)acwb5o"waÆk tüRcugx aöC
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: !gh!tryi`d tÙ f2ek wïuMç`l'Geo. bít I can`o~ly ãhmw )oyád_ 4ïr. Y?u/25PD\])fne u8dÙ+!as $o ÷ak tÜRbugX itÃ
+--------------------
+
+Probability of error: 18%
+Decoded string without any corrections: I(ðw69©n tm eåå#9g¥*(m|zæ-¢\fo 0FqI(cAj4/~li s¨gá+¯u$æj¥fo~r:p/uoRcm|øqoÿ%(t9id!#aó(eî çlkVhjowGøHu
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: I(ðwry¹ng tl Eõe#9o¥*(mmjô©£Nfo 0BuwI)ganp/nl) sgÀ)u%äh§folr*P/uoBc-TèSoÿ% t=it%cas`$l wglkTh"muGø Itð
+--------------------
+
+Probability of error: 19%
+Decoded string without any corrections: y&}60Cp)n'ög gxeg>åuÒ =+>L(4
+ï(BátYÂg*!mþhx$ó`owYO1õ(gdëkrâ(qnuÆómdÝ ç>ut(e¤ pc3²¶J0wq}zDhðï]sx(at.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: ù'm~$Aping ôo fxeg>auÒ )>L,4
+ï)Bå4Ù gj oúi| sdowyKu°thedokrà(qouÎrm¨tÜ oe tha¤ `a3°kpw1ÿ{ h²¯uWX(it.
+--------------------
+
+Probability of error: 20%
+Decoded string without any corrections: Ø3 â2xù*Å!vo1fzekøïw=}nçf ^eo,`Rtü¢M@`Qn$wm97}j/÷ygñÜä(M 5Ggr.2èMuôá sW`Oná phc~hëk£æÇ`e¿mk¢äÿ6¯1cè Ûw.
+\end{lstlisting}
+
+\begin{lstlisting}
+Decoded string with attempted corrections: Ø" ârxù*wo f{åkyovÉ=m.g&"Neo-`|tI@ An$_nl)&}jowùguÎd(e4eor.pÀLu¥|`$cU olå phazhë+#ä`w¿lk#Äûr¯5ch Ùw.
+--------------------
+\end{lstlisting}
+
+
+
+\end{document}

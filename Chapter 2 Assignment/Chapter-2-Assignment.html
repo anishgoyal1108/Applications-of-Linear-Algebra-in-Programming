@@ -1,0 +1,1101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.335">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Anish Goyal">
+<meta name="dcterms.date" content="2023-01-30">
+
+<title>Chapter 2 Assignment</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="Chapter-2-Assignment_files/libs/clipboard/clipboard.min.js"></script>
+<script src="Chapter-2-Assignment_files/libs/quarto-html/quarto.js"></script>
+<script src="Chapter-2-Assignment_files/libs/quarto-html/popper.min.js"></script>
+<script src="Chapter-2-Assignment_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="Chapter-2-Assignment_files/libs/quarto-html/anchor.min.js"></script>
+<link href="Chapter-2-Assignment_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="Chapter-2-Assignment_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="Chapter-2-Assignment_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="Chapter-2-Assignment_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="Chapter-2-Assignment_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body>
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+<div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+</div>
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<div class="quarto-title-block"><div><h1 class="title">Chapter 2 Assignment</h1><button type="button" class="btn code-tools-button dropdown-toggle" id="quarto-code-tools-menu" data-bs-toggle="dropdown" aria-expanded="false"><i class="bi"></i> Code</button><ul class="dropdown-menu dropdown-menu-end" aria-labelelledby="quarto-code-tools-menu"><li><a id="quarto-show-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Show All Code</a></li><li><a id="quarto-hide-all-code" class="dropdown-item" href="javascript:void(0)" role="button">Hide All Code</a></li><li><hr class="dropdown-divider"></li><li><a id="quarto-view-source" class="dropdown-item" href="javascript:void(0)" role="button">View Source</a></li></ul></div></div>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Anish Goyal </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">January 30, 2023</p>
+    </div>
+  </div>
+  
+    
+  </div>
+  
+
+</header>
+<nav id="TOC" role="doc-toc">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#vector-addition-practice" id="toc-vector-addition-practice">Vector addition practice</a>
+  <ul>
+  <li><a href="#problem-2.14.1" id="toc-problem-2.14.1">Problem 2.14.1</a></li>
+  <li><a href="#problem-2.14.2" id="toc-problem-2.14.2">Problem 2.14.2</a></li>
+  <li><a href="#problem-2.14.3" id="toc-problem-2.14.3">Problem 2.14.3</a></li>
+  </ul></li>
+  <li><a href="#expressing-one-gf2-vector-as-a-sum-of-others" id="toc-expressing-one-gf2-vector-as-a-sum-of-others">Expressing one <span class="math inline">\(GF(2)\)</span> vector as a sum of others</a>
+  <ul>
+  <li><a href="#problem-2.14.4" id="toc-problem-2.14.4">Problem 2.14.4</a></li>
+  <li><a href="#problem-2.14.5" id="toc-problem-2.14.5">Problem 2.14.5</a></li>
+  </ul></li>
+  <li><a href="#finding-a-solution-to-linear-equations-over-gf2" id="toc-finding-a-solution-to-linear-equations-over-gf2">Finding a solution to linear equations over <span class="math inline">\(GF(2)\)</span></a>
+  <ul>
+  <li><a href="#problem-2.14.6" id="toc-problem-2.14.6">Problem 2.14.6</a></li>
+  </ul></li>
+  <li><a href="#formulating-equations-using-dot-product" id="toc-formulating-equations-using-dot-product">Formulating equations using dot-product</a>
+  <ul>
+  <li><a href="#problem-2.14.7" id="toc-problem-2.14.7">Problem 2.14.7</a></li>
+  </ul></li>
+  <li><a href="#plotting-lines-and-segments" id="toc-plotting-lines-and-segments">Plotting lines and segments</a>
+  <ul>
+  <li><a href="#problem-2.14.8" id="toc-problem-2.14.8">Problem 2.14.8</a></li>
+  </ul></li>
+  <li><a href="#practice-with-dot-product" id="toc-practice-with-dot-product">Practice with dot-product</a>
+  <ul>
+  <li><a href="#problem-2.14.9" id="toc-problem-2.14.9">Problem 2.14.9</a></li>
+  </ul></li>
+  <li><a href="#writing-procedures-for-the-vec-class" id="toc-writing-procedures-for-the-vec-class">Writing procedures for the <code>Vec</code> class</a>
+  <ul>
+  <li><a href="#problem-2.14.10" id="toc-problem-2.14.10">Problem 2.14.10</a>
+  <ul>
+  <li><a href="#docstrings" id="toc-docstrings">Docstrings</a></li>
+  <li><a href="#doctests" id="toc-doctests">Doctests</a></li>
+  <li><a href="#testing-vec.py" id="toc-testing-vec.py">Testing <code>vec.py</code></a></li>
+  </ul></li>
+  </ul></li>
+  </ul>
+</nav>
+<div style="page-break-after: always;"></div>
+<section id="problems" class="level2 unnumbered unlisted">
+<h2 class="unnumbered unlisted anchored" data-anchor-id="problems"><strong>2.14 Problems</strong></h2>
+</section>
+<section id="vector-addition-practice" class="level2">
+<h2 class="anchored" data-anchor-id="vector-addition-practice">Vector addition practice</h2>
+<section id="problem-2.14.1" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.1">Problem 2.14.1</h3>
+<p>For vectors <span class="math inline">\(v = [-1, 3]\)</span> and <span class="math inline">\(u = [0, 4]\)</span>, find the vectors <span class="math inline">\(v+u\)</span>, <span class="math inline">\(v-u\)</span>, and <span class="math inline">\(3v-2u\)</span>. Draw these arrows as arrows on the same graph.</p>
+<p><span class="math inline">\(v+u\)</span> = [-1, 7]<br>
+<span class="math inline">\(v-u\)</span> = [-1, -1]<br>
+<span class="math inline">\(3v-2u\)</span> = [-3, 1]</p>
+<div class="cell" data-execution_count="1">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb1-1"><a href="#cb1-1"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb1-2"><a href="#cb1-2"></a></span>
+<span id="cb1-3"><a href="#cb1-3"></a>v <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb1-4"><a href="#cb1-4"></a>u <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">4</span>]</span>
+<span id="cb1-5"><a href="#cb1-5"></a>v_plus_u <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>]</span>
+<span id="cb1-6"><a href="#cb1-6"></a>v_minus_u <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb1-7"><a href="#cb1-7"></a>three_v_minus_two_u <span class="op">=</span> [<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>]</span>
+<span id="cb1-8"><a href="#cb1-8"></a></span>
+<span id="cb1-9"><a href="#cb1-9"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v[<span class="dv">0</span>], v[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v'</span>)</span>
+<span id="cb1-10"><a href="#cb1-10"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, u[<span class="dv">0</span>], u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'green'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'u'</span>)</span>
+<span id="cb1-11"><a href="#cb1-11"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v_plus_u[<span class="dv">0</span>], v_plus_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v+u'</span>)</span>
+<span id="cb1-12"><a href="#cb1-12"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v_minus_u[<span class="dv">0</span>], v_minus_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'purple'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v-u'</span>)</span>
+<span id="cb1-13"><a href="#cb1-13"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, three_v_minus_two_u[<span class="dv">0</span>], three_v_minus_two_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'orange'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'3v-2u'</span>)</span>
+<span id="cb1-14"><a href="#cb1-14"></a></span>
+<span id="cb1-15"><a href="#cb1-15"></a>plt.xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb1-16"><a href="#cb1-16"></a>plt.ylim(<span class="op">-</span><span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb1-17"><a href="#cb1-17"></a></span>
+<span id="cb1-18"><a href="#cb1-18"></a>plt.legend()</span>
+<span id="cb1-19"><a href="#cb1-19"></a>plt.show()</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-2-Assignment_files/figure-html/cell-2-output-1.png" width="573" height="416"></p>
+</div>
+</div>
+</section>
+<section id="problem-2.14.2" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.2">Problem 2.14.2</h3>
+<p>Given the vectors <span class="math inline">\(v = [2, -1, 5]\)</span> and <span class="math inline">\(u = [-1, 1, 1]\)</span>, find the vectors <span class="math inline">\(v+u\)</span>, <span class="math inline">\(v-u\)</span>, <span class="math inline">\(2v-u\)</span>, and <span class="math inline">\(v+2u\)</span>.</p>
+<p><span class="math inline">\(v+u = [1, 0, 6]\)</span><br>
+<span class="math inline">\(v-u = [3, -2, 4]\)</span> &nbsp; <span class="math inline">\(2v-u = [5, -3, 9]\)</span><br>
+<span class="math inline">\(v+2u = [0, 1, 7]\)</span></p>
+</section>
+<section id="problem-2.14.3" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.3">Problem 2.14.3</h3>
+<p>For the vectors <span class="math inline">\(v=[0, one, one]\)</span> and <span class="math inline">\(u=[one, one, one]\)</span> over <span class="math inline">\(GF(2)\)</span>, find <span class="math inline">\(v+u\)</span> and <span class="math inline">\(v+u+u\)</span>.</p>
+<p><span class="math inline">\(v+u = [0, one, one] + [one, one, one] = [one, 0, 0]\)</span><br>
+<span class="math inline">\(v+u+u = [one, 0, 0] + [one, one, one] = [0, one, one]\)</span></p>
+</section>
+</section>
+<section id="expressing-one-gf2-vector-as-a-sum-of-others" class="level2">
+<h2 class="anchored" data-anchor-id="expressing-one-gf2-vector-as-a-sum-of-others">Expressing one <span class="math inline">\(GF(2)\)</span> vector as a sum of others</h2>
+<section id="problem-2.14.4" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.4">Problem 2.14.4</h3>
+<p>Here are six 7-vectors over <span class="math inline">\(GF(2)\)</span>:</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><strong>a</strong> = 1100000</td>
+<td><strong>d</strong> = 0001100</td>
+</tr>
+<tr class="even">
+<td><strong>b</strong> = 0110000</td>
+<td><strong>e</strong> = 0000110</td>
+</tr>
+<tr class="odd">
+<td><strong>c</strong> = 0011000</td>
+<td><strong>f</strong> = 0000011</td>
+</tr>
+</tbody>
+</table>
+<p>For each of the following vectors <span class="math inline">\(u\)</span>, find a subset of the above vectors whose sum is <span class="math inline">\(u\)</span>, or report that no such subset exists.</p>
+<ol type="1">
+<li><span class="math inline">\(u\)</span> = 0010010<br>
+</li>
+<li><span class="math inline">\(u\)</span> = 0100010<br>
+</li>
+</ol>
+<ol type="1">
+<li><span class="math inline">\(u\)</span> = <span class="math inline">\(c\)</span> + <span class="math inline">\(d\)</span> + <span class="math inline">\(e\)</span><br>
+</li>
+<li><span class="math inline">\(u\)</span> = <span class="math inline">\(b\)</span> + <span class="math inline">\(c\)</span> + <span class="math inline">\(d\)</span> + <span class="math inline">\(e\)</span></li>
+</ol>
+</section>
+<section id="problem-2.14.5" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.5">Problem 2.14.5</h3>
+<p>Here are six 7-vectors over <span class="math inline">\(GF(2)\)</span>:</p>
+<table class="table">
+<tbody>
+<tr class="odd">
+<td><strong>a</strong> = 1110000</td>
+<td><strong>d</strong> = 0001110</td>
+</tr>
+<tr class="even">
+<td><strong>b</strong> = 0111000</td>
+<td><strong>e</strong> = 0000111</td>
+</tr>
+<tr class="odd">
+<td><strong>c</strong> = 0011100</td>
+<td><strong>f</strong> = 0000011</td>
+</tr>
+</tbody>
+</table>
+<p>For each of the following vectors <span class="math inline">\(u\)</span>, find a subset of the above vectors whose sum is <span class="math inline">\(u\)</span>, or report that no such subset exists.</p>
+<ol type="1">
+<li><span class="math inline">\(u\)</span> = 0010010<br>
+</li>
+<li><span class="math inline">\(u\)</span> = 0100010 &nbsp;</li>
+</ol>
+<ol type="1">
+<li><span class="math inline">\(u\)</span> = <span class="math inline">\(c\)</span> + <span class="math inline">\(d\)</span><br>
+</li>
+<li>There is no such subset.</li>
+</ol>
+</section>
+</section>
+<section id="finding-a-solution-to-linear-equations-over-gf2" class="level2">
+<h2 class="anchored" data-anchor-id="finding-a-solution-to-linear-equations-over-gf2">Finding a solution to linear equations over <span class="math inline">\(GF(2)\)</span></h2>
+<section id="problem-2.14.6" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.6">Problem 2.14.6</h3>
+<p>Find a vector <span class="math inline">\(x = [x_1, x_2, x_3, x_4]\)</span> over <span class="math inline">\(GF(2)\)</span> satisfying the following linear equations:<br>
+<span class="math inline">\(1100 \cdot x = 1\)</span><br>
+<span class="math inline">\(1010 \cdot x = 1\)</span> &nbsp; <span class="math inline">\(1111 \cdot x = 1\)</span><br>
+Show that <span class="math inline">\(x + 1111\)</span> also satisfies the equations.<br>
+</p>
+<p>A vector that satisfies the linear equation is <span class="math inline">\(x = [1, 0, 0, 0]\)</span>. <span class="math inline">\(1100 \cdot 1000 \stackrel{\checkmark}{=} 1\)</span><br>
+<span class="math inline">\(1010 \cdot 1000 \stackrel{\checkmark}{=} 1\)</span><br>
+<span class="math inline">\(1111 \cdot 1000 \stackrel{\checkmark}{=} 1\)</span><br>
+<span class="math inline">\((x=1000)+1111 = 0111\)</span> also satisfies the equations:<br>
+<span class="math inline">\(1100 \cdot 0111 \stackrel{\checkmark}{=} 0 + 1 + 0 + 0 \stackrel{\checkmark}{=} 1\)</span><br>
+<span class="math inline">\(1010 \cdot 0111 \stackrel{\checkmark}{=} 0 + 0 + 1 + 0 \stackrel{\checkmark}{=} 1\)</span><br>
+<span class="math inline">\(1111 \cdot 0111 \stackrel{\checkmark}{=} 0 + 1 + 1 + 1 \stackrel{\checkmark}{=} 1\)</span></p>
+</section>
+</section>
+<section id="formulating-equations-using-dot-product" class="level2">
+<h2 class="anchored" data-anchor-id="formulating-equations-using-dot-product">Formulating equations using dot-product</h2>
+<section id="problem-2.14.7" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.7">Problem 2.14.7</h3>
+<p>Consider the equations<br>
+<span class="math inline">\(2x_0 + 3x_1 - 4x_2 + x_3 = 10\)</span><br>
+<span class="math inline">\(x_0 - 5x_1 + 2x_2 + 0x_3 = 35\)</span><br>
+<span class="math inline">\(4x_0 + x_1 - x_2 - x_3 = 8\)</span><br>
+Your job is not to solve these equations but to formulate them using dot-product. In particular, come up with three vectors v1, v2, and v3 represented as lists so that the above equations are equivalent to<br>
+<span class="math inline">\(\mathrm{v1} \cdot x = 10\)</span><br>
+<span class="math inline">\(\mathrm{v2} \cdot x = 35\)</span><br>
+<span class="math inline">\(\mathrm{v3} \cdot x = 8\)</span><br>
+where <span class="math inline">\(x\)</span> is a 4-vector over <span class="math inline">\(\mathbb{R}\)</span>.<br>
+<span class="math inline">\(v_1=[2, 3, -4, 1]\)</span><br>
+<span class="math inline">\(v_2=[1, -5, 2, 0]\)</span><br>
+<span class="math inline">\(v_3=[4, 1, -1, -1]\)</span></p>
+</section>
+</section>
+<section id="plotting-lines-and-segments" class="level2">
+<h2 class="anchored" data-anchor-id="plotting-lines-and-segments">Plotting lines and segments</h2>
+<section id="problem-2.14.8" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.8">Problem 2.14.8</h3>
+<p>Use the <code>plot</code> module to plot<br>
+(a) a substantial portion of the line through [-1.5, 2] and [3, 0], and<br>
+(b) the line segment between [2, 1] and [-2, 2].<br>
+For each, provide the Python statements you used and the plot obtained.</p>
+<div class="cell" data-execution_count="2">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">from</span> plotting <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="im">from</span> IPython.display <span class="im">import</span> SVG, display</span>
+<span id="cb2-3"><a href="#cb2-3"></a>L<span class="op">=</span>[(<span class="dv">3</span> <span class="op">+</span> i<span class="op">*</span>(<span class="op">-</span><span class="dv">4</span>), i<span class="op">*</span><span class="dv">9</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>)]</span>
+<span id="cb2-4"><a href="#cb2-4"></a>display(SVG(plot(L, <span class="dv">200</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-2-Assignment_files/figure-html/cell-3-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+<div class="cell" data-execution_count="3">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb3-1"><a href="#cb3-1"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb3-2"><a href="#cb3-2"></a><span class="im">from</span> plotting <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="im">from</span> IPython.display <span class="im">import</span> SVG, display</span>
+<span id="cb3-4"><a href="#cb3-4"></a>L<span class="op">=</span>[(<span class="dv">2</span><span class="op">-</span>i, <span class="dv">1</span><span class="op">+</span><span class="fl">0.25</span><span class="op">*</span>i) <span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">0</span>, <span class="dv">4</span>, <span class="fl">0.001</span>)]</span>
+<span id="cb3-5"><a href="#cb3-5"></a>display(SVG(plot(L, <span class="dv">3</span>)))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display">
+<p><img src="Chapter-2-Assignment_files/figure-html/cell-4-output-1.svg" class="img-fluid"></p>
+</div>
+</div>
+</section>
+</section>
+<section id="practice-with-dot-product" class="level2">
+<h2 class="anchored" data-anchor-id="practice-with-dot-product">Practice with dot-product</h2>
+<section id="problem-2.14.9" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.9">Problem 2.14.9</h3>
+<p>For each of the following pairs of vectors <span class="math inline">\(u\)</span> and <span class="math inline">\(v\)</span> over <span class="math inline">\(\mathbb{R}\)</span>, evaluate the expression <span class="math inline">\(u \cdot v\)</span>:<br>
+(a) <span class="math inline">\(u = [1, 0], v = [5, 4321]\)</span><br>
+(b) <span class="math inline">\(u = [0, 1], v = [12345, 6]\)</span><br>
+(c) <span class="math inline">\(u = [-1, 3], v = [5, 7]\)</span><br>
+(d) <span class="math inline">\(u = \left[-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right], v = \left[\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right]\)</span></p>
+<ol type="a">
+<li><span class="math inline">\([1, 0] \cdot [5, 4321] = 5 + 0 = 5\)</span><br>
+</li>
+<li><span class="math inline">\([0, 1] \cdot [12345, 6] = 0 + 6 = 6\)</span><br>
+</li>
+<li><span class="math inline">\([-1, 3] \cdot [5, 7] = -5 + 21 =16\)</span><br>
+</li>
+<li><span class="math inline">\(\left[-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right] \cdot \left[\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right] = -\frac{1}{2} - \frac{1}{2} = -1\)</span></li>
+</ol>
+</section>
+</section>
+<section id="writing-procedures-for-the-vec-class" class="level2">
+<h2 class="anchored" data-anchor-id="writing-procedures-for-the-vec-class">Writing procedures for the <code>Vec</code> class</h2>
+<section id="problem-2.14.10" class="level3">
+<h3 class="anchored" data-anchor-id="problem-2.14.10">Problem 2.14.10</h3>
+<p>Download the file <code>vec.py</code> to your computer, and edit it. The file defines procedures using the Python statement <code>pass</code>, which does nothing. You can import the <code>vec</code> module and create instances of <code>Vec</code> but the operations such as * and + currently do nothing. Your job is to replace each occurrence of the <code>pass</code> statement with appropriate code. Your code for a procedure can include calls to others of the seven. You should make no changes to the class definition.</p>
+<section id="docstrings" class="level4">
+<h4 class="anchored" data-anchor-id="docstrings">Docstrings</h4>
+<p>At the beginning of each procedure body is a multi-line string (deliminated by triple quotation marks). This is called a documentation string (<em>docstring</em>). It specifies what the procedure should do.</p>
+</section>
+<section id="doctests" class="level4">
+<h4 class="anchored" data-anchor-id="doctests">Doctests</h4>
+<p>The documentation string we provide for a procedure also includes examples of the functionality that procedure is supposed to provide to <code>Vec</code>s. The examples show an interaction with Python: statements and expressions are evaluated by Python, and Python’s responses are shown. These examples are provided to you as tests (called <em>doctests</em>). You should make sure that your procedure is written in such a way that the behavior of your Vec implementation matches that in the examples. If not, your implementation is incorrect.</p>
+<p>Download the file <code>vec.py</code> to your computer, and edit it. Fill in the procedure definitions and test the doctests with<br>
+<code>python3 -m doctest vec.py</code>.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">def</span> getitem(v,k):</span>
+<span id="cb4-2"><a href="#cb4-2"></a>    <span class="co">"""</span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="co">    Return the value of entry k in v.</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="co">    Be sure getitem(v,k) returns 0 if k is not represented in v.f.</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a></span>
+<span id="cb4-6"><a href="#cb4-6"></a><span class="co">    &gt;&gt;&gt; v = Vec({'a','b','c', 'd'},{'a':2,'c':1,'d':3})</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a><span class="co">    &gt;&gt;&gt; v['d']</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a><span class="co">    3</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a><span class="co">    &gt;&gt;&gt; v['b']</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="co">    0</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a><span class="co">    """</span></span>
+<span id="cb4-12"><a href="#cb4-12"></a>    <span class="cf">assert</span> k <span class="kw">in</span> v.D</span>
+<span id="cb4-13"><a href="#cb4-13"></a>    <span class="cf">return</span> v.f[k] <span class="cf">if</span> k <span class="kw">in</span> v.f <span class="cf">else</span> <span class="dv">0</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a></span>
+<span id="cb4-15"><a href="#cb4-15"></a><span class="kw">def</span> setitem(v,k,val):</span>
+<span id="cb4-16"><a href="#cb4-16"></a>    <span class="co">"""</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a><span class="co">    Set the element of v with label d to be val.</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a><span class="co">    setitem(v,d,val) should set the value for key d even if d</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a><span class="co">    is not previously represented in v.f, and even if val is 0.</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a></span>
+<span id="cb4-21"><a href="#cb4-21"></a><span class="co">    &gt;&gt;&gt; v = Vec({'a', 'b', 'c'}, {'b':0})</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a><span class="co">    &gt;&gt;&gt; v['b'] = 5</span></span>
+<span id="cb4-23"><a href="#cb4-23"></a><span class="co">    &gt;&gt;&gt; v['b']</span></span>
+<span id="cb4-24"><a href="#cb4-24"></a><span class="co">    5</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a><span class="co">    &gt;&gt;&gt; v['a'] = 1</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a><span class="co">    &gt;&gt;&gt; v['a']</span></span>
+<span id="cb4-27"><a href="#cb4-27"></a><span class="co">    1</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a><span class="co">    &gt;&gt;&gt; v['a'] = 0</span></span>
+<span id="cb4-29"><a href="#cb4-29"></a><span class="co">    &gt;&gt;&gt; v['a']</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="co">    0</span></span>
+<span id="cb4-31"><a href="#cb4-31"></a><span class="co">    """</span></span>
+<span id="cb4-32"><a href="#cb4-32"></a>    <span class="cf">assert</span> k <span class="kw">in</span> v.D</span>
+<span id="cb4-33"><a href="#cb4-33"></a>    v.f[k] <span class="op">=</span> val</span>
+<span id="cb4-34"><a href="#cb4-34"></a>    <span class="cf">return</span></span>
+<span id="cb4-35"><a href="#cb4-35"></a></span>
+<span id="cb4-36"><a href="#cb4-36"></a><span class="kw">def</span> equal(u,v):</span>
+<span id="cb4-37"><a href="#cb4-37"></a>    <span class="co">"""</span></span>
+<span id="cb4-38"><a href="#cb4-38"></a><span class="co">    Return true iff u is equal to v.</span></span>
+<span id="cb4-39"><a href="#cb4-39"></a><span class="co">    Because of sparse representation, it is not enough to compare dictionaries</span></span>
+<span id="cb4-40"><a href="#cb4-40"></a></span>
+<span id="cb4-41"><a href="#cb4-41"></a><span class="co">    Consider using brackets notation u[...] and v[...] in your procedure</span></span>
+<span id="cb4-42"><a href="#cb4-42"></a><span class="co">    to access entries of the input vectors.  This avoids some sparsity bugs.</span></span>
+<span id="cb4-43"><a href="#cb4-43"></a></span>
+<span id="cb4-44"><a href="#cb4-44"></a><span class="co">    &gt;&gt;&gt; Vec({'a', 'b', 'c'}, {'a':0}) == Vec({'a', 'b', 'c'}, {'b':0})</span></span>
+<span id="cb4-45"><a href="#cb4-45"></a><span class="co">    True</span></span>
+<span id="cb4-46"><a href="#cb4-46"></a><span class="co">    &gt;&gt;&gt; Vec({'a', 'b', 'c'}, {'a': 0}) == Vec({'a', 'b', 'c'}, {})</span></span>
+<span id="cb4-47"><a href="#cb4-47"></a><span class="co">    True</span></span>
+<span id="cb4-48"><a href="#cb4-48"></a><span class="co">    &gt;&gt;&gt; Vec({'a', 'b', 'c'}, {}) == Vec({'a', 'b', 'c'}, {'a': 0})</span></span>
+<span id="cb4-49"><a href="#cb4-49"></a><span class="co">    True</span></span>
+<span id="cb4-50"><a href="#cb4-50"></a></span>
+<span id="cb4-51"><a href="#cb4-51"></a><span class="co">    Be sure that equal(u, v) checks equalities for all keys from u.f and v.f even if</span></span>
+<span id="cb4-52"><a href="#cb4-52"></a><span class="co">    some keys in u.f do not exist in v.f (or vice versa)</span></span>
+<span id="cb4-53"><a href="#cb4-53"></a></span>
+<span id="cb4-54"><a href="#cb4-54"></a><span class="co">    &gt;&gt;&gt; Vec({'x','y','z'},{'y':1,'x':2}) == Vec({'x','y','z'},{'y':1,'z':0})</span></span>
+<span id="cb4-55"><a href="#cb4-55"></a><span class="co">    False</span></span>
+<span id="cb4-56"><a href="#cb4-56"></a><span class="co">    &gt;&gt;&gt; Vec({'a','b','c'}, {'a':0,'c':1}) == Vec({'a','b','c'}, {'a':0,'c':1,'b':4})</span></span>
+<span id="cb4-57"><a href="#cb4-57"></a><span class="co">    False</span></span>
+<span id="cb4-58"><a href="#cb4-58"></a><span class="co">    &gt;&gt;&gt; Vec({'a','b','c'}, {'a':0,'c':1,'b':4}) == Vec({'a','b','c'}, {'a':0,'c':1})</span></span>
+<span id="cb4-59"><a href="#cb4-59"></a><span class="co">    False</span></span>
+<span id="cb4-60"><a href="#cb4-60"></a></span>
+<span id="cb4-61"><a href="#cb4-61"></a><span class="co">    The keys matter:</span></span>
+<span id="cb4-62"><a href="#cb4-62"></a><span class="co">    &gt;&gt;&gt; Vec({'a','b'},{'a':1}) == Vec({'a','b'},{'b':1})</span></span>
+<span id="cb4-63"><a href="#cb4-63"></a><span class="co">    False</span></span>
+<span id="cb4-64"><a href="#cb4-64"></a></span>
+<span id="cb4-65"><a href="#cb4-65"></a><span class="co">    The values matter:</span></span>
+<span id="cb4-66"><a href="#cb4-66"></a><span class="co">    &gt;&gt;&gt; Vec({'a','b'},{'a':1}) == Vec({'a','b'},{'a':2})</span></span>
+<span id="cb4-67"><a href="#cb4-67"></a><span class="co">    False</span></span>
+<span id="cb4-68"><a href="#cb4-68"></a><span class="co">    """</span></span>
+<span id="cb4-69"><a href="#cb4-69"></a>    <span class="cf">assert</span> u.D <span class="op">==</span> v.D</span>
+<span id="cb4-70"><a href="#cb4-70"></a>    first <span class="op">=</span> []</span>
+<span id="cb4-71"><a href="#cb4-71"></a>    second <span class="op">=</span> []</span>
+<span id="cb4-72"><a href="#cb4-72"></a>    <span class="cf">for</span> k <span class="kw">in</span> u.D:</span>
+<span id="cb4-73"><a href="#cb4-73"></a>        <span class="cf">if</span> k <span class="kw">in</span> u.f:</span>
+<span id="cb4-74"><a href="#cb4-74"></a>            first.append(u.f[k])</span>
+<span id="cb4-75"><a href="#cb4-75"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-76"><a href="#cb4-76"></a>            first.append(<span class="dv">0</span>)</span>
+<span id="cb4-77"><a href="#cb4-77"></a>        <span class="cf">if</span> k <span class="kw">in</span> v.f:</span>
+<span id="cb4-78"><a href="#cb4-78"></a>            second.append(v.f[k])</span>
+<span id="cb4-79"><a href="#cb4-79"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-80"><a href="#cb4-80"></a>            second.append(<span class="dv">0</span>)</span>
+<span id="cb4-81"><a href="#cb4-81"></a>    <span class="cf">return</span> first <span class="op">==</span> second</span>
+<span id="cb4-82"><a href="#cb4-82"></a></span>
+<span id="cb4-83"><a href="#cb4-83"></a><span class="kw">def</span> add(u,v):</span>
+<span id="cb4-84"><a href="#cb4-84"></a>    <span class="co">"""</span></span>
+<span id="cb4-85"><a href="#cb4-85"></a><span class="co">    Returns the sum of the two vectors.</span></span>
+<span id="cb4-86"><a href="#cb4-86"></a><span class="co">    </span></span>
+<span id="cb4-87"><a href="#cb4-87"></a><span class="co">    Consider using brackets notation u[...] and v[...] in your procedure</span></span>
+<span id="cb4-88"><a href="#cb4-88"></a><span class="co">    to access entries of the input vectors.  This avoids some sparsity bugs.</span></span>
+<span id="cb4-89"><a href="#cb4-89"></a></span>
+<span id="cb4-90"><a href="#cb4-90"></a><span class="co">    Do not seek to create more sparsity than exists in the two input vectors.</span></span>
+<span id="cb4-91"><a href="#cb4-91"></a><span class="co">    Doing so will unnecessarily complicate your code and will hurt performance.</span></span>
+<span id="cb4-92"><a href="#cb4-92"></a></span>
+<span id="cb4-93"><a href="#cb4-93"></a><span class="co">    Make sure to add together values for all keys from u.f and v.f even if some keys in u.f do not</span></span>
+<span id="cb4-94"><a href="#cb4-94"></a><span class="co">    exist in v.f (or vice versa)</span></span>
+<span id="cb4-95"><a href="#cb4-95"></a></span>
+<span id="cb4-96"><a href="#cb4-96"></a><span class="co">    &gt;&gt;&gt; a = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2})</span></span>
+<span id="cb4-97"><a href="#cb4-97"></a><span class="co">    &gt;&gt;&gt; b = Vec({'a','e','i','o','u'}, {'o':4,'u':7})</span></span>
+<span id="cb4-98"><a href="#cb4-98"></a><span class="co">    &gt;&gt;&gt; c = Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2,'o':4,'u':7})</span></span>
+<span id="cb4-99"><a href="#cb4-99"></a><span class="co">    &gt;&gt;&gt; a + b == c</span></span>
+<span id="cb4-100"><a href="#cb4-100"></a><span class="co">    True</span></span>
+<span id="cb4-101"><a href="#cb4-101"></a><span class="co">    &gt;&gt;&gt; a == Vec({'a','e','i','o','u'}, {'a':0,'e':1,'i':2})</span></span>
+<span id="cb4-102"><a href="#cb4-102"></a><span class="co">    True</span></span>
+<span id="cb4-103"><a href="#cb4-103"></a><span class="co">    &gt;&gt;&gt; b == Vec({'a','e','i','o','u'}, {'o':4,'u':7})</span></span>
+<span id="cb4-104"><a href="#cb4-104"></a><span class="co">    True</span></span>
+<span id="cb4-105"><a href="#cb4-105"></a><span class="co">    &gt;&gt;&gt; d = Vec({'x','y','z'}, {'x':2,'y':1})</span></span>
+<span id="cb4-106"><a href="#cb4-106"></a><span class="co">    &gt;&gt;&gt; e = Vec({'x','y','z'}, {'z':4,'y':-1})</span></span>
+<span id="cb4-107"><a href="#cb4-107"></a><span class="co">    &gt;&gt;&gt; f = Vec({'x','y','z'}, {'x':2,'y':0,'z':4})</span></span>
+<span id="cb4-108"><a href="#cb4-108"></a><span class="co">    &gt;&gt;&gt; d + e == f</span></span>
+<span id="cb4-109"><a href="#cb4-109"></a><span class="co">    True</span></span>
+<span id="cb4-110"><a href="#cb4-110"></a><span class="co">    &gt;&gt;&gt; d == Vec({'x','y','z'}, {'x':2,'y':1})</span></span>
+<span id="cb4-111"><a href="#cb4-111"></a><span class="co">    True</span></span>
+<span id="cb4-112"><a href="#cb4-112"></a><span class="co">    &gt;&gt;&gt; e == Vec({'x','y','z'}, {'z':4,'y':-1})</span></span>
+<span id="cb4-113"><a href="#cb4-113"></a><span class="co">    True</span></span>
+<span id="cb4-114"><a href="#cb4-114"></a><span class="co">    &gt;&gt;&gt; b + Vec({'a','e','i','o','u'}, {}) == b</span></span>
+<span id="cb4-115"><a href="#cb4-115"></a><span class="co">    True</span></span>
+<span id="cb4-116"><a href="#cb4-116"></a><span class="co">    """</span></span>
+<span id="cb4-117"><a href="#cb4-117"></a>    <span class="cf">assert</span> u.D <span class="op">==</span> v.D</span>
+<span id="cb4-118"><a href="#cb4-118"></a>    <span class="cf">return</span> Vec(u.D, {d:getitem(u,d)<span class="op">+</span>getitem(v,d) <span class="cf">for</span> d <span class="kw">in</span> u.D})</span>
+<span id="cb4-119"><a href="#cb4-119"></a></span>
+<span id="cb4-120"><a href="#cb4-120"></a><span class="kw">def</span> dot(u,v):</span>
+<span id="cb4-121"><a href="#cb4-121"></a>    <span class="co">"""</span></span>
+<span id="cb4-122"><a href="#cb4-122"></a><span class="co">    Returns the dot product of the two vectors.</span></span>
+<span id="cb4-123"><a href="#cb4-123"></a></span>
+<span id="cb4-124"><a href="#cb4-124"></a><span class="co">    Consider using brackets notation u[...] and v[...] in your procedure</span></span>
+<span id="cb4-125"><a href="#cb4-125"></a><span class="co">    to access entries of the input vectors.  This avoids some sparsity bugs.</span></span>
+<span id="cb4-126"><a href="#cb4-126"></a></span>
+<span id="cb4-127"><a href="#cb4-127"></a><span class="co">    &gt;&gt;&gt; u1 = Vec({'a','b'}, {'a':1, 'b':2})</span></span>
+<span id="cb4-128"><a href="#cb4-128"></a><span class="co">    &gt;&gt;&gt; u2 = Vec({'a','b'}, {'b':2, 'a':1})</span></span>
+<span id="cb4-129"><a href="#cb4-129"></a><span class="co">    &gt;&gt;&gt; u1*u2</span></span>
+<span id="cb4-130"><a href="#cb4-130"></a><span class="co">    5</span></span>
+<span id="cb4-131"><a href="#cb4-131"></a><span class="co">    &gt;&gt;&gt; u1 == Vec({'a','b'}, {'a':1, 'b':2})</span></span>
+<span id="cb4-132"><a href="#cb4-132"></a><span class="co">    True</span></span>
+<span id="cb4-133"><a href="#cb4-133"></a><span class="co">    &gt;&gt;&gt; u2 == Vec({'a','b'}, {'b':2, 'a':1})</span></span>
+<span id="cb4-134"><a href="#cb4-134"></a><span class="co">    True</span></span>
+<span id="cb4-135"><a href="#cb4-135"></a><span class="co">    &gt;&gt;&gt; v1 = Vec({'p','q','r','s'}, {'p':2,'s':3,'q':-1,'r':0})</span></span>
+<span id="cb4-136"><a href="#cb4-136"></a><span class="co">    &gt;&gt;&gt; v2 = Vec({'p','q','r','s'}, {'p':-2,'r':5})</span></span>
+<span id="cb4-137"><a href="#cb4-137"></a><span class="co">    &gt;&gt;&gt; v1*v2</span></span>
+<span id="cb4-138"><a href="#cb4-138"></a><span class="co">    -4</span></span>
+<span id="cb4-139"><a href="#cb4-139"></a><span class="co">    &gt;&gt;&gt; w1 = Vec({'a','b','c'}, {'a':2,'b':3,'c':4})</span></span>
+<span id="cb4-140"><a href="#cb4-140"></a><span class="co">    &gt;&gt;&gt; w2 = Vec({'a','b','c'}, {'a':12,'b':8,'c':6})</span></span>
+<span id="cb4-141"><a href="#cb4-141"></a><span class="co">    &gt;&gt;&gt; w1*w2</span></span>
+<span id="cb4-142"><a href="#cb4-142"></a><span class="co">    72</span></span>
+<span id="cb4-143"><a href="#cb4-143"></a></span>
+<span id="cb4-144"><a href="#cb4-144"></a><span class="co">    The pairwise products should not be collected in a set before summing</span></span>
+<span id="cb4-145"><a href="#cb4-145"></a><span class="co">    because a set eliminates duplicates</span></span>
+<span id="cb4-146"><a href="#cb4-146"></a><span class="co">    &gt;&gt;&gt; v1 = Vec({1, 2}, {1 : 3, 2 : 6})</span></span>
+<span id="cb4-147"><a href="#cb4-147"></a><span class="co">    &gt;&gt;&gt; v2 = Vec({1, 2}, {1 : 2, 2 : 1})</span></span>
+<span id="cb4-148"><a href="#cb4-148"></a><span class="co">    &gt;&gt;&gt; v1 * v2</span></span>
+<span id="cb4-149"><a href="#cb4-149"></a><span class="co">    12</span></span>
+<span id="cb4-150"><a href="#cb4-150"></a><span class="co">    """</span></span>
+<span id="cb4-151"><a href="#cb4-151"></a>    <span class="cf">assert</span> u.D <span class="op">==</span> v.D</span>
+<span id="cb4-152"><a href="#cb4-152"></a>    <span class="bu">sum</span> <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-153"><a href="#cb4-153"></a>    <span class="cf">for</span> k <span class="kw">in</span> u.D:</span>
+<span id="cb4-154"><a href="#cb4-154"></a>        <span class="cf">if</span> k <span class="kw">in</span> u.f <span class="kw">and</span> k <span class="kw">in</span> v.f:</span>
+<span id="cb4-155"><a href="#cb4-155"></a>            <span class="bu">sum</span> <span class="op">+=</span> u.f[k]<span class="op">*</span>v.f[k]</span>
+<span id="cb4-156"><a href="#cb4-156"></a>    <span class="cf">return</span> <span class="bu">sum</span></span>
+<span id="cb4-157"><a href="#cb4-157"></a></span>
+<span id="cb4-158"><a href="#cb4-158"></a><span class="kw">def</span> scalar_mul(v, alpha):</span>
+<span id="cb4-159"><a href="#cb4-159"></a>    <span class="co">"""</span></span>
+<span id="cb4-160"><a href="#cb4-160"></a><span class="co">    Returns the scalar-vector product alpha times v.</span></span>
+<span id="cb4-161"><a href="#cb4-161"></a></span>
+<span id="cb4-162"><a href="#cb4-162"></a><span class="co">    Consider using brackets notation v[...] in your procedure</span></span>
+<span id="cb4-163"><a href="#cb4-163"></a><span class="co">    to access entries of the input vector.  This avoids some sparsity bugs.</span></span>
+<span id="cb4-164"><a href="#cb4-164"></a></span>
+<span id="cb4-165"><a href="#cb4-165"></a><span class="co">    &gt;&gt;&gt; zero = Vec({'x','y','z','w'}, {})</span></span>
+<span id="cb4-166"><a href="#cb4-166"></a><span class="co">    &gt;&gt;&gt; u = Vec({'x','y','z','w'},{'x':1,'y':2,'z':3,'w':4})</span></span>
+<span id="cb4-167"><a href="#cb4-167"></a><span class="co">    &gt;&gt;&gt; 0*u == zero</span></span>
+<span id="cb4-168"><a href="#cb4-168"></a><span class="co">    True</span></span>
+<span id="cb4-169"><a href="#cb4-169"></a><span class="co">    &gt;&gt;&gt; 1*u == u</span></span>
+<span id="cb4-170"><a href="#cb4-170"></a><span class="co">    True</span></span>
+<span id="cb4-171"><a href="#cb4-171"></a><span class="co">    &gt;&gt;&gt; 0.5*u == Vec({'x','y','z','w'},{'x':0.5,'y':1,'z':1.5,'w':2})</span></span>
+<span id="cb4-172"><a href="#cb4-172"></a><span class="co">    True</span></span>
+<span id="cb4-173"><a href="#cb4-173"></a><span class="co">    &gt;&gt;&gt; u == Vec({'x','y','z','w'},{'x':1,'y':2,'z':3,'w':4})</span></span>
+<span id="cb4-174"><a href="#cb4-174"></a><span class="co">    True</span></span>
+<span id="cb4-175"><a href="#cb4-175"></a><span class="co">    """</span></span>
+<span id="cb4-176"><a href="#cb4-176"></a>    <span class="cf">return</span> Vec(v.D, {d:alpha<span class="op">*</span>getitem(v, d) <span class="cf">for</span> d <span class="kw">in</span> v.D})</span>
+<span id="cb4-177"><a href="#cb4-177"></a></span>
+<span id="cb4-178"><a href="#cb4-178"></a><span class="kw">def</span> neg(v):</span>
+<span id="cb4-179"><a href="#cb4-179"></a>    <span class="co">"""</span></span>
+<span id="cb4-180"><a href="#cb4-180"></a><span class="co">    Returns the negation of a vector.</span></span>
+<span id="cb4-181"><a href="#cb4-181"></a></span>
+<span id="cb4-182"><a href="#cb4-182"></a><span class="co">    Consider using brackets notation v[...] in your procedure</span></span>
+<span id="cb4-183"><a href="#cb4-183"></a><span class="co">    to access entries of the input vector.  This avoids some sparsity bugs.</span></span>
+<span id="cb4-184"><a href="#cb4-184"></a></span>
+<span id="cb4-185"><a href="#cb4-185"></a><span class="co">    &gt;&gt;&gt; u = Vec({1,3,5,7},{1:1,3:2,5:3,7:4})</span></span>
+<span id="cb4-186"><a href="#cb4-186"></a><span class="co">    &gt;&gt;&gt; -u</span></span>
+<span id="cb4-187"><a href="#cb4-187"></a><span class="co">    Vec({1, 3, 5, 7},{1: -1, 3: -2, 5: -3, 7: -4})</span></span>
+<span id="cb4-188"><a href="#cb4-188"></a><span class="co">    &gt;&gt;&gt; u == Vec({1,3,5,7},{1:1,3:2,5:3,7:4})</span></span>
+<span id="cb4-189"><a href="#cb4-189"></a><span class="co">    True</span></span>
+<span id="cb4-190"><a href="#cb4-190"></a><span class="co">    &gt;&gt;&gt; -Vec({'a','b','c'}, {'a':1}) == Vec({'a','b','c'}, {'a':-1})</span></span>
+<span id="cb4-191"><a href="#cb4-191"></a><span class="co">    True</span></span>
+<span id="cb4-192"><a href="#cb4-192"></a><span class="co">    """</span></span>
+<span id="cb4-193"><a href="#cb4-193"></a>    <span class="cf">return</span> scalar_mul(v, <span class="op">-</span><span class="dv">1</span>)</span>
+<span id="cb4-194"><a href="#cb4-194"></a></span>
+<span id="cb4-195"><a href="#cb4-195"></a><span class="co">###############################################################################################################################</span></span>
+<span id="cb4-196"><a href="#cb4-196"></a></span>
+<span id="cb4-197"><a href="#cb4-197"></a><span class="kw">class</span> Vec:</span>
+<span id="cb4-198"><a href="#cb4-198"></a>    <span class="co">"""</span></span>
+<span id="cb4-199"><a href="#cb4-199"></a><span class="co">    A vector has two fields:</span></span>
+<span id="cb4-200"><a href="#cb4-200"></a><span class="co">    D - the domain (a set)</span></span>
+<span id="cb4-201"><a href="#cb4-201"></a><span class="co">    f - a dictionary mapping (some) domain elements to field elements</span></span>
+<span id="cb4-202"><a href="#cb4-202"></a><span class="co">        elements of D not appearing in f are implicitly mapped to zero</span></span>
+<span id="cb4-203"><a href="#cb4-203"></a><span class="co">    """</span></span>
+<span id="cb4-204"><a href="#cb4-204"></a>    <span class="kw">def</span> <span class="fu">__init__</span>(<span class="va">self</span>, labels, function):</span>
+<span id="cb4-205"><a href="#cb4-205"></a>        <span class="cf">assert</span> <span class="bu">isinstance</span>(labels, <span class="bu">set</span>)</span>
+<span id="cb4-206"><a href="#cb4-206"></a>        <span class="cf">assert</span> <span class="bu">isinstance</span>(function, <span class="bu">dict</span>)</span>
+<span id="cb4-207"><a href="#cb4-207"></a>        <span class="va">self</span>.D <span class="op">=</span> labels</span>
+<span id="cb4-208"><a href="#cb4-208"></a>        <span class="va">self</span>.f <span class="op">=</span> function</span>
+<span id="cb4-209"><a href="#cb4-209"></a></span>
+<span id="cb4-210"><a href="#cb4-210"></a>    <span class="fu">__getitem__</span> <span class="op">=</span> getitem</span>
+<span id="cb4-211"><a href="#cb4-211"></a>    <span class="fu">__setitem__</span> <span class="op">=</span> setitem</span>
+<span id="cb4-212"><a href="#cb4-212"></a>    <span class="fu">__neg__</span> <span class="op">=</span> neg</span>
+<span id="cb4-213"><a href="#cb4-213"></a>    <span class="fu">__rmul__</span> <span class="op">=</span> scalar_mul <span class="co">#if left arg of * is primitive, assume it's a scalar</span></span>
+<span id="cb4-214"><a href="#cb4-214"></a></span>
+<span id="cb4-215"><a href="#cb4-215"></a>    <span class="kw">def</span> <span class="fu">__mul__</span>(<span class="va">self</span>,other):</span>
+<span id="cb4-216"><a href="#cb4-216"></a>        <span class="co">#If other is a vector, returns the dot product of self and other</span></span>
+<span id="cb4-217"><a href="#cb4-217"></a>        <span class="cf">if</span> <span class="bu">isinstance</span>(other, Vec):</span>
+<span id="cb4-218"><a href="#cb4-218"></a>            <span class="cf">return</span> dot(<span class="va">self</span>,other)</span>
+<span id="cb4-219"><a href="#cb4-219"></a>        <span class="cf">else</span>:</span>
+<span id="cb4-220"><a href="#cb4-220"></a>            <span class="cf">return</span> <span class="va">NotImplemented</span>  <span class="co">#  Will cause other.__rmul__(self) to be invoked</span></span>
+<span id="cb4-221"><a href="#cb4-221"></a></span>
+<span id="cb4-222"><a href="#cb4-222"></a>    <span class="kw">def</span> <span class="fu">__truediv__</span>(<span class="va">self</span>,other):  <span class="co"># Scalar division</span></span>
+<span id="cb4-223"><a href="#cb4-223"></a>        <span class="cf">return</span> (<span class="dv">1</span><span class="op">/</span>other)<span class="op">*</span><span class="va">self</span></span>
+<span id="cb4-224"><a href="#cb4-224"></a></span>
+<span id="cb4-225"><a href="#cb4-225"></a>    <span class="fu">__add__</span> <span class="op">=</span> add</span>
+<span id="cb4-226"><a href="#cb4-226"></a></span>
+<span id="cb4-227"><a href="#cb4-227"></a>    <span class="kw">def</span> <span class="fu">__radd__</span>(<span class="va">self</span>, other):</span>
+<span id="cb4-228"><a href="#cb4-228"></a>        <span class="co">"Hack to allow sum(...) to work with vectors"</span></span>
+<span id="cb4-229"><a href="#cb4-229"></a>        <span class="cf">if</span> other <span class="op">==</span> <span class="dv">0</span>:</span>
+<span id="cb4-230"><a href="#cb4-230"></a>            <span class="cf">return</span> <span class="va">self</span></span>
+<span id="cb4-231"><a href="#cb4-231"></a></span>
+<span id="cb4-232"><a href="#cb4-232"></a>    <span class="kw">def</span> <span class="fu">__sub__</span>(a,b):</span>
+<span id="cb4-233"><a href="#cb4-233"></a>        <span class="co">"Returns a vector which is the difference of a and b."</span></span>
+<span id="cb4-234"><a href="#cb4-234"></a>        <span class="cf">return</span> a<span class="op">+</span>(<span class="op">-</span>b)</span>
+<span id="cb4-235"><a href="#cb4-235"></a></span>
+<span id="cb4-236"><a href="#cb4-236"></a>    <span class="fu">__eq__</span> <span class="op">=</span> equal</span>
+<span id="cb4-237"><a href="#cb4-237"></a></span>
+<span id="cb4-238"><a href="#cb4-238"></a>    <span class="kw">def</span> is_almost_zero(<span class="va">self</span>):</span>
+<span id="cb4-239"><a href="#cb4-239"></a>        s <span class="op">=</span> <span class="dv">0</span></span>
+<span id="cb4-240"><a href="#cb4-240"></a>        <span class="cf">for</span> x <span class="kw">in</span> <span class="va">self</span>.f.values():</span>
+<span id="cb4-241"><a href="#cb4-241"></a>            <span class="cf">if</span> <span class="bu">isinstance</span>(x, <span class="bu">int</span>) <span class="kw">or</span> <span class="bu">isinstance</span>(x, <span class="bu">float</span>):</span>
+<span id="cb4-242"><a href="#cb4-242"></a>                s <span class="op">+=</span> x<span class="op">*</span>x</span>
+<span id="cb4-243"><a href="#cb4-243"></a>            <span class="cf">elif</span> <span class="bu">isinstance</span>(x, <span class="bu">complex</span>):</span>
+<span id="cb4-244"><a href="#cb4-244"></a>                y <span class="op">=</span> <span class="bu">abs</span>(x)</span>
+<span id="cb4-245"><a href="#cb4-245"></a>                s <span class="op">+=</span> y<span class="op">*</span>y</span>
+<span id="cb4-246"><a href="#cb4-246"></a>            <span class="cf">else</span>: <span class="cf">return</span> <span class="va">False</span></span>
+<span id="cb4-247"><a href="#cb4-247"></a>        <span class="cf">return</span> s <span class="op">&lt;</span> <span class="fl">1e-20</span></span>
+<span id="cb4-248"><a href="#cb4-248"></a></span>
+<span id="cb4-249"><a href="#cb4-249"></a>    <span class="kw">def</span> <span class="fu">__str__</span>(v):</span>
+<span id="cb4-250"><a href="#cb4-250"></a>        <span class="co">"pretty-printing"</span></span>
+<span id="cb4-251"><a href="#cb4-251"></a>        D_list <span class="op">=</span> <span class="bu">sorted</span>(v.D, key<span class="op">=</span><span class="bu">repr</span>)</span>
+<span id="cb4-252"><a href="#cb4-252"></a>        numdec <span class="op">=</span> <span class="dv">3</span></span>
+<span id="cb4-253"><a href="#cb4-253"></a>        wd <span class="op">=</span> <span class="bu">dict</span>([(k,(<span class="dv">1</span><span class="op">+</span><span class="bu">max</span>(<span class="bu">len</span>(<span class="bu">str</span>(k)), <span class="bu">len</span>(<span class="st">'{0:.</span><span class="sc">{1}</span><span class="st">G}'</span>.<span class="bu">format</span>(v[k], numdec))))) <span class="cf">if</span> <span class="bu">isinstance</span>(v[k], <span class="bu">int</span>) <span class="kw">or</span> <span class="bu">isinstance</span>(v[k], <span class="bu">float</span>) <span class="cf">else</span> (k,(<span class="dv">1</span><span class="op">+</span><span class="bu">max</span>(<span class="bu">len</span>(<span class="bu">str</span>(k)), <span class="bu">len</span>(<span class="bu">str</span>(v[k]))))) <span class="cf">for</span> k <span class="kw">in</span> D_list])</span>
+<span id="cb4-254"><a href="#cb4-254"></a>        s1 <span class="op">=</span> <span class="st">''</span>.join([<span class="st">'{0:&gt;</span><span class="sc">{1}</span><span class="st">}'</span>.<span class="bu">format</span>(<span class="bu">str</span>(k),wd[k]) <span class="cf">for</span> k <span class="kw">in</span> D_list])</span>
+<span id="cb4-255"><a href="#cb4-255"></a>        s2 <span class="op">=</span> <span class="st">''</span>.join([<span class="st">'{0:&gt;</span><span class="sc">{1}</span><span class="st">.</span><span class="sc">{2}</span><span class="st">G}'</span>.<span class="bu">format</span>(v[k],wd[k],numdec) <span class="cf">if</span> <span class="bu">isinstance</span>(v[k], <span class="bu">int</span>) <span class="kw">or</span> <span class="bu">isinstance</span>(v[k], <span class="bu">float</span>) <span class="cf">else</span> <span class="st">'{0:&gt;</span><span class="sc">{1}</span><span class="st">}'</span>.<span class="bu">format</span>(v[k], wd[k]) <span class="cf">for</span> k <span class="kw">in</span> D_list])</span>
+<span id="cb4-256"><a href="#cb4-256"></a>        <span class="cf">return</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> s1 <span class="op">+</span> <span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> <span class="st">'-'</span><span class="op">*</span><span class="bu">sum</span>(wd.values()) <span class="op">+</span><span class="st">"</span><span class="ch">\n</span><span class="st">"</span> <span class="op">+</span> s2</span>
+<span id="cb4-257"><a href="#cb4-257"></a></span>
+<span id="cb4-258"><a href="#cb4-258"></a>    <span class="kw">def</span> <span class="fu">__hash__</span>(<span class="va">self</span>):</span>
+<span id="cb4-259"><a href="#cb4-259"></a>        <span class="co">"Here we pretend Vecs are immutable so we can form sets of them"</span></span>
+<span id="cb4-260"><a href="#cb4-260"></a>        h <span class="op">=</span> <span class="bu">hash</span>(<span class="bu">frozenset</span>(<span class="va">self</span>.D))</span>
+<span id="cb4-261"><a href="#cb4-261"></a>        <span class="cf">for</span> k,v <span class="kw">in</span> <span class="bu">sorted</span>(<span class="va">self</span>.f.items(), key <span class="op">=</span> <span class="kw">lambda</span> x:<span class="bu">repr</span>(x[<span class="dv">0</span>])):</span>
+<span id="cb4-262"><a href="#cb4-262"></a>            <span class="cf">if</span> v <span class="op">!=</span> <span class="dv">0</span>:</span>
+<span id="cb4-263"><a href="#cb4-263"></a>                h <span class="op">=</span> <span class="bu">hash</span>((h, <span class="bu">hash</span>(v)))</span>
+<span id="cb4-264"><a href="#cb4-264"></a>        <span class="cf">return</span> h</span>
+<span id="cb4-265"><a href="#cb4-265"></a></span>
+<span id="cb4-266"><a href="#cb4-266"></a>    <span class="kw">def</span> <span class="fu">__repr__</span>(<span class="va">self</span>):</span>
+<span id="cb4-267"><a href="#cb4-267"></a>        <span class="cf">return</span> <span class="st">"Vec("</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.D) <span class="op">+</span> <span class="st">","</span> <span class="op">+</span> <span class="bu">str</span>(<span class="va">self</span>.f) <span class="op">+</span> <span class="st">")"</span></span>
+<span id="cb4-268"><a href="#cb4-268"></a></span>
+<span id="cb4-269"><a href="#cb4-269"></a>    <span class="kw">def</span> copy(<span class="va">self</span>):</span>
+<span id="cb4-270"><a href="#cb4-270"></a>        <span class="co">"Don't make a new copy of the domain D"</span></span>
+<span id="cb4-271"><a href="#cb4-271"></a>        <span class="cf">return</span> Vec(<span class="va">self</span>.D, <span class="va">self</span>.f.copy())</span>
+<span id="cb4-272"><a href="#cb4-272"></a></span>
+<span id="cb4-273"><a href="#cb4-273"></a>    <span class="kw">def</span> <span class="fu">__iter__</span>(<span class="va">self</span>):</span>
+<span id="cb4-274"><a href="#cb4-274"></a>        <span class="cf">raise</span> <span class="pp">TypeError</span>(<span class="st">'</span><span class="sc">%r</span><span class="st"> object is not iterable'</span> <span class="op">%</span> <span class="va">self</span>.__class__.<span class="va">__name__</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="testing-vec.py" class="level4">
+<h4 class="anchored" data-anchor-id="testing-vec.py">Testing <code>vec.py</code></h4>
+<div class="cell" data-execution_count="4">
+<details>
+<summary>Code</summary>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode numberSource python number-lines code-with-copy"><code class="sourceCode python"><span id="cb5-1"><a href="#cb5-1"></a><span class="im">import</span> subprocess</span>
+<span id="cb5-2"><a href="#cb5-2"></a>subprocess.run([<span class="st">"python"</span>, <span class="st">"-m"</span>, <span class="st">"doctest"</span>, <span class="st">"vec.py"</span>], check<span class="op">=</span><span class="va">True</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</details>
+<div class="cell-output cell-output-display" data-execution_count="4">
+<pre><code>CompletedProcess(args=['python', '-m', 'doctest', 'vec.py'], returncode=0)</code></pre>
+</div>
+</div>
+<p>Note that a <code>returncode</code> of 0 means that all of the testcases executed successfully.</p>
+<!-- -->
+
+</section>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  const viewSource = window.document.getElementById('quarto-view-source') ||
+                     window.document.getElementById('quarto-code-tools-source');
+  if (viewSource) {
+    const sourceUrl = viewSource.getAttribute("data-quarto-source-url");
+    viewSource.addEventListener("click", function(e) {
+      if (sourceUrl) {
+        // rstudio viewer pane
+        if (/\bcapabilities=\b/.test(window.location)) {
+          window.open(sourceUrl);
+        } else {
+          window.location.href = sourceUrl;
+        }
+      } else {
+        const modal = new bootstrap.Modal(document.getElementById('quarto-embedded-source-code-modal'));
+        modal.show();
+      }
+      return false;
+    });
+  }
+  function toggleCodeHandler(show) {
+    return function(e) {
+      const detailsSrc = window.document.querySelectorAll(".cell > details > .sourceCode");
+      for (let i=0; i<detailsSrc.length; i++) {
+        const details = detailsSrc[i].parentElement;
+        if (show) {
+          details.open = true;
+        } else {
+          details.removeAttribute("open");
+        }
+      }
+      const cellCodeDivs = window.document.querySelectorAll(".cell > .sourceCode");
+      const fromCls = show ? "hidden" : "unhidden";
+      const toCls = show ? "unhidden" : "hidden";
+      for (let i=0; i<cellCodeDivs.length; i++) {
+        const codeDiv = cellCodeDivs[i];
+        if (codeDiv.classList.contains(fromCls)) {
+          codeDiv.classList.remove(fromCls);
+          codeDiv.classList.add(toCls);
+        } 
+      }
+      return false;
+    }
+  }
+  const hideAllCode = window.document.getElementById("quarto-hide-all-code");
+  if (hideAllCode) {
+    hideAllCode.addEventListener("click", toggleCodeHandler(false));
+  }
+  const showAllCode = window.document.getElementById("quarto-show-all-code");
+  if (showAllCode) {
+    showAllCode.addEventListener("click", toggleCodeHandler(true));
+  }
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Source Code</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
+<div class="sourceCode" id="cb7" data-shortcodes="false"><pre class="sourceCode numberSource markdown number-lines code-with-copy"><code class="sourceCode markdown"><span id="cb7-1"><a href="#cb7-1"></a><span class="co">---</span></span>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="an">title:</span><span class="co"> "Chapter 2 Assignment"</span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="an">author:</span><span class="co"> Anish Goyal</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="an">date:</span><span class="co"> January 30, 2023</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="an">format:</span><span class="co"> </span></span>
+<span id="cb7-6"><a href="#cb7-6"></a><span class="co">    html:</span></span>
+<span id="cb7-7"><a href="#cb7-7"></a><span class="co">        code-fold: true</span></span>
+<span id="cb7-8"><a href="#cb7-8"></a><span class="co">        code-tools: true</span></span>
+<span id="cb7-9"><a href="#cb7-9"></a><span class="co">        code-link: true</span></span>
+<span id="cb7-10"><a href="#cb7-10"></a><span class="an">pdf-engine:</span><span class="co"> pdflatex</span></span>
+<span id="cb7-11"><a href="#cb7-11"></a><span class="an">toc:</span><span class="co"> true</span></span>
+<span id="cb7-12"><a href="#cb7-12"></a><span class="an">toc-depth:</span><span class="co"> 4</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a><span class="an">toc-location:</span><span class="co"> body</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a><span class="an">code-overflow:</span><span class="co"> wrap</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a><span class="an">code-line-numbers:</span><span class="co"> true </span></span>
+<span id="cb7-16"><a href="#cb7-16"></a><span class="an">filters:</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a><span class="co">   - include-code-files</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a><span class="co">---</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a></span>
+<span id="cb7-20"><a href="#cb7-20"></a>{{&lt; pagebreak &gt;}}</span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
+<span id="cb7-22"><a href="#cb7-22"></a><span class="fu">## **2.14 Problems** {.unnumbered .unlisted}</span></span>
+<span id="cb7-23"><a href="#cb7-23"></a></span>
+<span id="cb7-24"><a href="#cb7-24"></a><span class="fu">## Vector addition practice</span></span>
+<span id="cb7-25"><a href="#cb7-25"></a></span>
+<span id="cb7-26"><a href="#cb7-26"></a><span class="fu">### Problem 2.14.1</span></span>
+<span id="cb7-27"><a href="#cb7-27"></a></span>
+<span id="cb7-28"><a href="#cb7-28"></a>For vectors $v = <span class="co">[</span><span class="ot">-1, 3</span><span class="co">]</span>$ and $u = <span class="co">[</span><span class="ot">0, 4</span><span class="co">]</span>$, find the vectors $v+u$,</span>
+<span id="cb7-29"><a href="#cb7-29"></a>$v-u$, and $3v-2u$. Draw these arrows as arrows on the same graph.</span>
+<span id="cb7-30"><a href="#cb7-30"></a></span>
+<span id="cb7-31"><a href="#cb7-31"></a>$v+u$ = <span class="sc">\[</span>-1, 7<span class="sc">\]</span> \</span>
+<span id="cb7-32"><a href="#cb7-32"></a>$v-u$ = <span class="sc">\[</span>-1, -1<span class="sc">\]</span> \</span>
+<span id="cb7-33"><a href="#cb7-33"></a>$3v-2u$ = <span class="sc">\[</span>-3, 1<span class="sc">\]</span></span>
+<span id="cb7-34"><a href="#cb7-34"></a></span>
+<span id="cb7-37"><a href="#cb7-37"></a><span class="in">```{python}</span></span>
+<span id="cb7-38"><a href="#cb7-38"></a><span class="im">import</span> matplotlib.pyplot <span class="im">as</span> plt</span>
+<span id="cb7-39"><a href="#cb7-39"></a></span>
+<span id="cb7-40"><a href="#cb7-40"></a>v <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">3</span>]</span>
+<span id="cb7-41"><a href="#cb7-41"></a>u <span class="op">=</span> [<span class="dv">0</span>, <span class="dv">4</span>]</span>
+<span id="cb7-42"><a href="#cb7-42"></a>v_plus_u <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="dv">7</span>]</span>
+<span id="cb7-43"><a href="#cb7-43"></a>v_minus_u <span class="op">=</span> [<span class="op">-</span><span class="dv">1</span>, <span class="op">-</span><span class="dv">1</span>]</span>
+<span id="cb7-44"><a href="#cb7-44"></a>three_v_minus_two_u <span class="op">=</span> [<span class="op">-</span><span class="dv">3</span>, <span class="op">-</span><span class="dv">5</span>]</span>
+<span id="cb7-45"><a href="#cb7-45"></a></span>
+<span id="cb7-46"><a href="#cb7-46"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v[<span class="dv">0</span>], v[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'blue'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v'</span>)</span>
+<span id="cb7-47"><a href="#cb7-47"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, u[<span class="dv">0</span>], u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'green'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'u'</span>)</span>
+<span id="cb7-48"><a href="#cb7-48"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v_plus_u[<span class="dv">0</span>], v_plus_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'red'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v+u'</span>)</span>
+<span id="cb7-49"><a href="#cb7-49"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, v_minus_u[<span class="dv">0</span>], v_minus_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'purple'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'v-u'</span>)</span>
+<span id="cb7-50"><a href="#cb7-50"></a>plt.arrow(<span class="dv">0</span>, <span class="dv">0</span>, three_v_minus_two_u[<span class="dv">0</span>], three_v_minus_two_u[<span class="dv">1</span>], color<span class="op">=</span><span class="st">'orange'</span>, width<span class="op">=</span><span class="fl">0.05</span>, length_includes_head<span class="op">=</span><span class="va">True</span>, label<span class="op">=</span><span class="st">'3v-2u'</span>)</span>
+<span id="cb7-51"><a href="#cb7-51"></a></span>
+<span id="cb7-52"><a href="#cb7-52"></a>plt.xlim(<span class="op">-</span><span class="dv">4</span>, <span class="dv">2</span>)</span>
+<span id="cb7-53"><a href="#cb7-53"></a>plt.ylim(<span class="op">-</span><span class="dv">6</span>, <span class="dv">8</span>)</span>
+<span id="cb7-54"><a href="#cb7-54"></a></span>
+<span id="cb7-55"><a href="#cb7-55"></a>plt.legend()</span>
+<span id="cb7-56"><a href="#cb7-56"></a>plt.show()</span>
+<span id="cb7-57"><a href="#cb7-57"></a><span class="in">```</span></span>
+<span id="cb7-58"><a href="#cb7-58"></a></span>
+<span id="cb7-59"><a href="#cb7-59"></a><span class="fu">### Problem 2.14.2</span></span>
+<span id="cb7-60"><a href="#cb7-60"></a></span>
+<span id="cb7-61"><a href="#cb7-61"></a>Given the vectors $v = <span class="co">[</span><span class="ot">2, -1, 5</span><span class="co">]</span>$ and $u = <span class="co">[</span><span class="ot">-1, 1, 1</span><span class="co">]</span>$, find the</span>
+<span id="cb7-62"><a href="#cb7-62"></a>vectors $v+u$, $v-u$, $2v-u$, and $v+2u$.</span>
+<span id="cb7-63"><a href="#cb7-63"></a></span>
+<span id="cb7-64"><a href="#cb7-64"></a>$v+u = <span class="co">[</span><span class="ot">1, 0, 6</span><span class="co">]</span>$ \</span>
+<span id="cb7-65"><a href="#cb7-65"></a>$v-u = <span class="co">[</span><span class="ot">3, -2, 4</span><span class="co">]</span>$ \ </span>
+<span id="cb7-66"><a href="#cb7-66"></a>$2v-u = <span class="co">[</span><span class="ot">5, -3, 9</span><span class="co">]</span>$ \</span>
+<span id="cb7-67"><a href="#cb7-67"></a>$v+2u = <span class="co">[</span><span class="ot">0, 1, 7</span><span class="co">]</span>$ </span>
+<span id="cb7-68"><a href="#cb7-68"></a></span>
+<span id="cb7-69"><a href="#cb7-69"></a><span class="fu">### Problem 2.14.3</span></span>
+<span id="cb7-70"><a href="#cb7-70"></a>For the vectors $v=<span class="co">[</span><span class="ot">0, one, one</span><span class="co">]</span>$ and $u=<span class="co">[</span><span class="ot">one, one, one</span><span class="co">]</span>$ over $GF(2)$,</span>
+<span id="cb7-71"><a href="#cb7-71"></a>find $v+u$ and $v+u+u$.</span>
+<span id="cb7-72"><a href="#cb7-72"></a></span>
+<span id="cb7-73"><a href="#cb7-73"></a>$v+u = <span class="co">[</span><span class="ot">0, one, one</span><span class="co">]</span> + <span class="co">[</span><span class="ot">one, one, one</span><span class="co">]</span> = <span class="co">[</span><span class="ot">one, 0, 0</span><span class="co">]</span>$ \</span>
+<span id="cb7-74"><a href="#cb7-74"></a>$v+u+u = <span class="co">[</span><span class="ot">one, 0, 0</span><span class="co">]</span> + <span class="co">[</span><span class="ot">one, one, one</span><span class="co">]</span> = <span class="co">[</span><span class="ot">0, one, one</span><span class="co">]</span>$ </span>
+<span id="cb7-75"><a href="#cb7-75"></a></span>
+<span id="cb7-76"><a href="#cb7-76"></a><span class="fu">## Expressing one $GF(2)$ vector as a sum of others</span></span>
+<span id="cb7-77"><a href="#cb7-77"></a></span>
+<span id="cb7-78"><a href="#cb7-78"></a><span class="fu">### Problem 2.14.4</span></span>
+<span id="cb7-79"><a href="#cb7-79"></a></span>
+<span id="cb7-80"><a href="#cb7-80"></a>Here are six 7-vectors over $GF(2)$:</span>
+<span id="cb7-81"><a href="#cb7-81"></a></span>
+<span id="cb7-82"><a href="#cb7-82"></a>|                 |                 |</span>
+<span id="cb7-83"><a href="#cb7-83"></a>|-----------------|-----------------|</span>
+<span id="cb7-84"><a href="#cb7-84"></a>| **a** = 1100000 | **d** = 0001100 |</span>
+<span id="cb7-85"><a href="#cb7-85"></a>| **b** = 0110000 | **e** = 0000110 |</span>
+<span id="cb7-86"><a href="#cb7-86"></a>| **c** = 0011000 | **f** = 0000011 |</span>
+<span id="cb7-87"><a href="#cb7-87"></a></span>
+<span id="cb7-88"><a href="#cb7-88"></a>For each of the following vectors $u$, find a subset of the above</span>
+<span id="cb7-89"><a href="#cb7-89"></a>vectors whose sum is $u$, or report that no such subset exists.</span>
+<span id="cb7-90"><a href="#cb7-90"></a></span>
+<span id="cb7-91"><a href="#cb7-91"></a><span class="ss">1.  </span>$u$ = 0010010 \</span>
+<span id="cb7-92"><a href="#cb7-92"></a><span class="ss">2.  </span>$u$ = 0100010 \</span>
+<span id="cb7-93"><a href="#cb7-93"></a></span>
+<span id="cb7-94"><a href="#cb7-94"></a>1) $u$ = $c$ + $d$ + $e$ \</span>
+<span id="cb7-95"><a href="#cb7-95"></a>2) $u$ = $b$ + $c$ + $d$ + $e$</span>
+<span id="cb7-96"><a href="#cb7-96"></a></span>
+<span id="cb7-97"><a href="#cb7-97"></a><span class="fu">### Problem 2.14.5</span></span>
+<span id="cb7-98"><a href="#cb7-98"></a>Here are six 7-vectors over $GF(2)$:</span>
+<span id="cb7-99"><a href="#cb7-99"></a></span>
+<span id="cb7-100"><a href="#cb7-100"></a>|                 |                 |</span>
+<span id="cb7-101"><a href="#cb7-101"></a>|-----------------|-----------------|</span>
+<span id="cb7-102"><a href="#cb7-102"></a>| **a** = 1110000 | **d** = 0001110 |</span>
+<span id="cb7-103"><a href="#cb7-103"></a>| **b** = 0111000 | **e** = 0000111 |</span>
+<span id="cb7-104"><a href="#cb7-104"></a>| **c** = 0011100 | **f** = 0000011 |</span>
+<span id="cb7-105"><a href="#cb7-105"></a></span>
+<span id="cb7-106"><a href="#cb7-106"></a>For each of the following vectors $u$, find a subset of the above</span>
+<span id="cb7-107"><a href="#cb7-107"></a>vectors whose sum is $u$, or report that no such subset exists.</span>
+<span id="cb7-108"><a href="#cb7-108"></a></span>
+<span id="cb7-109"><a href="#cb7-109"></a><span class="ss">1.  </span>$u$ = 0010010 \</span>
+<span id="cb7-110"><a href="#cb7-110"></a><span class="ss">2.  </span>$u$ = 0100010 \ </span>
+<span id="cb7-111"><a href="#cb7-111"></a></span>
+<span id="cb7-112"><a href="#cb7-112"></a>1) $u$ = $c$ + $d$ \</span>
+<span id="cb7-113"><a href="#cb7-113"></a>2) There is no such subset.</span>
+<span id="cb7-114"><a href="#cb7-114"></a></span>
+<span id="cb7-115"><a href="#cb7-115"></a><span class="fu">## Finding a solution to linear equations over $GF(2)$</span></span>
+<span id="cb7-116"><a href="#cb7-116"></a></span>
+<span id="cb7-117"><a href="#cb7-117"></a><span class="fu">### Problem 2.14.6</span></span>
+<span id="cb7-118"><a href="#cb7-118"></a>Find a vector $x = <span class="co">[</span><span class="ot">x_1, x_2, x_3, x_4</span><span class="co">]</span>$ over $GF(2)$ satisfying the following linear equations: \</span>
+<span id="cb7-119"><a href="#cb7-119"></a>$1100 \cdot x = 1$ \</span>
+<span id="cb7-120"><a href="#cb7-120"></a>$1010 \cdot x = 1$ \ </span>
+<span id="cb7-121"><a href="#cb7-121"></a>$1111 \cdot x = 1$ \</span>
+<span id="cb7-122"><a href="#cb7-122"></a>Show that $x + 1111$ also satisfies the equations. \</span>
+<span id="cb7-123"><a href="#cb7-123"></a></span>
+<span id="cb7-124"><a href="#cb7-124"></a>A vector that satisfies the linear equation is $x = <span class="co">[</span><span class="ot">1, 0, 0, 0</span><span class="co">]</span>$.</span>
+<span id="cb7-125"><a href="#cb7-125"></a>$1100 \cdot 1000 \stackrel{\checkmark}{=} 1$ \</span>
+<span id="cb7-126"><a href="#cb7-126"></a>$1010 \cdot 1000 \stackrel{\checkmark}{=} 1$ \</span>
+<span id="cb7-127"><a href="#cb7-127"></a>$1111 \cdot 1000 \stackrel{\checkmark}{=} 1$ \</span>
+<span id="cb7-128"><a href="#cb7-128"></a>$(x=1000)+1111 = 0111$ also satisfies the equations: \</span>
+<span id="cb7-129"><a href="#cb7-129"></a>$1100 \cdot 0111 \stackrel{\checkmark}{=} 0 + 1 + 0 + 0 \stackrel{\checkmark}{=} 1$ \</span>
+<span id="cb7-130"><a href="#cb7-130"></a>$1010 \cdot 0111 \stackrel{\checkmark}{=} 0 + 0 + 1 + 0 \stackrel{\checkmark}{=} 1$ \</span>
+<span id="cb7-131"><a href="#cb7-131"></a>$1111 \cdot 0111 \stackrel{\checkmark}{=} 0 + 1 + 1 + 1 \stackrel{\checkmark}{=} 1$</span>
+<span id="cb7-132"><a href="#cb7-132"></a></span>
+<span id="cb7-133"><a href="#cb7-133"></a><span class="fu">## Formulating equations using dot-product</span></span>
+<span id="cb7-134"><a href="#cb7-134"></a></span>
+<span id="cb7-135"><a href="#cb7-135"></a><span class="fu">### Problem 2.14.7</span></span>
+<span id="cb7-136"><a href="#cb7-136"></a>Consider the equations \</span>
+<span id="cb7-137"><a href="#cb7-137"></a>$2x_0 + 3x_1 - 4x_2 + x_3 = 10$ \</span>
+<span id="cb7-138"><a href="#cb7-138"></a>$x_0 - 5x_1 + 2x_2 + 0x_3 = 35$ \</span>
+<span id="cb7-139"><a href="#cb7-139"></a>$4x_0 + x_1 - x_2 - x_3 = 8$ \</span>
+<span id="cb7-140"><a href="#cb7-140"></a>Your job is not to solve these equations but to formulate them using dot-product. In particular, come up with three vectors v1, v2, and v3 represented as lists so that the above equations are equivalent to \</span>
+<span id="cb7-141"><a href="#cb7-141"></a>$\mathrm{v1} \cdot x = 10$ \</span>
+<span id="cb7-142"><a href="#cb7-142"></a>$\mathrm{v2} \cdot x = 35$ \</span>
+<span id="cb7-143"><a href="#cb7-143"></a>$\mathrm{v3} \cdot x = 8$ \</span>
+<span id="cb7-144"><a href="#cb7-144"></a>where $x$ is a 4-vector over $\mathbb{R}$. \</span>
+<span id="cb7-145"><a href="#cb7-145"></a>$v_1=<span class="co">[</span><span class="ot">2, 3, -4, 1</span><span class="co">]</span>$ \</span>
+<span id="cb7-146"><a href="#cb7-146"></a>$v_2=<span class="co">[</span><span class="ot">1, -5, 2, 0</span><span class="co">]</span>$ \</span>
+<span id="cb7-147"><a href="#cb7-147"></a>$v_3=<span class="co">[</span><span class="ot">4, 1, -1, -1</span><span class="co">]</span>$</span>
+<span id="cb7-148"><a href="#cb7-148"></a></span>
+<span id="cb7-149"><a href="#cb7-149"></a><span class="fu">## Plotting lines and segments</span></span>
+<span id="cb7-150"><a href="#cb7-150"></a></span>
+<span id="cb7-151"><a href="#cb7-151"></a><span class="fu">### Problem 2.14.8</span></span>
+<span id="cb7-152"><a href="#cb7-152"></a>Use the <span class="in">`plot`</span> module to plot \</span>
+<span id="cb7-153"><a href="#cb7-153"></a>(a) a substantial portion of the line through <span class="co">[</span><span class="ot">-1.5, 2</span><span class="co">]</span> and <span class="co">[</span><span class="ot">3, 0</span><span class="co">]</span>, and \</span>
+<span id="cb7-154"><a href="#cb7-154"></a>(b) the line segment between <span class="co">[</span><span class="ot">2, 1</span><span class="co">]</span> and <span class="co">[</span><span class="ot">-2, 2</span><span class="co">]</span>. \</span>
+<span id="cb7-155"><a href="#cb7-155"></a>For each, provide the Python statements you used and the plot obtained.</span>
+<span id="cb7-156"><a href="#cb7-156"></a></span>
+<span id="cb7-159"><a href="#cb7-159"></a><span class="in">```{python}</span></span>
+<span id="cb7-160"><a href="#cb7-160"></a><span class="im">from</span> plotting <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb7-161"><a href="#cb7-161"></a><span class="im">from</span> IPython.display <span class="im">import</span> SVG, display</span>
+<span id="cb7-162"><a href="#cb7-162"></a>L<span class="op">=</span>[(<span class="dv">3</span> <span class="op">+</span> i<span class="op">*</span>(<span class="op">-</span><span class="dv">4</span>), i<span class="op">*</span><span class="dv">9</span>) <span class="cf">for</span> i <span class="kw">in</span> <span class="bu">range</span>(<span class="op">-</span><span class="dv">20</span>, <span class="dv">20</span>)]</span>
+<span id="cb7-163"><a href="#cb7-163"></a>display(SVG(plot(L, <span class="dv">200</span>)))</span>
+<span id="cb7-164"><a href="#cb7-164"></a><span class="in">```</span></span>
+<span id="cb7-165"><a href="#cb7-165"></a></span>
+<span id="cb7-168"><a href="#cb7-168"></a><span class="in">```{python}</span></span>
+<span id="cb7-169"><a href="#cb7-169"></a><span class="im">import</span> numpy <span class="im">as</span> np</span>
+<span id="cb7-170"><a href="#cb7-170"></a><span class="im">from</span> plotting <span class="im">import</span> <span class="op">*</span></span>
+<span id="cb7-171"><a href="#cb7-171"></a><span class="im">from</span> IPython.display <span class="im">import</span> SVG, display</span>
+<span id="cb7-172"><a href="#cb7-172"></a>L<span class="op">=</span>[(<span class="dv">2</span><span class="op">-</span>i, <span class="dv">1</span><span class="op">+</span><span class="fl">0.25</span><span class="op">*</span>i) <span class="cf">for</span> i <span class="kw">in</span> np.arange(<span class="dv">0</span>, <span class="dv">4</span>, <span class="fl">0.001</span>)]</span>
+<span id="cb7-173"><a href="#cb7-173"></a>display(SVG(plot(L, <span class="dv">3</span>)))</span>
+<span id="cb7-174"><a href="#cb7-174"></a><span class="in">```</span></span>
+<span id="cb7-175"><a href="#cb7-175"></a></span>
+<span id="cb7-176"><a href="#cb7-176"></a><span class="fu">## Practice with dot-product</span></span>
+<span id="cb7-177"><a href="#cb7-177"></a></span>
+<span id="cb7-178"><a href="#cb7-178"></a><span class="fu">### Problem 2.14.9</span></span>
+<span id="cb7-179"><a href="#cb7-179"></a>For each of the following pairs of vectors $u$ and $v$ over $\mathbb{R}$, evaluate the expression $u \cdot v$: \</span>
+<span id="cb7-180"><a href="#cb7-180"></a>(a) $u = <span class="co">[</span><span class="ot">1, 0</span><span class="co">]</span>, v = <span class="co">[</span><span class="ot">5, 4321</span><span class="co">]</span>$ \</span>
+<span id="cb7-181"><a href="#cb7-181"></a>(b) $u = <span class="co">[</span><span class="ot">0, 1</span><span class="co">]</span>, v = <span class="co">[</span><span class="ot">12345, 6</span><span class="co">]</span>$ \</span>
+<span id="cb7-182"><a href="#cb7-182"></a>(c) $u = <span class="co">[</span><span class="ot">-1, 3</span><span class="co">]</span>, v = <span class="co">[</span><span class="ot">5, 7</span><span class="co">]</span>$ \</span>
+<span id="cb7-183"><a href="#cb7-183"></a>(d) $u = \left<span class="co">[</span><span class="ot">-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right</span><span class="co">]</span>, v = \left<span class="co">[</span><span class="ot">\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right</span><span class="co">]</span>$</span>
+<span id="cb7-184"><a href="#cb7-184"></a></span>
+<span id="cb7-185"><a href="#cb7-185"></a>(a) $<span class="co">[</span><span class="ot">1, 0</span><span class="co">]</span> \cdot <span class="co">[</span><span class="ot">5, 4321</span><span class="co">]</span> = 5 + 0 = 5$ \</span>
+<span id="cb7-186"><a href="#cb7-186"></a>(b) $<span class="co">[</span><span class="ot">0, 1</span><span class="co">]</span> \cdot <span class="co">[</span><span class="ot">12345, 6</span><span class="co">]</span> = 0 + 6 = 6$ \</span>
+<span id="cb7-187"><a href="#cb7-187"></a>(c) $<span class="co">[</span><span class="ot">-1, 3</span><span class="co">]</span> \cdot <span class="co">[</span><span class="ot">5, 7</span><span class="co">]</span> = -5 + 21 =16$ \</span>
+<span id="cb7-188"><a href="#cb7-188"></a>(d) $\left<span class="co">[</span><span class="ot">-\frac{\sqrt{2}}{2}, \frac{\sqrt{2}}{2}\right</span><span class="co">]</span> \cdot \left<span class="co">[</span><span class="ot">\frac{\sqrt{2}}{2}, -\frac{\sqrt{2}}{2}\right</span><span class="co">]</span> = -\frac{1}{2} - \frac{1}{2} = -1$</span>
+<span id="cb7-189"><a href="#cb7-189"></a></span>
+<span id="cb7-190"><a href="#cb7-190"></a><span class="fu">## Writing procedures for the `Vec` class</span></span>
+<span id="cb7-191"><a href="#cb7-191"></a></span>
+<span id="cb7-192"><a href="#cb7-192"></a><span class="fu">### Problem 2.14.10</span></span>
+<span id="cb7-193"><a href="#cb7-193"></a>Download the file <span class="in">`vec.py`</span> to your computer, and edit it. The file defines procedures using the Python statement <span class="in">`pass`</span>, which does nothing. You can import the <span class="in">`vec`</span> module and create instances of <span class="in">`Vec`</span> but the operations such as * and + currently do nothing. Your job is to replace each occurrence of the <span class="in">`pass`</span> statement with appropriate code. Your code for a procedure can include calls to others of the seven. You should make no changes to the class definition.</span>
+<span id="cb7-194"><a href="#cb7-194"></a></span>
+<span id="cb7-195"><a href="#cb7-195"></a><span class="fu">#### Docstrings</span></span>
+<span id="cb7-196"><a href="#cb7-196"></a>At the beginning of each procedure body is a multi-line string (deliminated by triple quotation marks). This is called a documentation string (*docstring*). It specifies what the procedure should do.</span>
+<span id="cb7-197"><a href="#cb7-197"></a></span>
+<span id="cb7-198"><a href="#cb7-198"></a><span class="fu">#### Doctests</span></span>
+<span id="cb7-199"><a href="#cb7-199"></a>The documentation string we provide for a procedure also includes examples of the functionality that procedure is supposed to provide to <span class="in">`Vec`</span>s. The examples show an interaction with Python: statements and expressions are evaluated by Python, and Python's responses are shown. These examples are provided to you as tests (called *doctests*). You should make sure that your procedure is written in such a way that the behavior of your Vec implementation matches that in the examples. If not, your implementation is incorrect.  </span>
+<span id="cb7-200"><a href="#cb7-200"></a></span>
+<span id="cb7-201"><a href="#cb7-201"></a>Download the file <span class="in">`vec.py`</span> to your computer, and edit it.  Fill in the procedure definitions and test the doctests with  </span>
+<span id="cb7-202"><a href="#cb7-202"></a><span class="in">`python3 -m doctest vec.py`</span>.</span>
+<span id="cb7-203"><a href="#cb7-203"></a></span>
+<span id="cb7-204"><a href="#cb7-204"></a><span class="in">```{.python include="vec.py"}</span></span>
+<span id="cb7-205"><a href="#cb7-205"></a><span class="in">```</span></span>
+<span id="cb7-206"><a href="#cb7-206"></a></span>
+<span id="cb7-207"><a href="#cb7-207"></a><span class="fu">#### Testing `vec.py`</span></span>
+<span id="cb7-210"><a href="#cb7-210"></a><span class="in">```{python}</span></span>
+<span id="cb7-211"><a href="#cb7-211"></a><span class="im">import</span> subprocess</span>
+<span id="cb7-212"><a href="#cb7-212"></a>subprocess.run([<span class="st">"python"</span>, <span class="st">"-m"</span>, <span class="st">"doctest"</span>, <span class="st">"vec.py"</span>], check<span class="op">=</span><span class="va">True</span>)</span>
+<span id="cb7-213"><a href="#cb7-213"></a><span class="in">```</span></span>
+<span id="cb7-214"><a href="#cb7-214"></a></span>
+<span id="cb7-215"><a href="#cb7-215"></a>Note that a <span class="in">`returncode`</span> of 0 means that all of the testcases executed successfully.</span>
+</code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div></div></div></div></div>
+</div> <!-- /content -->
+
+
+
+</body></html>

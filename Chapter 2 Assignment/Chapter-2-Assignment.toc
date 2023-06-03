@@ -1,0 +1,36 @@
+\contentsline {section}{\nonumberline \textbf {2.13 Review Questions}}{3}{section*.3}%
+\contentsline {subsection}{\nonumberline What is vector addition?}{3}{subsection*.5}%
+\contentsline {subsection}{\nonumberline What is the geometric interpretation of vector addition?}{3}{subsection*.7}%
+\contentsline {subsection}{\nonumberline What is scalar-vector multiplication?}{3}{subsection*.9}%
+\contentsline {subsection}{\nonumberline What is the distributive property that involves scalar-vector multiplication but not vector addition?}{3}{subsection*.11}%
+\contentsline {subsection}{\nonumberline What is the distributive property that involves both scalar-vector multiplication and vector addition?}{3}{subsection*.13}%
+\contentsline {subsection}{\nonumberline How is scalar-vector multiplication used to represent the line through a pair of given points?}{4}{subsection*.15}%
+\contentsline {subsection}{\nonumberline What is dot product?}{4}{subsection*.17}%
+\contentsline {subsection}{\nonumberline What is the \emph {homogeneity} property that relates dot-product to scalar-vector multiplication?}{4}{subsection*.19}%
+\contentsline {subsection}{\nonumberline What is the distributive property property that relates dot-product to vector addition?}{4}{subsection*.21}%
+\contentsline {subsection}{\nonumberline What is a linear equation (expressed using dot-product)?}{4}{subsection*.23}%
+\contentsline {subsection}{\nonumberline What is a linear system?}{4}{subsection*.25}%
+\contentsline {subsection}{\nonumberline What is an upper-triangular linear system?}{5}{subsection*.27}%
+\contentsline {subsection}{\nonumberline How can one solve an upper-triangular linear system?}{5}{subsection*.29}%
+\contentsline {section}{\nonumberline \textbf {2.14 Problems}}{5}{section*.31}%
+\contentsline {subsection}{\nonumberline Vector addition practice}{5}{subsection*.33}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.1}{5}{subsubsection*.35}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.2}{6}{subsubsection*.38}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.3}{6}{subsubsection*.40}%
+\contentsline {subsection}{\nonumberline Expressing one \(GF(2)\) vector as a sum of others}{7}{subsection*.42}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.4}{7}{subsubsection*.44}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.5}{7}{subsubsection*.46}%
+\contentsline {subsection}{\nonumberline Finding a solution to linear equations over \(GF(2)\)}{8}{subsection*.48}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.6}{8}{subsubsection*.50}%
+\contentsline {subsection}{\nonumberline Formulating equations using dot-product}{8}{subsection*.52}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.7}{8}{subsubsection*.54}%
+\contentsline {subsection}{\nonumberline Plotting lines and segments}{9}{subsection*.56}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.8}{9}{subsubsection*.58}%
+\contentsline {subsection}{\nonumberline Practice with dot-product}{10}{subsection*.62}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.9}{10}{subsubsection*.64}%
+\contentsline {subsection}{\nonumberline Writing procedures for the \texttt {Vec} class}{11}{subsection*.66}%
+\contentsline {subsubsection}{\nonumberline Problem 2.14.10}{11}{subsubsection*.68}%
+\contentsline {paragraph}{\nonumberline Docstrings}{11}{paragraph*.70}%
+\contentsline {paragraph}{\nonumberline Doctests}{11}{paragraph*.72}%
+\contentsline {paragraph}{\nonumberline Testing \texttt {vec.py}}{19}{paragraph*.74}%
+\providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

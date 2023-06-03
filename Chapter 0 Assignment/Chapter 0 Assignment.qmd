@@ -1,0 +1,161 @@
+---
+format: pdf
+pdf-engine: pdflatex
+toc: true
+toc-depth: 4
+toc-location: body
+code-line-numbers: true 
+include-in-header: 
+  text: |
+    \usepackage{fvextra}
+    \usepackage{svg}
+    \DefineVerbatimEnvironment{Highlighting}{Verbatim}{breaklines,commandchars=\\\{\}}
+include-before-body: 
+  text: |
+    \input{./title.tex}
+    \newpage
+---
+
+{{< pagebreak >}}
+
+## Review Questions
+
+### What does the notation $f : A \longrightarrow B$ mean?
+
+$f$ is a function whose domain is the set $A$ and codomain is the set $B$. AKA: $f$ is a function that maps $A$ to $B$.
+
+### What are the criteria for $f$ to be an invertible function?
+
+- $f \circ g$ is defined and the identity function on the domain of $g$
+- $g \circ f$ is defined and the identity function on the domain of $f$
+
+### What is the associativity of functional composition?
+
+$h \circ (g \circ f) = (h \circ g) \circ f$
+
+### What are the criteria for a function to be a probability function?
+
+-   The function must output a non-negative real number for all inputs.
+-   The function must be measurable, meaning it must correspond to some set that can be assigned a probability.
+
+### What is the Fundamental Principle of Probability Theory?
+
+The probability of an event is the sum of probabilities.
+
+### If the input to an invertible function is chosen randomly according to the uniform distribution, what is the distribution of the output?
+
+The output will also have a uniform distribution. This is because an invertible function is a one-to-one mapping, so it preserves the uniformity of the distribution. In other words, every possible output value will have the same probability of being produced, as every possible input value has the same probability of being chosen.
+
+## 0.8 Problems
+
+### Problem 0.8.1
+
+increments(L)\
+input: list L of numbers\
+output: list of numbers in which the ith element is one plus the ith element Example: increments(\[1, 5, 7\]) should return \[2, 6, 8\]
+
+```{python}
+def increments(L): return [x+1 for x in L]
+print(increments([1, 5, 7]))
+```
+
+### Problem 0.8.2
+
+cubes(L)\
+input: list L of numbers\
+output: list of numbers in which the ith element is the cube of the ith element of L.\
+Example: given \[1, 2, 3\] return \[1, 8, 27\]
+
+```{python}
+def cubes(L): return[x**3 for x in L]
+print(cubes([1, 2, 3]))
+```
+
+### Problem 0.8.3
+
+tuple_sum(A, B)\
+input: lists A and B of the same length, where each element in each list is a pair (x, y) of numbers\
+output: list of pairs (x, y) in which the first element of the ith pair is the sum of the first element of the ith pair in A and the first element of the ith pair in B\
+Example: given lists \[(1, 2), (10, 20)\] and \[(3, 4), (30, 40)\], return \[(4, 6), (40, 60)\]
+
+```{python}
+def tuple_sum(A, B): return [(x[0]+y[0], x[1]+y[1]) for x, y in zip(A, B)]
+A= [(1, 2), (10, 20)]
+B = [(3, 4), (30, 40)]
+print(tuple_sum(A, B))
+```
+
+### Problem 0.8.4
+
+inv_dict(d)\
+input: dictionary d representing an invertible function f\
+output: dictionary representing the inverse of f, the returned dictionary's keys are the value of d and its values are the keys of d\
+Example: given an English-French dictionary:\
+{'thank you' : 'merci', 'goodbye' : 'au revoir'}\
+return a French-English dictionary:\
+{'merci' : 'thank you', 'au revoir' : 'goodbye'}
+
+```{python}
+def inv_dict(d): return {v: k for k, v in d.items()}
+d = {'thank you' : 'merci', 'goodbye' : 'au revoir'}
+print(inv_dict(d))
+```
+
+### Problem 0.8.5
+
+First write a procedure row with the following spec:\
+input: integer p, integer n\
+output: n-element list such that element i is p+i\
+Example: given p = 10 and n = 4, return \[10, 11, 12, 13\]\
+Next, write a comprehension whose value is a 15-element list of 20-element lists such that the jth element of the ith list is i+j. You can use row(p, n) in your comprehension.\
+Finally, write the same comprehension but without using row(p, n). Hint: replace the call to row(p, n) with the comprehension that forms the body of row (p, n)\
+
+```{python .code-overflow-wrap}
+def row(p, n): return [p+i for i in range(n)]
+print(row(10, 4))
+print([row(i, 20) for i in range(15)])
+print([[i+j for j in range(20)] for i in range(15)])
+```
+
+### Problem 0.8.6
+
+Is the following function invertible? If yes, explain why. If not, can you change the domain and/or codomain of the function to make it invertible? Provide the drawing.\
+![](images/image-1442319506.png)\
+The function is invertible because for every $x, y \in U, f(x) = f(y)$ and for every $z \in V$, there exists $x \in U$ such that $f(x) = z$.
+
+### Problem 0.8.7
+
+Is the following function invertible? If yes, explain why. If not, can you change the domain and/or codomain of the function to make it invertible? Provide the drawing.\
+![](images/image-1309870809.png)\
+The function is not invertible. It is impossible to make this function invertible as it currently is now, as $|V| \ne |U|$, but if you remove the last element of $V$, then it is invertible.
+
+### Problem 0.8.8
+
+Let $f : \mathbf{R} \rightarrow \mathbf{R}$ where $f(x) = abs(x)$ . Is there a choice of domain and codomain for the function $g(x)$ with the rule $g(x) = \sqrt{x}$ such that $g \circ f$ is defined? If so, specify it. If not, explain why not. Could you change domain and/or codomain of $f$ or $g$ so that $g \circ f$ will be defined? The choice of domain and codomain for $g(x)$ where $g \circ f$ is defined is $\mathbf{R}$.
+
+### Problem 0.8.9
+
+Consider functions f and g in the following figure:
+
+![](images/image-1619342838.png){width="356"}
+
+Is $f \circ g$ defined? If so, draw it, otherwise explain why not.
+
+$f \circ g$ is defined as follows:
+
+```{mermaid}
+%%| fig-width: 1.6
+graph LR
+1 --> 23
+2 --> 22
+3 --> 21
+```
+
+### Problem 0.8.10
+
+A function f(x) = x+1 with domain {1, 2, 3, 5, 6} and codomain {2, 3, 4, 6, 7} has the following probability on its domain: Pr(1) = 0.5, Pr(2) = 0.2, and Pr(3) = Pr(5) = Pr(6) = 0.1. What is the probability of getting an even number as an output of f(x)? An odd number? $\mathrm{Pr}("even") = \mathrm{Pr}(1) + \mathrm{Pr}(3) + \mathrm{Pr}(5) = 0.5+0.1+0.1 = 0.7$
+
+### Problem 0.8.11
+
+A function g(x) = x mod 3 with domain {1, 2, 3, 4, 5, 6, 7} and codomain {0, 1, 2} has the following probability function on its domain: Pr(1) = Pr(2) = Pr(3) = 0.2 and Pr(4) = Pr(5) = Pr(6) = Pr(7) = 0.1. What is the probability of getting 1 as an output of g(x)? What is the probability of getting 0 or 2? $\mathrm{Pr}(\text{"1"}) = \mathrm{Pr}(1) + \mathrm{Pr}(4) + \mathrm{Pr}(7) = 0.2 + 0.1 + 0.1 = 0.4$\
+$\mathrm{Pr}(\text{"0 or 2"}) = \mathrm{Pr}(2) + \mathrm{Pr}(3)+\mathrm{Pr}+(5)+\mathrm{Pr}(6) = 0.2 + 0.2 + 0.1 + 0.1 = 0.6$
