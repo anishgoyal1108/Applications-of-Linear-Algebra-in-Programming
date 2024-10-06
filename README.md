@@ -31,5 +31,3 @@ Below is a list of assignments in this repository:
 - **Problem Set 1 Vec Space**
 - **Senator Voting Records Lab**
 - **Spanday 1**
-  
-This README provides an overview of the structure of the repository. Happy learning!
